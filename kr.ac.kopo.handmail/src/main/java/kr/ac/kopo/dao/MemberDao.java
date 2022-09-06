@@ -7,7 +7,7 @@ import kr.ac.kopo.model.MemberVO;
 @Mapper
 public interface MemberDao {
 
-List<MemberVO> selectMemList();
+	List<MemberVO> selectMemList();
 	
 	int insertMem(MemberVO vo);
 	

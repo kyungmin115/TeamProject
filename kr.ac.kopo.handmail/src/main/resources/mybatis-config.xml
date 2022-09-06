@@ -8,9 +8,11 @@
 	
 	<typeAliases>
 	 <typeAlias type="kr.ac.kopo.model.MemberVO" alias="MemberVO"/>
+	 <typeAlias type="kr.ac.kopo.model.ProductVO" alias="ProductVO"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mybatis/MemberMapper.xml"/>
+		<mapper resource="mybatis/ProductMapper.xml"/>
 	</mappers>
 </configuration>

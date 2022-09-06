@@ -6,7 +6,7 @@
 
 <mapper namespace="kr.ac.kopo.dao.MemberDao">
 
-	<insert id="insertMem" parameterType="MemberVo">
+	<insert id="insertMem" parameterType="MemberVO">
 	 	INSERT INTO member
 	(mem_id, mem_mail, mem_pass, mem_name, admin )
 	VALUES (#{memId}, #{memMail}, #{memPass}, #{memName}, 'N')
@@ -14,7 +14,7 @@
 	 
 	 
 	 <!-- 로그인 -->
-	 <select id="login" resultType="MemberVo">
+	 <select id="login" resultType="MemberVO">
 	 	SELECT mem_id, mem_pass, mem_name
 	 	FROM member
 	 	WHERE mem_id = #{memId}
