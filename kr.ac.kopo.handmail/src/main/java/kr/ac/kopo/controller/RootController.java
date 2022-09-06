@@ -10,5 +10,9 @@ public class RootController {
 	String index() {
 		return "index";
 	}
-	
+	@RequestMapping(value="/main.do")
+	public String main() throws Exception{
+		
+		return "mail/main";
+	}
 }
