@@ -8,10 +8,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.dao.ProductDao;
 import kr.ac.kopo.model.ProductVO;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired
@@ -61,6 +63,13 @@ public class ProductServiceImpl implements ProductService {
 		
 		
 		return productDao.insertProd(vo);
+	}
+
+	@Override
+	public void delete() {
+		
+		productDao.delete();
+		
 	}
 
 }

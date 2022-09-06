@@ -10,7 +10,12 @@
 
 	<form action="${pageContext.request.contextPath}/product/insert.do" method="post">
 	
-	<input type="submit"/>
+	<input type="submit" value="상품추가"/>
+	
+	</form>
+	
+	<form action="${pageContext.request.contextPath}/product/delete.do" method="post">
+	<input type="submit" value="상품전체삭제"/>
 	
 	</form>
 

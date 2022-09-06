@@ -5,5 +5,7 @@ import kr.ac.kopo.model.ProductVO;
 public interface ProductService {
 
 	int insertProd(ProductVO vo);
+
+	void delete();
 	
 }

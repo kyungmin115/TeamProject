@@ -8,4 +8,6 @@ import kr.ac.kopo.model.ProductVO;
 public interface ProductDao {
 
 	public int insertProd(ProductVO vo);
+
+	public void delete();
 }

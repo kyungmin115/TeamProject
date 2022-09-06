@@ -12,6 +12,11 @@
 	VALUES (prod_seq.NEXTVAL, #{prodName}, #{prodPrice}, #{sale}, #{store}, #{category})
 	</insert>
 	 
+	 
+	<delete id="delete">
+		DELETE FROM product_data
+	
+	</delete>
 	
 	
 	  
