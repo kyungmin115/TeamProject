@@ -15,7 +15,7 @@
 	</form>
 	
 	<form action="${pageContext.request.contextPath}/product/delete.do" method="post">
-	<input type="submit" value="상품전체삭제"/>
+	<input type="submit" value="상품모두삭제"/>
 	
 	</form>
 
