@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+
+<div class="line">
+    <header class="hed">
+        <ul class="mid">
+            <li class="mid"></li>
+            <li class="imag"><a href=""><img src="/resources/images/header/로고2.png" alt=""></a></li>
+            <li class="made"></li>
+            <li class="mid"><a href="">소개</a></li>
+            <li class="mid"><a href="">이벤트</a></li>
+            <li class="mid"><a href="">상품 서비스</a></li>
+            <li class="mid"><a href="">추천 레시피</a></li>
+            <li class="mid"></li>
+            <li class="mid"><a href="">로그인</a></li> 
+        </ul>
+    </header>
+    </div>

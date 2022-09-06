@@ -1,0 +1,97 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+a{
+	text-decoration: none;
+}
+.hed{
+	width: 1200px;
+	height: 80px;
+	margin: 0 auto;
+	text-align: center;
+	background: white;
+}
+header ul li{
+	float: left;
+	padding: 15px;
+}
+header ul li a{
+	color: black;
+	font-size: 18px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 600;
+}
+.mid{
+	margin-top: 10px;
+	margin-left: 50px;
+}
+.line{
+	width: 1920px;
+	border-bottom: 0.5px solid rgb(199, 199, 199);
+}
+.imag{
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 20px;
+}
+.imag:hover{
+	filter: opacity(0.5) drop-shadow(0 0 0 rgb(0, 0, 212));
+}
+.made{
+	margin-left: 30px;
+}
+.fot{
+    width: 1920px;
+    height: 80px;
+    background: black;
+    margin: 0 auto;
+    text-align: center;
+}
+.ter{
+    text-align: center;
+    color: white;
+    padding-top: 15px;
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 25px;
+}
