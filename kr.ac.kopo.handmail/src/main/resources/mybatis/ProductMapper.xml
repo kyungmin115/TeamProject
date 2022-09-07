@@ -18,6 +18,12 @@
 	
 	</delete>
 	
+	<select id="selectList" resultType="productVO">
+		select prod_name, prod_price, sale, store
+		from
+		product_data
+	
+	</select>
 	
 	  
 	

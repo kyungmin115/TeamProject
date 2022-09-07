@@ -1,6 +1,7 @@
 package kr.ac.kopo.service;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
@@ -70,6 +71,12 @@ public class ProductServiceImpl implements ProductService {
 		
 		productDao.delete();
 		
+	}
+
+	@Override
+	public List<ProductVO> selectList() {
+		
+		return productDao.selectList();
 	}
 
 }
