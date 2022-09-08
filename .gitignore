@@ -1,6 +1,7 @@
 /.metadata/
 /target/
 !.mvn/wrapper/maven-wrapper.jar
+kr.ac.kopo.handmail/target
 
 ### STS ###
 .apt_generated
