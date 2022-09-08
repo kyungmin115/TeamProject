@@ -18,15 +18,49 @@
 	
 	</delete>
 	
-	<select id="selectList" resultType="productVO">
+	<select id="selectList" resultType="productVO" parameterType="kr.ac.kopo.model.Criteria">
 		select prod_name, prod_price, sale, store
 		from
-		product_data
-	
+		(select prod_name, prod_price, sale, store, row_number() over(order by prod_num) as RNUM
+		from
+		product_data)
+		
+		WHERE RNUM BETWEEN #{rowStart} AND #{rowEnd}
+		
 	</select>
 	
-	  
 	
+	<sql id="selectListWhere">
+		<where>
+			<if test='searchCondition != null and searchCondition != ""'>
+				<choose>
+					<when test='searchCondition == "all"'>
+						AND prod_name LIKE '%'||#{searchKeyword}||'%'
+					</when>
+					<when test='searchCondition == "cu"'>
+						AND store LIKE #{searchCondition} AND prod_name LIKE '%'||#{searchKeyword}||'%'
+					</when>
+					<when test='searchCondition == "gs25"'>
+						AND store LIKE #{searchCondition} AND prod_name LIKE '%'||#{searchKeyword}||'%'
+					</when>
+					<when test='searchCondition == "seven"'>
+						AND store LIKE #{searchCondition} AND prod_name LIKE '%'||#{searchKeyword}||'%'
+					</when>
+					<when test='searchCondition == "emart24"'>
+						AND store LIKE #{searchCondition} AND prod_name LIKE '%'||#{searchKeyword}||'%'
+					</when>
+				</choose>
+			</if>
+		</where>
+	
+	</sql>
+	 
+	<select id="listCount" resultType="int">
+	<![CDATA[
+		SELECT COUNT(*)
+		  FROM product_data
+	]]>
+	</select>
 	
 	
 

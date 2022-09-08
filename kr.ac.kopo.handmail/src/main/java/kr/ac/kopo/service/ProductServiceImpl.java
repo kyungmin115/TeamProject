@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.dao.ProductDao;
+import kr.ac.kopo.model.Criteria;
 import kr.ac.kopo.model.ProductVO;
 
 @Service
@@ -74,9 +75,15 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<ProductVO> selectList() {
+	public List<ProductVO> selectList(Criteria cri) {
 		
-		return productDao.selectList();
+		return productDao.selectList(cri);
+	}
+
+	@Override
+	public int listCount() {
+		
+		return productDao.listCount();
 	}
 
 }
