@@ -21,9 +21,15 @@
 	<select id="selectList" resultType="productVO" parameterType="kr.ac.kopo.model.Criteria">
 		select prod_name, prod_price, sale, store
 		from
-		(select prod_name, prod_price, sale, store, row_number() over(order by prod_num) as RNUM
-		from
-		product_data)
+		(
+		select prod_name, prod_price, sale, store, row_number() over(order by prod_num) as RNUM
+		from product_data
+		WHERE 1=1
+		<include refid="selectListWhere"></include>
+		)
+		
+		
+		
 		
 		WHERE RNUM BETWEEN #{rowStart} AND #{rowEnd}
 		
