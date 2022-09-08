@@ -11,25 +11,29 @@
 <style type="text/css">
 			li {list-style: none; float: left; padding: 6px;}
 </style>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
-<form name="frm" method="get" action="/product/list.do">
-				<fieldset>
-					<legend>검색조건입력폼</legend>
-					<label for="ftext" class="hdn">검색분류선택</label>
-					<select name="searchCondition" id="ftext">
-						<option value="all">전체</option>
-						<option value="cu">CU</option>
-						<option value="gs25">GS25</option>
-						<option value="seven">SEVEN</option>
-						<option value="emart24">EMART</option>
-					</select>
-					<label for="inp_text" class="hdn">검색어입력</label>
-					<input name="searchKeyword" type="text" class="inp_s" id="inp_text" />
-					<span class="bbtn_s"><input type="submit" value="검색" title="검색(수업용 게시판 게시물 내)" />
-					</span>
-				</fieldset>
-</form>
+ <div class="search">
+    <select name="searchType">
+      <option value="n"<c:out value="${scri.searchType == null ? 'selected' : ''}"/>>전체</option>
+      <option value="cu"<c:out value="${scri.searchType eq 'cu' ? 'selected' : ''}"/>>CU</option>
+      <option value="gs25"<c:out value="${scri.searchType eq 'gs25' ? 'selected' : ''}"/>>GS25</option>
+      <option value="seven"<c:out value="${scri.searchType eq 'seven' ? 'selected' : ''}"/>>세븐</option>
+      <option value="emart24"<c:out value="${scri.searchType eq 'emart24' ? 'selected' : ''}"/>>이마트</option>
+    </select>
+
+    <input type="text" name="keyword" id="keywordInput" value="${scri.keyword}"/>
+
+    <button id="searchBtn" type="button">검색</button>
+    <script>
+      $(function(){
+        $('#searchBtn').click(function() {
+          self.location = "list.do" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+        });
+      });   
+    </script>
+  </div>
 			
  <table>
  	<thead>
@@ -58,15 +62,15 @@
 <div>
   <ul>
     <c:if test="${pageMaker.prev}">
-    	<li><a href="list.do${pageMaker.makeQuery(pageMaker.startPage - 1)}">이전</a></li>
+    	<li><a href="list.do${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
     </c:if> 
 
     <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-    	<li><a href="list.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
+    	<li><a href="list.do${pageMaker.makeSearch(idx)}">${idx}</a></li>
     </c:forEach>
 
     <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-    	<li><a href="list.do${pageMaker.makeQuery(pageMaker.endPage + 1)}">다음</a></li>
+    	<li><a href="list.do${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
     </c:if> 
   </ul>
 </div>

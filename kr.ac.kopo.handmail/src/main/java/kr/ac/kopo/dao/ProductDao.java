@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import kr.ac.kopo.model.Criteria;
 import kr.ac.kopo.model.ProductVO;
+import kr.ac.kopo.model.SearchCriteria;
 
 @Mapper
 public interface ProductDao {
@@ -16,7 +17,7 @@ public interface ProductDao {
 
 	public void delete();
 
-	public List<ProductVO> selectList(Criteria cri);
+	public List<ProductVO> selectList(SearchCriteria scri);
 
-	public int listCount();
+	public int listCount(SearchCriteria scri);
 }

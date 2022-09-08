@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import kr.ac.kopo.dao.ProductDao;
 import kr.ac.kopo.model.Criteria;
 import kr.ac.kopo.model.ProductVO;
+import kr.ac.kopo.model.SearchCriteria;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -75,15 +76,15 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<ProductVO> selectList(Criteria cri) {
+	public List<ProductVO> selectList(SearchCriteria scri) {
 		
-		return productDao.selectList(cri);
+		return productDao.selectList(scri);
 	}
 
 	@Override
-	public int listCount() {
+	public int listCount(SearchCriteria scri) {
 		
-		return productDao.listCount();
+		return productDao.listCount(scri);
 	}
 
 }

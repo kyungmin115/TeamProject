@@ -4,6 +4,7 @@ import java.util.List;
 
 import kr.ac.kopo.model.Criteria;
 import kr.ac.kopo.model.ProductVO;
+import kr.ac.kopo.model.SearchCriteria;
 
 public interface ProductService {
 
@@ -11,8 +12,8 @@ public interface ProductService {
 
 	void delete();
 	
-	List<ProductVO> selectList(Criteria cri);
+	List<ProductVO> selectList(SearchCriteria scri);
 	
-	public int listCount();
+	public int listCount(SearchCriteria scri);
 	
 }
