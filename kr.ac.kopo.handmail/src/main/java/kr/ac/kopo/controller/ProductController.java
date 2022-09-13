@@ -62,5 +62,23 @@ public class ProductController {
 		return "product/prodList2";
 	}
 	
+	@GetMapping("search.do")
+	public String searchList(Model model, @ModelAttribute("scri") SearchCriteria scri) {
+		
+		List<ProductVO> list;
+		list = productService.selectList(scri);
+		
+		model.addAttribute("result", list);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(scri);
+		pageMaker.setTotalCount(productService.listCount(scri));
+		
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "product/search";
+	}
+	
+	
 	
 }

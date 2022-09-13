@@ -18,54 +18,38 @@
 	
 	</delete>
 	
-	<select id="selectList" resultType="productVO" parameterType="kr.ac.kopo.model.Criteria">
+	<select id="selectList" resultType="productVO" parameterType="kr.ac.kopo.model.SearchCriteria">
 		select prod_name, prod_price, sale, store
 		from
 		(
 		select prod_name, prod_price, sale, store, row_number() over(order by prod_num) as RNUM
 		from product_data
 		WHERE 1=1
-		<include refid="selectListWhere"></include>
+		<include refid="search"></include>
 		)
-		
-		
-		
 		
 		WHERE RNUM BETWEEN #{rowStart} AND #{rowEnd}
 		
 	</select>
 	
-	
-	<sql id="selectListWhere">
-		<where>
-			<if test='searchCondition != null and searchCondition != ""'>
-				<choose>
-					<when test='searchCondition == "all"'>
-						AND prod_name LIKE '%'||#{searchKeyword}||'%'
-					</when>
-					<when test='searchCondition == "cu"'>
-						AND store LIKE #{searchCondition} AND prod_name LIKE '%'||#{searchKeyword}||'%'
-					</when>
-					<when test='searchCondition == "gs25"'>
-						AND store LIKE #{searchCondition} AND prod_name LIKE '%'||#{searchKeyword}||'%'
-					</when>
-					<when test='searchCondition == "seven"'>
-						AND store LIKE #{searchCondition} AND prod_name LIKE '%'||#{searchKeyword}||'%'
-					</when>
-					<when test='searchCondition == "emart24"'>
-						AND store LIKE #{searchCondition} AND prod_name LIKE '%'||#{searchKeyword}||'%'
-					</when>
-				</choose>
-			</if>
-		</where>
-	
+	<sql id="search">
+		<if test="searchType != null">
+			<if test="searchType == 'n'.toString()">AND PROD_NAME LIKE '%' || #{keyword} || '%'</if>
+			<if test="searchType == 'cu'.toString()">AND STORE LIKE 'cu' AND PROD_NAME LIKE '%' || #{keyword} || '%'</if>
+			<if test="searchType == 'gs25'.toString()">AND STORE LIKE 'gs25' AND PROD_NAME LIKE '%' || #{keyword} || '%'</if>
+			<if test="searchType == 'seven'.toString()">AND STORE LIKE 'seven' AND PROD_NAME LIKE '%' || #{keyword} || '%'</if>
+			<if test="searchType == 'emart24'.toString()">AND STORE LIKE 'emart24' AND PROD_NAME LIKE '%' || #{keyword} || '%'</if>
+		</if>
 	</sql>
+	
 	 
-	<select id="listCount" resultType="int">
-	<![CDATA[
+	<select id="listCount" resultType="int" parameterType="kr.ac.kopo.model.SearchCriteria">
+	
 		SELECT COUNT(*)
 		  FROM product_data
-	]]>
+		  WHERE 1=1
+		  <include refid="search"></include>
+	
 	</select>
 	
 	

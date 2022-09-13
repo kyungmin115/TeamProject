@@ -8,7 +8,7 @@
 
 	<insert id="insertMem" parameterType="MemberVO">
 	 	INSERT INTO member
-	(mem_id, mem_mail, mem_pass, mem_name, admin )
+	(mem_id, mem_mail, mem_pass, mem_name, admin)
 	VALUES (#{memId}, #{memMail}, #{memPass}, #{memName}, 'N')
 	</insert>
 	 

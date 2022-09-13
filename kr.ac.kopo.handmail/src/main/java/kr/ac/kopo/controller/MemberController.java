@@ -40,7 +40,7 @@ public class MemberController {
 		
 		memberService.insertMem(vo);
 		
-		return "redirect:/";
+		return "redirect:/product/log.do";
 	}
 	
 	
@@ -58,14 +58,14 @@ public class MemberController {
 			rttr.addFlashAttribute("msg", false);
 		}
 		
-		return "redirect:/";
+		return "redirect:/product/log.do";
 		
 	}
 	
 	@GetMapping("logout.do")
 	public String logout(HttpSession session) throws Exception {
 		session.invalidate();
-		return "redirect:/";
+		return "redirect:/product/list.do";
 	}
 	
 	

@@ -95,3 +95,13 @@ header ul li a{
     font-family: 'Noto Sans KR', sans-serif;
     line-height: 25px;
 }
+.contt{
+	width: 1200px;
+	height: 400px;
+	margin: 0 auto;
+}
+.cont{
+	width: 1200px;
+	height: 50px;
+	margin: 0 auto;
+}

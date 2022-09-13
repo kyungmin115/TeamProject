@@ -16,7 +16,6 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
-
 	<div class="cont">
 	 <div class="search">
 	    <select name="searchType">
@@ -33,13 +32,56 @@
 	    <script>
 	      $(function(){
 	        $('#searchBtn').click(function() {
-	          self.location = "search.do" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+	          self.location = "list.do" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
 	        });
 	      });   
 	    </script>
 	  </div>
 	</div>
+<div class="contt">	
+ <table>
+ 	<thead>
+ 		<tr>
+	 		<th>상품이름</th>
+	 		<th>가격</th>
+	 		<th>편의점</th>
+	 		<th>할인종류</th>
+ 		</tr>
+ 	</thead>
+ 	<tbody>
+ 		<c:forEach var="item" items="${result}">
+ 		<tr>
+ 			<td>${item.prodName}</td>
+ 			<td>${item.prodPrice}</td>
+ 			<td>${item.store}</td>
+ 			<td>
+ 			<c:choose>
+ 				<c:when test="${item.sale eq '1'}"><c:out value="1+1"/></c:when>
+ 				<c:when test="${item.sale eq '2'}"><c:out value="2+1"/></c:when>
+ 			</c:choose>
+ 			</td>
+ 		</tr>
+ 		</c:forEach>
+ 	</tbody>
+ 	
+ </table>
+</div>
+<div class="cont">
+  <ul>
+    <c:if test="${pageMaker.prev}">
+    	<li><a href="search.do${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
+    </c:if> 
 
+    <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+    	<li><a href="search.do${pageMaker.makeSearch(idx)}">${idx}</a></li>
+    </c:forEach>
+
+    <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+    	<li><a href="search.do${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
+    </c:if> 
+  </ul>
+</div>
+<div class="cont"></div>
 
 
 <%@ include file="/WEB-INF/views/include/footer.jsp" %>
