@@ -45,53 +45,14 @@ table {
 a{
 	text-decoration: none;
 }
-.hed{
-	width: 1450px;
-	height: 80px;
+.cont{
+	padding-top: 50px;
+	width: 800px;
+	height: 50px;
 	margin: 0 auto;
-	text-align: center;
-	background: white;
 }
-header ul li{
-	float: left;
-	padding: 15px;
-}
-header ul li a{
-	color: black;
-	font-size: 18px;
-	font-family: 'Noto Sans KR', sans-serif;
-	font-weight: 600;
-}
-.mid{
-	margin-top: 10px;
-	margin-left: 50px;
-}
-.line{
-	width: 1920px;
-	border-bottom: 0.5px solid rgb(199, 199, 199);
-}
-.imag{
-	padding-top: 0px;
-	padding-left: 0px;
-	padding-right: 20px;
-}
-.imag:hover{
-	filter: opacity(0.5) drop-shadow(0 0 0 rgb(0, 0, 212));
-}
-.made{
-	margin-left: 30px;
-}
-.fot{
-    width: 1920px;
-    height: 80px;
-    background: black;
-    margin: 0 auto;
-    text-align: center;
-}
-.ter{
-    text-align: center;
-    color: white;
-    padding-top: 15px;
-    font-family: 'Noto Sans KR', sans-serif;
-    line-height: 25px;
+.contt{
+	width: 1200px;
+	height: 400px;
+	margin: 0 auto;
 }

@@ -8,7 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>손안의 편의점 지침서</title>
-<link rel="stylesheet" href="/resources/css/include.css?after" type="text/css"/>
+<link rel="stylesheet" href="/resources/css/include.css" type="text/css"/>
+<link rel="stylesheet" href="/resources/css/search.css?after" type="text/css"/>
 <style type="text/css">
 			li {list-style: none; float: left; padding: 6px;}
 </style>
@@ -16,6 +17,7 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
+	<div class="cont"></div>
 	<div class="cont">
 	 <div class="search">
 	    <select name="searchType">
@@ -32,7 +34,7 @@
 	    <script>
 	      $(function(){
 	        $('#searchBtn').click(function() {
-	          self.location = "list.do" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+	          self.location = "search.do" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
 	        });
 	      });   
 	    </script>

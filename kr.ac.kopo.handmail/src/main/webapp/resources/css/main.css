@@ -45,53 +45,55 @@ table {
 a{
 	text-decoration: none;
 }
-.hed{
-	width: 1450px;
-	height: 80px;
+.contt{
+	width: 1200px;
+	height: 400px;
 	margin: 0 auto;
-	text-align: center;
-	background: white;
 }
-header ul li{
+.cont{
+	padding-top: 50px;
+	width: 800px;
+	height: 50px;
+	margin: 0 auto;
+}
+select{
+	width: 60px;
+	height: 30px;
+}
+.sect{
+	width: 800px;
+	height: 180px;
+	margin: 0 auto;
+	padding-bottom: 25px;
+}
+section div a img{
+	width: 120px;
+	height: 120px;
 	float: left;
-	padding: 15px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 35px;
+	padding-bottom:30px;
+	margin: 0 auto;
 }
-header ul li a{
-	color: black;
-	font-size: 18px;
-	font-family: 'Noto Sans KR', sans-serif;
-	font-weight: 600;
+.searchh{
+	height: 25px;
+	width: 300px;
 }
-.mid{
-	margin-top: 10px;
-	margin-left: 50px;
+.butt{
+	width: 60px;
+	height: 32px;
+}
+.search{
+	width: 600px;
+	height: 100px;
+	margin: 0 auto;
+}
+.secti{
+	width: 1200px;
+	height: 400px;
+	margin: 0 auto;
 }
 .line{
-	width: 1920px;
 	border-bottom: 0.5px solid rgb(199, 199, 199);
-}
-.imag{
-	padding-top: 0px;
-	padding-left: 0px;
-	padding-right: 20px;
-}
-.imag:hover{
-	filter: opacity(0.5) drop-shadow(0 0 0 rgb(0, 0, 212));
-}
-.made{
-	margin-left: 30px;
-}
-.fot{
-    width: 1920px;
-    height: 80px;
-    background: black;
-    margin: 0 auto;
-    text-align: center;
-}
-.ter{
-    text-align: center;
-    color: white;
-    padding-top: 15px;
-    font-family: 'Noto Sans KR', sans-serif;
-    line-height: 25px;
 }
