@@ -5,8 +5,8 @@
 <footer class="fot">
     <div class="ter">
         <div>
-            <p>TeamProject</p>
-            <p>조장 : 이경민&nbsp;&nbsp;&nbsp;조원 : 조항진, 호수영, 김우섭, 신재홍</p>
+            <p>손.편.지</p>
+            <p>팀장 : 이경민&nbsp;&nbsp;&nbsp;팀원 : 김우섭, 김진환, 신재홍, 조항진, 호수영</p>
         </div>
     </div>
 </footer>
