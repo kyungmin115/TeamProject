@@ -1,0 +1,151 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+button{
+	background: inherit ; 
+	border:none;
+	box-shadow:none; 
+	border-radius:0;
+	padding:0;
+	overflow:visible;
+	cursor:pointer;
+	width: 40px;
+	height: 48px;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR&display=swap');
+a{
+	text-decoration: none;
+}
+.bbox{
+	padding-top: 30px;
+	width: 1400px;
+	height: 400px;
+	margin: 0 auto;
+	position: relative;
+}
+.slide{
+	width: 1000px;
+	height: 300px;
+	margin: 0 auto;
+	padding: 0;
+	float: left;
+}
+.box{
+	float: left;
+	width: 200px;
+	height: 280px;
+	background: rgb(255, 255, 255);
+	margin: 15px;
+	border-radius: 15px;
+	border: 0.5px solid rgb(211, 211, 211);
+}
+.mini{
+	width: 200px;
+	height: 40px;
+	background: skyblue;
+	border-top-left-radius: 14px;
+	border-top-right-radius: 14px;
+	text-align: center;
+	line-height: 40px;
+	font-family: 'Nanum Brush Script';
+	font-weight: 600;
+	font-size: 1.25em;
+	color: white;
+}
+.box img{
+	padding-left: 15px;
+	width: 160px;
+	height: 180px;
+}
+.box p{
+	font-family: 'Nanum Brush Script';
+	font-weight: 600;
+	font-size: 18px;
+	text-align: center;
+	line-height: 25px;
+}
+.bot-right{
+	width: 48px;
+	height: 48px;
+}
+.bot-left{
+	width: 48px;
+	height: 48px;
+}
+.bot-box1{
+	width: 48px;
+	height: 48px;
+	position: absolute;
+	top: 185px;
+	left: 150px;
+}
+.bot-box2{	
+	width: 48px;
+	height: 48px;
+	position: absolute;
+	right: 225px;
+	top: 185px;
+}
+
+.outer{
+	width: 1000px;
+	height: 300px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.iner{
+	width: 3000px;
+	margin: 0;
+	transition: .2s ease-out;
+}
+.chu{
+	width:200px;
+	height:30px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 1.8em;
+	text-align: center;
+	margin-left : 200px;
+	margin-bottom: 5px;
+	font-weight: 600;
+}

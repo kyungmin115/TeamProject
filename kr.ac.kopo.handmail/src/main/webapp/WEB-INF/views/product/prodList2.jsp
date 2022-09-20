@@ -9,7 +9,8 @@
 <meta charset="UTF-8">
 <title>손안의 편의점 지침서</title>
 <link rel="stylesheet" href="/resources/css/include.css" type="text/css"/>
-<link rel="stylesheet" href="/resources/css/main.css" type="text/css"/>
+<link rel="stylesheet" href="/resources/css/main.css?after" type="text/css"/>
+<link rel="stylesheet" href="/resources/css/slide.css" type="text/css"/>
 <style type="text/css">
 			li {list-style: none; float: left; padding: 6px;}
 </style>
@@ -48,11 +49,50 @@
 		<div><a href="#"><img src="/resources/images/main/식품.png" alt="식품"></a></div>
 	</section>
 	</div>
-	<section class="secti">
 	
-	
-	
-	</section>
+	<div class="bbox">
+	<div class="chu">추천상품</div>
+<div class="bot-box1"><button class="botl"><img src="/resources/images/main/오른쪽버튼.png" alt="오른쪽버튼" class="bot-right"></button></div>
+    <div class="outer">
+        <div class="iner">
+
+            <section class="slide">
+                <div class="box"><div class="mini">CU</div>
+                <div><img src="/resources/images/main/과자류.png" alt=""></div>
+                <p>롯)칠성사이다</p>
+                <p>2,000원</p>
+                </div>
+                <div class="box"><div class="mini">GS25</div></div>
+                <div class="box"><div class="mini">세븐일레븐</div></div>
+                <div class="box"><div class="mini">이마트24</div></div>
+            </section>
+
+            <section class="slide">
+                <div class="box"><div class="mini">CU</div>
+                <div><img src="/resources/images/main/음료.png" alt=""></div>
+                <p>롯)팔성사이다</p>
+                <p>8,000원</p>
+                </div>
+                <div class="box"><div class="mini">GS25</div></div>
+                <div class="box"><div class="mini">세븐일레븐</div></div>
+                <div class="box"><div class="mini">이마트254</div></div>
+            </section>
+
+            <section class="slide">
+                <div class="box"><div class="mini">CU</div>
+                <div><img src="/resources/images/main/식품.png" alt=""></div>
+                <p>롯)구성사이다</p>
+                <p>9,000원</p>
+                </div>
+                <div class="box"><div class="mini">GS25</div></div>
+                <div class="box"><div class="mini">세븐일레븐</div></div>
+                <div class="box"><div class="mini">이마트294</div></div>
+            </section>
+        </div>
+    </div>
+    <div class="bot-box2"><button class="botr"><img src="/resources/images/main/왼쪽버튼.png" alt="왼쪽버튼" class="bot-left"></button></div>
+</div>
+
 	<section class="secti">
 	
 	
@@ -61,4 +101,5 @@
 	
 <%@ include file="/WEB-INF/views/include/footer.jsp" %>
 </body>
+<script src="/resources/js/slide.js" type="text/javascript"></script>
 </html>
