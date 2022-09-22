@@ -21,6 +21,10 @@
 	<div class="cont">
 	<button id="saleBtn1" type="button">1+1</button>
 	<button id="saleBtn2" type="button">2+1</button>
+	<button id="cate1" type="button">음료</button>
+	<button id="cate2" type="button">과자</button>
+	<button id="cate3" type="button">식품</button>
+	<button id="cate4" type="button">아이스크림</button>
 	 <div class="search">
 	    <select name="searchType">
 	      <option value="n"<c:out value="${scri.searchType == null ? 'selected' : ''}"/>>전체</option>
@@ -47,6 +51,26 @@
 	      $(function(){
 		        $('#saleBtn2').click(function() {
 		          self.location = "category.do" + '${pageMaker.makeQuery(1)}'  + "&searchType=" + $("select option:selected").val()+ "&sale=2" + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+		        });
+		      });
+	      $(function(){
+		        $('#cate1').click(function() {
+		          self.location = "category.do" + '${pageMaker.makeQuery(1)}'  + "&searchType=" + $("select option:selected").val()+ "&sale=1" + "&category=1" + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+		        });
+		      });
+	      $(function(){
+		        $('#cate2').click(function() {
+		          self.location = "category.do" + '${pageMaker.makeQuery(1)}'  + "&searchType=" + $("select option:selected").val()+ "&sale=2" + "&category=2" + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+		        });
+		      });
+	      $(function(){
+		        $('#cate3').click(function() {
+		          self.location = "category.do" + '${pageMaker.makeQuery(1)}'  + "&searchType=" + $("select option:selected").val()+ "&sale=1" + "&category=3" + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+		        });
+		      });
+	      $(function(){
+		        $('#cate4').click(function() {
+		          self.location = "category.do" + '${pageMaker.makeQuery(1)}'  + "&searchType=" + $("select option:selected").val()+ "&sale=2" + "&category=4" + "&keyword=" + encodeURIComponent($('#keywordInput').val());
 		        });
 		      });
 	    </script>

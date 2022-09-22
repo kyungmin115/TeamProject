@@ -69,19 +69,19 @@
 	</select>
 	
 		<select id="category" resultType="productVO" parameterType="kr.ac.kopo.model.SearchCriteria">
-		select prod_name, prod_price, sale, store
+		select prod_name, prod_price, sale, store, category
 		from
 		(
-		select prod_name, prod_price, sale, store, row_number() over(order by prod_num) as RNUM
+		select prod_name, prod_price, sale, store, category, row_number() over(order by prod_num) as RNUM
 		from product_data
-		WHERE 1=1 <include refid="sale"></include>
+		WHERE 1=1 <include refid="sale"></include> <include refid="cate"></include>
 		<include refid="search"></include>
 		)
 		
 		WHERE 
 		RNUM BETWEEN #{rowStart} AND #{rowEnd} 
 		<include refid="sale"></include>
-		
+		<include refid="cate"></include>
 	</select>
 	
 	<sql id="sale">
@@ -90,5 +90,23 @@
 			<if test="sale == '2'.toString()"> AND sale = #{sale}</if>
 		</if>
 	</sql>
+	
+	<sql id="cate">
+		<if test="category != null">
+			<if test="category == '1'.toString()"> AND category = #{category}</if>
+			<if test="category == '2'.toString()"> AND category = #{category}</if>
+			<if test="category == '3'.toString()"> AND category = #{category}</if>
+			<if test="category == '4'.toString()"> AND category = #{category}</if>
+		</if>
+	</sql>
+
+
+
+
+
+
+
+
+
 
 </mapper>
