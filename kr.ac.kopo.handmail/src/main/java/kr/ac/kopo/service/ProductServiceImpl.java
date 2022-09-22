@@ -87,4 +87,12 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.listCount(scri);
 	}
 
+	@Override
+	public List<ProductVO> selectEvent(SearchCriteria scri) {
+
+		return productDao.selectEvent(scri);
+	}
+
+
+
 }

@@ -5,6 +5,7 @@ public class Criteria {
 	private int perPageNum;
 	private int rowStart;
 	private int rowEnd;
+	private String sale = "";
 	
 	public Criteria() {
 		this.page = 1;
@@ -48,10 +49,16 @@ public class Criteria {
 		rowEnd = rowStart + perPageNum - 1;
 		return rowEnd;
 	}
+	public String getSale() {
+		return sale;
+	}
+	public void setSale(String sale) {
+		this.sale = sale;
+	}
 
 	@Override
 	public String toString() {
-		return "Criteria [page=" + page + ", perPageNum=" + perPageNum + ", rowStart=" + rowStart + ", rowEnd=" + rowEnd
+		return "Criteria [page=" + page + ",sale=" + sale + ", perPageNum=" + perPageNum + ", rowStart=" + rowStart + ", rowEnd=" + rowEnd
 				+ "]";
 	}
 }

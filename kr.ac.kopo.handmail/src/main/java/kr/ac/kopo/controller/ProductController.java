@@ -78,11 +78,13 @@ public class ProductController {
 		
 		return "product/search";
 	}
-	@GetMapping("service.do")
+	
+	@GetMapping("event.do")
 	public String serviceList(Model model, @ModelAttribute("scri") SearchCriteria scri) {
+		System.out.println(scri);
 		
 		List<ProductVO> list;
-		list = productService.selectList(scri);
+		list = productService.selectEvent(scri);
 		
 		model.addAttribute("result", list);
 		
@@ -92,7 +94,7 @@ public class ProductController {
 		
 		model.addAttribute("pageMaker", pageMaker);
 		
-		return "product/service";
+		return "mail/event";
 	}
 	
 	

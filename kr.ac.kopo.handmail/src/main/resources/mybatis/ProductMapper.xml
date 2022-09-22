@@ -28,7 +28,7 @@
 		<include refid="search"></include>
 		)
 		
-		WHERE AND RNUM BETWEEN #{rowStart} AND #{rowEnd} 
+		WHERE RNUM BETWEEN #{rowStart} AND #{rowEnd}
 		
 	</select>
 	
@@ -52,8 +52,27 @@
 	
 	</select>
 	
+	<select id="selectEvent" resultType="productVO" parameterType="kr.ac.kopo.model.SearchCriteria">
+		select prod_name, prod_price, sale, store
+		from
+		(
+		select prod_name, prod_price, sale, store, row_number() over(order by prod_num) as RNUM
+		from product_data
+		WHERE 1=1 <include refid="sale"></include>
+		<include refid="search"></include>
+		)
+		
+		WHERE 
+		RNUM BETWEEN #{rowStart} AND #{rowEnd}
+		<include refid="sale"></include>
+		
+	</select>
 	
-	
-	
+	<sql id="sale">
+		<if test="sale != null">
+			<if test="sale == '1'.toString()"> AND sale = #{sale}</if>
+			<if test="sale == '2'.toString()"> AND sale = #{sale}</if>
+		</if>
+	</sql>
 
 </mapper>
