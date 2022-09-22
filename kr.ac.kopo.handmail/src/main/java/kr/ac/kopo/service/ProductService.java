@@ -17,5 +17,7 @@ public interface ProductService {
 	public int listCount(SearchCriteria scri);
 	
 	List<ProductVO> selectEvent(SearchCriteria scri);
+
+	List<ProductVO> category(SearchCriteria scri);
 	
 }

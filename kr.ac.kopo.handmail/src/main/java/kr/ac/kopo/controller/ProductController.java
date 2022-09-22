@@ -96,6 +96,21 @@ public class ProductController {
 		
 		return "mail/event";
 	}
+	@RequestMapping(value = "category.do")
+	public String category(Model model, @ModelAttribute("scri") SearchCriteria scri) {
+		
+		List<ProductVO> list;
+		list = productService.category(scri);
+		
+		model.addAttribute("result", list);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(scri);
+		pageMaker.setTotalCount(productService.listCount(scri));
+		
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "mail/category";
 	
-	
+	}	
 }
