@@ -19,8 +19,6 @@
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
 	<div class="cont"></div>
 	<div class="cont">
-	<button id="saleBtn1" type="button">1+1</button>
-	<button id="saleBtn2" type="button">2+1</button>
 	<button id="cate1" type="button">음료</button>
 	<button id="cate2" type="button">과자</button>
 	<button id="cate3" type="button">식품</button>
@@ -44,33 +42,23 @@
 	        });
 	      });
 	      $(function(){
-		        $('#saleBtn1').click(function() {
-		          self.location = "category.do" + '${pageMaker.makeQuery(1)}'  + "&searchType=" + $("select option:selected").val()+ "&sale=1" + "&keyword=" + encodeURIComponent($('#keywordInput').val());
-		        });
-		      });
-	      $(function(){
-		        $('#saleBtn2').click(function() {
-		          self.location = "category.do" + '${pageMaker.makeQuery(1)}'  + "&searchType=" + $("select option:selected").val()+ "&sale=2" + "&keyword=" + encodeURIComponent($('#keywordInput').val());
-		        });
-		      });
-	      $(function(){
 		        $('#cate1').click(function() {
-		          self.location = "category.do" + '${pageMaker.makeQuery(1)}'  + "&searchType=" + $("select option:selected").val()+ "&sale=1" + "&category=1" + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+		          self.location = "category.do" + '${pageMaker.makeQuery(1)}'  + "&searchType=" + $("select option:selected").val()+ "&category=1" + "&keyword=" + encodeURIComponent($('#keywordInput').val());
 		        });
 		      });
 	      $(function(){
 		        $('#cate2').click(function() {
-		          self.location = "category.do" + '${pageMaker.makeQuery(1)}'  + "&searchType=" + $("select option:selected").val()+ "&sale=2" + "&category=2" + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+		          self.location = "category.do" + '${pageMaker.makeQuery(1)}'  + "&searchType=" + $("select option:selected").val()+ "&category=2" + "&keyword=" + encodeURIComponent($('#keywordInput').val());
 		        });
 		      });
 	      $(function(){
 		        $('#cate3').click(function() {
-		          self.location = "category.do" + '${pageMaker.makeQuery(1)}'  + "&searchType=" + $("select option:selected").val()+ "&sale=1" + "&category=3" + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+		          self.location = "category.do" + '${pageMaker.makeQuery(1)}'  + "&searchType=" + $("select option:selected").val()+ "&category=3" + "&keyword=" + encodeURIComponent($('#keywordInput').val());
 		        });
 		      });
 	      $(function(){
 		        $('#cate4').click(function() {
-		          self.location = "category.do" + '${pageMaker.makeQuery(1)}'  + "&searchType=" + $("select option:selected").val()+ "&sale=2" + "&category=4" + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+		          self.location = "category.do" + '${pageMaker.makeQuery(1)}'  + "&searchType=" + $("select option:selected").val()+ "&category=4" + "&keyword=" + encodeURIComponent($('#keywordInput').val());
 		        });
 		      });
 	    </script>
