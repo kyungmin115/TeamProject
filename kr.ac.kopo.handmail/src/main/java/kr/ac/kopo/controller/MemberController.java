@@ -44,6 +44,11 @@ public class MemberController {
 	}
 	
 	
+	
+	
+	
+	
+	
 	@PostMapping("login.do")
 	public String login(MemberVO vo, HttpSession session, RedirectAttributes rttr ) throws Exception {
 		
