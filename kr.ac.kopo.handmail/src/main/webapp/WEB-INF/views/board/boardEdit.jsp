@@ -94,22 +94,30 @@ $(function(){
 
 </script>
 </head>
+
 <body>
-<%@ include file="/WEB-INF/views/include/header.jsp" %>
 
-<div id="wrap">
-<h1>게시글작성</h1>
-
-<form action='${pageContext.request.contextPath}/board/add.do' method='post'>
+	<%@ include file="/WEB-INF/views/include/header.jsp" %>
+	
+	<form action='${pageContext.request.contextPath}/board/edit.do' method='post'>
+	
 <table class="table">
 	<tbody>
 		<tr>
 			<td>제목</td>
-			<td><input type='text' name = 'boardTitle' class="form-control"/></td>			
+			<td><input type='text' name='boardTitle' value="${boardVO.boardTitle}" class="form-control"/></td>			
 		</tr>
 		<tr>
 			<td>내용</td>
-			<td><textarea id = "boardContent"  rows="10" cols="30" name="boardContent" class="form-control"></textarea></td>			
+			<td><textarea id = "boardContent"  rows="10" cols="30" name="boardContent" class="form-control">${boardVO.boardContent}</textarea></td>			
+		</tr>
+		<tr>
+			<td>작성자</td>
+			<td><c:out value="${boardVO.boardWriter}"/></td>
+		</tr>
+		<tr>
+			<td>작성일</td>
+			<td><fmt:formatDate value="${boardVO.boardRegDate}" pattern="yyyy/MM/dd"/></td>
 		</tr>
 
 	</tbody>
@@ -117,12 +125,15 @@ $(function(){
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
 <a href='${pageContext.request.contextPath}/board/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>
 
-<input type='submit' value="등록" class="btn btn-outline-primary">
+<input type='submit' value="수정" class="btn btn-outline-primary" >
 </div>
 </form>
-</div>
 
+	
+	
+	<%@ include file="/WEB-INF/views/include/footer.jsp" %>
+	
 
-<%@ include file="/WEB-INF/views/include/footer.jsp" %>
 </body>
+
 </html>
