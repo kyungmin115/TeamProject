@@ -10,7 +10,7 @@
 <title>손안의 편의점 지침서</title>
 <link rel="stylesheet" href="/resources/css/include.css" type="text/css"/>
 <link rel="stylesheet" href="/resources/css/main.css?after" type="text/css"/>
-<link rel="stylesheet" href="/resources/css/slide.css" type="text/css"/>
+<link rel="stylesheet" href="/resources/css/slide.css?after" type="text/css"/>
 <style type="text/css">
 			li {list-style: none; float: left; padding: 6px;}
 </style>
@@ -43,10 +43,10 @@
 	</div>
 	<div class="line">
 	<section class="sect">
-		<div><a href="#"><img src="/resources/images/main/과자류.png" alt="과자류"></a></div>
-		<div><a href="#"><img src="/resources/images/main/음료.png" alt="음료"></a></div>
-		<div><a href="#"><img src="/resources/images/main/아이스크림.png" alt="아이스크릠"></a></div>
-		<div><a href="#"><img src="/resources/images/main/식품.png" alt="식품"></a></div>
+		<div class="imgbox"><a href="http://localhost:8004/product/category.do?page=1&perPageNum=10&searchType=n&category=2&keyword="><img src="/resources/images/main/과자류.png" alt="과자류"></a></div>
+		<div class="imgbox"><a href="http://localhost:8004/product/category.do?page=1&perPageNum=10&searchType=n&category=1&keyword="><img src="/resources/images/main/음료.png" alt="음료"></a></div>
+		<div class="imgbox"><a href="http://localhost:8004/product/category.do?page=1&perPageNum=10&searchType=n&category=4&keyword="><img src="/resources/images/main/아이스크림.png" alt="아이스크릠"></a></div>
+		<div class="imgbox"><a href="http://localhost:8004/product/category.do?page=1&perPageNum=10&searchType=n&category=3&keyword="><img src="/resources/images/main/식품.png" alt="식품"></a></div>
 	</section>
 	</div>
 	

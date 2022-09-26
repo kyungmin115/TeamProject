@@ -49,7 +49,8 @@
 		  FROM product_data
 		  WHERE 1=1
 		  <include refid="search"></include>
-	
+		  <include refid="sale"></include>
+		  <include refid="cate"></include>
 	</select>
 	
 	<select id="selectEvent" resultType="productVO" parameterType="kr.ac.kopo.model.SearchCriteria">
@@ -80,7 +81,7 @@
 		
 		WHERE 
 		RNUM BETWEEN #{rowStart} AND #{rowEnd} 
-		<include refid="sale"></include>
+<!-- 		<include refid="sale"></include> -->
 		<include refid="cate"></include>
 	</select>
 	
