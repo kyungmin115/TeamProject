@@ -14,7 +14,7 @@
             <li class="mid"><a href="">추천 레시피</a></li>
             <li class="mid"></li>
             <li class="mid"></li>
-            <li class=""><a href="log.do"><img src="/resources/images/header/로그인버튼.png" alt="로그인" style="width: 40px"></a></li> 
+            <li class=""><a href="../product/log.do"><img src="/resources/images/header/로그인버튼.png" alt="로그인" style="width: 40px"></a></li> 
         </ul>
     </header>
     </div>

@@ -100,3 +100,12 @@ select{
 	padding-bottom:30px;
 	margin: 0 auto;
 	}
+section div a img{
+	width: 120px;
+	height: 120px;
+	border: 0.5px solid rgb(255, 255, 255);
+	border-radius: 15px;
+}
+section div a img:hover{
+	border: 2px solid #87CEEA;
+}
