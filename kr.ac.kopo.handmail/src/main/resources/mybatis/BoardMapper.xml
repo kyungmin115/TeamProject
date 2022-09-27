@@ -49,8 +49,8 @@
 	
 	<update id="updateBoard" parameterType="BoardVO">
 	  	UPDATE board
-	  	SET BOARD_TITLE=#{boardTitle},  BOARD_CONTENT=#{boardContent}
-	  	WHERE BOARD_NO=#{boardNo}
+	  	SET BOARD_TITLE = #{boardTitle}, BOARD_CONTENT = #{boardContent}
+	  	WHERE BOARD_NO = #{boardNo}
 	</update>
 
 </mapper>

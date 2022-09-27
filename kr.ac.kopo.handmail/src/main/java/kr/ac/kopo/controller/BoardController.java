@@ -68,7 +68,11 @@ public class BoardController {
 	@PostMapping("edit.do")
 	public String edit(BoardVO vo) {
 
+	System.out.println(vo.getBoardTitle());
+	System.out.println(vo.getBoardNo());	
+	
 	int num = boardService.updateBoard(vo);
+	
 	return "redirect:/board/list.do";
 	}
 }

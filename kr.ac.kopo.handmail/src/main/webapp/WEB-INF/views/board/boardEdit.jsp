@@ -101,6 +101,7 @@ $(function(){
 	
 	<form action='${pageContext.request.contextPath}/board/edit.do' method='post'>
 	
+			<input type="hidden" name="boardNo" value="${boardVO.boardNo}"/>
 <table class="table">
 	<tbody>
 		<tr>
@@ -125,7 +126,7 @@ $(function(){
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
 <a href='${pageContext.request.contextPath}/board/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>
 
-<input type='submit' value="수정" class="btn btn-outline-primary" >
+<input type="submit" value="수정" class="btn btn-outline-primary" >
 </div>
 </form>
 
