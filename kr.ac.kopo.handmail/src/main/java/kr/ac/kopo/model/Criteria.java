@@ -1,5 +1,8 @@
 package kr.ac.kopo.model;
 
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
+
 public class Criteria {
 	private int page;
 	private int perPageNum;
@@ -67,7 +70,15 @@ public class Criteria {
 
 	@Override
 	public String toString() {
-		return "Criteria [page=" + page + ",sale=" + sale + ", category=" + category + ", perPageNum=" + perPageNum + ", rowStart=" + rowStart + ", rowEnd=" + rowEnd
+		return "Criteria [page=" + page + ", sale=" + sale + ", category=" + category + ", perPageNum=" + perPageNum + ", rowStart=" + rowStart + ", rowEnd=" + rowEnd
 				+ "]";
 	}
+	
+	public String cate(String cate) {
+		cate = category;
+		   
+		return cate;
+	}
+
+	
 }
