@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="kr.ac.kopo.dao.BoardDao">
+
+	
+	<resultMap type="BoardVO" id="boardMap">
+		<id property="boardNo" column="BOARD_NO" />
+		<result property="boardTitle" column="BOARD_TITLE" />
+		<result property="boardContent" column="BOARD_CONTENT" />
+		<result property="boardWriter" column="BOARD_WRITER" />
+		<result property="boardRegDate" column="BOARD_REG_DATE" />
+		<result property="boardCount" column="BOARD_COUNT" />
+	</resultMap>
+
+	<select id="selectBoardList" resultType="BoardVO">
+		SELECT BOARD_NO, BOARD_TITLE, BOARD_WRITER, BOARD_REG_DATE, BOARD_COUNT
+		FROM BOARD
+			<where>
+				<if test="searchWord != null and searchWord != ''">
+					<choose>
+					<when test="searchType == 'title'">
+					BOARD_TITLE LIKE '%' || #{searchWord} || '%'
+					</when>
+					<when test="searchType == 'content'">
+					BOARD_CONTENT LIKE '%' || #{searchWord} || '%'
+					</when>
+					<when test="searchType == 'total'">
+					BOARD_CONTENT LIKE '%' || #{searchWord} || '%'  
+						OR BOARD_TITLE LIKE '%' || #{searchWord} || '%'
+					</when>
+					</choose>			   	      
+				</if>
+			</where>
+		ORDER BY BOARD_NO desc
+	</select>
+	 
+	<select id="selectBoard" parameterType="Integer" resultType="BoardVO">
+		select BOARD_NO, BOARD_TITLE, BOARD_CONTENT, BOARD_WRITER, BOARD_REG_DATE from BOARD WHERE BOARD_NO = #{boardNo}
+	</select>
+	
+	<insert id="insertBoard" parameterType="BoardVO">
+	 	INSERT INTO board
+	(BOARD_NO, BOARD_TITLE, BOARD_CONTENT, BOARD_WRITER, BOARD_REG_DATE, BOARD_COUNT)
+	VALUES (board_seq.NEXTVAL, #{boardTitle}, #{boardContent}, #{boardWriter}, SYSDATE, #{boardCount})
+	</insert>
+	
+	<update id="updateBoard" parameterType="BoardVO">
+	  	UPDATE board
+	  	SET BOARD_TITLE = #{boardTitle}, BOARD_CONTENT = #{boardContent}
+	  	WHERE BOARD_NO = #{boardNo}
+	</update>
+	
+	<delete id="delBoard" parameterType="Integer">
+	  	DELETE FROM board WHERE board_no = #{boardNo}
+	</delete>
+
+</mapper>
