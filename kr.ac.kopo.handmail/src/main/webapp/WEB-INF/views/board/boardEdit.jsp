@@ -127,6 +127,11 @@ $(function(){
 <a href='${pageContext.request.contextPath}/board/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>
 
 <input type="submit" value="수정" class="btn btn-outline-primary" >
+
+<a href='${pageContext.request.contextPath}/board/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>
+
+<a href='${pageContext.request.contextPath}/board/del.do?boardNo=${boardVO.boardNo}'><input type="button" value="삭제" class="btn btn-outline-danger"></a>
+
 </div>
 </form>
 
