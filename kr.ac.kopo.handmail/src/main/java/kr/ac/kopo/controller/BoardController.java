@@ -1,6 +1,7 @@
 package kr.ac.kopo.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -50,5 +51,24 @@ public class BoardController {
 		
 		int num = boardService.insertBoard(vo);	
 		return "redirect:/board/list.do";
+	}
+	
+//	@RequestMapping(value ="edit.do", method = RequestMethod.GET)
+	@GetMapping("edit.do")
+	public String editForm(int boardNo, Map<String,Object> map) {
+		
+		BoardVO vo = boardService.selectBoard(boardNo);
+		map.put("boardVO", vo);
+		
+		return "board/boardEdit";
+		
+	}
+	
+//	@RequestMapping(value ="edit.do", method = RequestMethod.POST)
+	@PostMapping("edit.do")
+	public String edit(BoardVO vo) {
+
+	int num = boardService.updateBoard(vo);
+	return "redirect:/board/list.do";
 	}
 }

@@ -14,9 +14,9 @@ public interface BoardDao {
 
 	int insertBoard(BoardVO vo);
 
-	int delBoard(int bbsNo);
+	int delBoard(int boardNo);
 
-	BoardVO selectBoard(int bbsNo);
+	BoardVO selectBoard(int boardNo);
 
 	int updateBoard(BoardVO vo);
 	

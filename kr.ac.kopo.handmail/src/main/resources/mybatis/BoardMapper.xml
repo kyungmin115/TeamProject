@@ -38,7 +38,7 @@
 	</select>
 	 
 	<select id="selectBoard" parameterType="Integer" resultType="BoardVO">
-	select BOARD_NO, BOARD_TITLE, BOARD_CONTENT, BOARD_WRITER, BOARD_REG_DATE from BOARD WHERE BOARD_NO = #{boardNo}
+		select BOARD_NO, BOARD_TITLE, BOARD_CONTENT, BOARD_WRITER, BOARD_REG_DATE from BOARD WHERE BOARD_NO = #{boardNo}
 	</select>
 	
 	<insert id="insertBoard" parameterType="BoardVO">
@@ -46,5 +46,11 @@
 	(BOARD_NO, BOARD_TITLE, BOARD_CONTENT, BOARD_WRITER, BOARD_REG_DATE, BOARD_COUNT)
 	VALUES (board_seq.NEXTVAL, #{boardTitle}, #{boardContent}, #{boardWriter}, SYSDATE, #{boardCount})
 	</insert>
+	
+	<update id="updateBoard" parameterType="BoardVO">
+	  	UPDATE board
+	  	SET BOARD_TITLE=#{boardTitle},  BOARD_CONTENT=#{boardContent}
+	  	WHERE BOARD_NO=#{boardNo}
+	</update>
 
 </mapper>
