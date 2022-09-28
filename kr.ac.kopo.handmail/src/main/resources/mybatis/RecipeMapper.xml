@@ -3,58 +3,58 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="kr.ac.kopo.dao.BoardDao">
+<mapper namespace="kr.ac.kopo.dao.RecipeDao">
 
 	
-	<resultMap type="BoardVO" id="boardMap">
-		<id property="boardNo" column="BOARD_NO" />
-		<result property="boardTitle" column="BOARD_TITLE" />
-		<result property="boardContent" column="BOARD_CONTENT" />
-		<result property="boardWriter" column="BOARD_WRITER" />
-		<result property="boardRegDate" column="BOARD_REG_DATE" />
-		<result property="boardCount" column="BOARD_COUNT" />
+	<resultMap type="RecipeVO" id="recipeMap">
+		<id property="recipeNo" column="RECIPE_NO" />
+		<result property="recipeTitle" column="RECIPE_TITLE" />
+		<result property="recipeContent" column="RECIPE_CONTENT" />
+		<result property="recipeWriter" column="RECIPE_WRITER" />
+		<result property="recipeRegDate" column="RECIPE_REG_DATE" />
+		<result property="recipeCount" column="RECIPE_COUNT" />
 	</resultMap>
 
-	<select id="selectBoardList" resultType="BoardVO">
-		SELECT BOARD_NO, BOARD_TITLE, BOARD_WRITER, BOARD_REG_DATE, BOARD_COUNT
-		FROM BOARD
+	<select id="selectRecipeList" resultType="RecipeVO">
+		SELECT RECIPE_NO, RECIPE_TITLE, RECIPE_WRITER, RECIPE_REG_DATE, RECIPE_COUNT
+		FROM RECIPE_BOARD
 			<where>
 				<if test="searchWord != null and searchWord != ''">
 					<choose>
 					<when test="searchType == 'title'">
-					BOARD_TITLE LIKE '%' || #{searchWord} || '%'
+					RECIPE_TITLE LIKE '%' || #{searchWord} || '%'
 					</when>
 					<when test="searchType == 'content'">
-					BOARD_CONTENT LIKE '%' || #{searchWord} || '%'
+					RECIPE_CONTENT LIKE '%' || #{searchWord} || '%'
 					</when>
 					<when test="searchType == 'total'">
-					BOARD_CONTENT LIKE '%' || #{searchWord} || '%'  
-						OR BOARD_TITLE LIKE '%' || #{searchWord} || '%'
+					RECIPE_CONTENT LIKE '%' || #{searchWord} || '%'  
+						OR RECIPE_TITLE LIKE '%' || #{searchWord} || '%'
 					</when>
 					</choose>			   	      
 				</if>
 			</where>
-		ORDER BY BOARD_NO desc
+		ORDER BY RECIPE_NO desc
 	</select>
 	 
-	<select id="selectBoard" parameterType="Integer" resultType="BoardVO">
-		select BOARD_NO, BOARD_TITLE, BOARD_CONTENT, BOARD_WRITER, BOARD_REG_DATE from BOARD WHERE BOARD_NO = #{boardNo}
+	<select id="selectRecipe" parameterType="Integer" resultType="RecipeVO">
+		select RECIPE_NO, RECIPE_TITLE, RECIPE_CONTENT, RECIPE_WRITER, RECIPE_REG_DATE from RECIPE_BOARD WHERE RECIPE_NO = #{recipeNo}
 	</select>
 	
-	<insert id="insertBoard" parameterType="BoardVO">
-	 	INSERT INTO board
-	(BOARD_NO, BOARD_TITLE, BOARD_CONTENT, BOARD_WRITER, BOARD_REG_DATE, BOARD_COUNT)
-	VALUES (board_seq.NEXTVAL, #{boardTitle}, #{boardContent}, #{boardWriter}, SYSDATE, #{boardCount})
+	<insert id="insertRecipe" parameterType="RecipeVO">
+	 	INSERT INTO RECIPE_board
+	(RECIPE_NO, RECIPE_TITLE, RECIPE_CONTENT, RECIPE_WRITER, RECIPE_REG_DATE, RECIPE_COUNT)
+	VALUES (recipe_seq.NEXTVAL, #{recipeTitle}, #{recipeContent}, #{recipeWriter}, SYSDATE, #{recipeCount})
 	</insert>
 	
-	<update id="updateBoard" parameterType="BoardVO">
-	  	UPDATE board
-	  	SET BOARD_TITLE = #{boardTitle}, BOARD_CONTENT = #{boardContent}
-	  	WHERE BOARD_NO = #{boardNo}
+	<update id="updateRecipe" parameterType="RecipeVO">
+	  	UPDATE RECIPE_BOARD
+	  	SET RECIPE_TITLE = #{recipeTitle}, RECIPE_CONTENT = #{recipeContent}
+	  	WHERE RECIPE_NO = #{recipeNo}
 	</update>
 	
-	<delete id="delBoard" parameterType="Integer">
-	  	DELETE FROM board WHERE board_no = #{boardNo}
+	<delete id="delRecipe" parameterType="Integer">
+	  	DELETE FROM RECIPE_BOARD WHERE recipe_no = #{recipeNo}
 	</delete>
 
 </mapper>

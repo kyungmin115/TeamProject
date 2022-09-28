@@ -29,7 +29,7 @@
 <h1>게시글 목록</h1>
 
 <div>
-<form action="${pageContext.request.contextPath}/board/list.do">
+<form action="${pageContext.request.contextPath}/recipe/list.do">
 	<select name="searchType">
 		<option value="title">제목</option>
 		<option value="content">내용</option>
@@ -58,16 +58,16 @@
 	<tbody>
 		<c:forEach var="VO" items="${result}">	
 			<tr>	
-				<td><c:out value="${VO.boardNo}"/></td>
-				<td><a href="${pageContext.request.contextPath}/board/edit.do?boardNo=${VO.boardNo}"><c:out value="${VO.boardTitle}"/></a></td>
-	 			<td><c:out value="${VO.boardWriter}"/></td>
-	 			<td><fmt:formatDate value="${VO.boardRegDate}" pattern="yyyy/MM/dd"/><br></td>
+				<td><c:out value="${VO.recipeNo}"/></td>
+				<td><a href="${pageContext.request.contextPath}/recipe/edit.do?recipeNo=${VO.recipeNo}"><c:out value="${VO.recipeTitle}"/></a></td>
+	 			<td><c:out value="${VO.recipeWriter}"/></td>
+	 			<td><fmt:formatDate value="${VO.recipeRegDate}" pattern="yyyy/MM/dd"/><br></td>
 	 		</tr>
 		</c:forEach>
 	</tbody>
 </table>
 
-<a href='${pageContext.request.contextPath}/board/add.do'>글쓰기</a><br><br><br>
+<a href='${pageContext.request.contextPath}/recipe/add.do'>글쓰기</a><br><br><br>
 </div>
 	
 

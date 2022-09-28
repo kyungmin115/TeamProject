@@ -70,6 +70,8 @@ public class BoardController {
 
 	int num = boardService.updateBoard(vo);
 	
+	System.out.println(vo.getBoardNo());
+	
 	return "redirect:/board/list.do";
 	}
 	

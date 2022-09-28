@@ -1,4 +1,4 @@
-package kr.ac.kopo.service;
+package kr.ac.kopo.service.Impl;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,6 +15,7 @@ import kr.ac.kopo.dao.ProductDao;
 import kr.ac.kopo.model.Criteria;
 import kr.ac.kopo.model.ProductVO;
 import kr.ac.kopo.model.SearchCriteria;
+import kr.ac.kopo.service.ProductService;
 
 @Service
 public class ProductServiceImpl implements ProductService {

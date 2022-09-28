@@ -4,68 +4,58 @@ import java.util.Date;
 
 public class RecipeVO {
 
-	private int boardNo;
-	private String boardTitle;
-	private String boardContent;
-	private String boardWriter;
-	private Date boardRegDate;
-	private int boardCount;
+	private int recipeNo;
+	private String recipeTitle;
+	private String recipeContent;
+	private String recipeWriter;
+	private Date recipeRegDate;
+	private int recipeCount;
 	private String noticeAt;
 	
-	public int getBoardNo() {
-		return boardNo;
-	}
 	
-	public void setBoardNo(int boardNo) {
-		this.boardNo = boardNo;
+	public int getRecipeNo() {
+		return recipeNo;
 	}
-	
-	public String getBoardTitle() {
-		return boardTitle;
+	public void setRecipeNo(int recipeNo) {
+		this.recipeNo = recipeNo;
 	}
-	
-	public void setBoardTitle(String boardTitle) {
-		this.boardTitle = boardTitle;
+	public String getRecipeTitle() {
+		return recipeTitle;
 	}
-	
-	public String getBoardContent() {
-		return boardContent;
+	public void setRecipeTitle(String recipeTitle) {
+		this.recipeTitle = recipeTitle;
 	}
-	
-	public void setBoardContent(String boardContent) {
-		this.boardContent = boardContent;
+	public String getRecipeContent() {
+		return recipeContent;
 	}
-	
-	public String getBoardWriter() {
-		return boardWriter;
+	public void setRecipeContent(String recipeContent) {
+		this.recipeContent = recipeContent;
 	}
-	
-	public void setBoardWriter(String boardWriter) {
-		this.boardWriter = boardWriter;
+	public String getRecipeWriter() {
+		return recipeWriter;
 	}
-	
-	public Date getBoardRegDate() {
-		return boardRegDate;
+	public void setRecipeWriter(String recipeWriter) {
+		this.recipeWriter = recipeWriter;
 	}
-	
-	public void setBoardRegDate(Date boardRegDate) {
-		this.boardRegDate = boardRegDate;
+	public Date getRecipeRegDate() {
+		return recipeRegDate;
 	}
-	
-	public int getBoardCount() {
-		return boardCount;
+	public void setRecipeRegDate(Date recipeRegDate) {
+		this.recipeRegDate = recipeRegDate;
 	}
-	
-	public void setBoardCount(int boardCount) {
-		this.boardCount = boardCount;
+	public int getRecipeCount() {
+		return recipeCount;
 	}
-
+	public void setRecipeCount(int recipeCount) {
+		this.recipeCount = recipeCount;
+	}
 	public String getNoticeAt() {
 		return noticeAt;
 	}
-
 	public void setNoticeAt(String noticeAt) {
 		this.noticeAt = noticeAt;
 	}
+	
+	
 	
 }

@@ -13,71 +13,71 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
-import kr.ac.kopo.model.BoardVO;
 import kr.ac.kopo.model.MemberVO;
-import kr.ac.kopo.service.BoardService;
+import kr.ac.kopo.model.RecipeVO;
+import kr.ac.kopo.service.RecipeService;
 
 @Controller
-@RequestMapping("/board")
+@RequestMapping("/recipe")
 public class RecipeController {
 	
 	@Autowired
-	private BoardService boardService;
+	private RecipeService recipeService;
 	
 	//목록
 	@GetMapping("list.do")
 	public String selectList(Model model) {
 		
-		List<BoardVO> list;
-		list = boardService.selectList();
+		List<RecipeVO> list;
+		list = recipeService.selectList();
 		
 		model.addAttribute("result", list);
 
-		return "board/boardSelectList";
+		return "recipe/recipeSelectList";
 	}
 	
 	//추가
 	@GetMapping("add.do")
 	public String addform() {
 			
-		return "board/boardAdd";
+		return "recipe/recipeAdd";
 	}
 	
 	@PostMapping("add.do")
-	public String add(BoardVO vo, HttpSession session, @SessionAttribute("member") MemberVO memberVO) {
+	public String add(RecipeVO vo, HttpSession session, @SessionAttribute("member") MemberVO memberVO) {
 	
 //		MemberVo memVo = (MemberVo)session.getAttribute("member"); //MemberController의 로그인 메서드에서 loginUser로 로그인 유저 정보를 저장함
-		vo.setBoardWriter(memberVO.getMemId());
+		vo.setRecipeWriter(memberVO.getMemId());
 		
-		int num = boardService.insertBoard(vo);	
-		return "redirect:/board/list.do";
+		int num = recipeService.insertRecipe(vo);	
+		return "redirect:/recipe/list.do";
 	}
 	
 //	@RequestMapping(value ="edit.do", method = RequestMethod.GET)
 	@GetMapping("edit.do")
-	public String editForm(int boardNo, Map<String,Object> map) {
+	public String editForm(int recipeNo, Map<String,Object> map) {
 		
-		BoardVO vo = boardService.selectBoard(boardNo);
-		map.put("boardVO", vo);
+		RecipeVO vo = recipeService.selectRecipe(recipeNo);
+		map.put("recipeVO", vo);
 		
-		return "board/boardEdit";
+		return "recipe/recipeEdit";
 		
 	}
 	
 //	@RequestMapping(value ="edit.do", method = RequestMethod.POST)
 	@PostMapping("edit.do")
-	public String edit(BoardVO vo) {
+	public String edit(RecipeVO vo) {
 
-	int num = boardService.updateBoard(vo);
+	int num = recipeService.updateRecipe(vo);
 	
-	return "redirect:/board/list.do";
+	return "redirect:/recipe/list.do";
 	}
 	
 	@GetMapping("del.do")
-	public String del(int boardNo) {
+	public String del(int recipeNo) {
 
-	int num = boardService.delBoard(boardNo);
-	return "redirect:/board/list.do";
+	int num = recipeService.delRecipe(recipeNo);
+	return "redirect:/recipe/list.do";
 
 	}
 }

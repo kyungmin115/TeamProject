@@ -3,19 +3,20 @@ package kr.ac.kopo.service;
 import java.util.List;
 
 import kr.ac.kopo.model.BoardVO;
+import kr.ac.kopo.model.RecipeVO;
 import kr.ac.kopo.model.SearchCriteria;
 
 public interface RecipeService {
 
-	List<BoardVO> selectList();
+	List<RecipeVO> selectList();
 
-	int insertBoard(BoardVO vo);
+	int insertRecipe(RecipeVO vo);
 
-	int delBoard(int boardNo);
+	int delRecipe(int recipeNo);
 
-	BoardVO selectBoard(int boardNo);
+	RecipeVO selectRecipe(int recipeNo);
 
-	int updateBoard(BoardVO vo);
+	int updateRecipe(RecipeVO vo);
 
 	
 }

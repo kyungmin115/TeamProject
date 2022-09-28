@@ -5,19 +5,19 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import kr.ac.kopo.model.BoardVO;
-import kr.ac.kopo.model.SearchInfo;
+import kr.ac.kopo.model.RecipeVO;
 
 @Mapper
 public interface RecipeDao {
 	
-	List<BoardVO> selectBoardList();
+	List<RecipeVO> selectRecipeList();
 
-	int insertBoard(BoardVO vo);
+	int insertRecipe(RecipeVO vo);
 
-	int delBoard(int boardNo);
+	int delRecipe(int recipeNo);
 
-	BoardVO selectBoard(int boardNo);
+	RecipeVO selectRecipe(int recipeNo);
 
-	int updateBoard(BoardVO vo);
+	int updateRecipe(RecipeVO vo);
 	
 }

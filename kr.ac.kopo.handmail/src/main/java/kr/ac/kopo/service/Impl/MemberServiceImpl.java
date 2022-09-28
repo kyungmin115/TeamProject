@@ -1,4 +1,4 @@
-package kr.ac.kopo.service;
+package kr.ac.kopo.service.Impl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.dao.MemberDao;
 import kr.ac.kopo.model.MemberVO;
+import kr.ac.kopo.service.MemberService;
 
 @Service
 public class MemberServiceImpl implements MemberService {

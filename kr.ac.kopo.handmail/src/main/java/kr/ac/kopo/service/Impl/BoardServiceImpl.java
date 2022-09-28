@@ -1,4 +1,4 @@
-package kr.ac.kopo.service;
+package kr.ac.kopo.service.Impl;
 
 import java.util.List;
 
@@ -8,9 +8,10 @@ import org.springframework.stereotype.Service;
 import kr.ac.kopo.dao.BoardDao;
 import kr.ac.kopo.model.BoardVO;
 import kr.ac.kopo.model.SearchCriteria;
+import kr.ac.kopo.service.BoardService;
 
 @Service
-public class RecipeServiceImpl implements BoardService {
+public class BoardServiceImpl implements BoardService {
 
 
 	@Autowired
