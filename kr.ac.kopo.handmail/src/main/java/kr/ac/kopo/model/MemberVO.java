@@ -47,4 +47,5 @@ public class MemberVO {
 	public void setAdmin(String admin) {
 		Admin = admin;
 	}
+	
 }

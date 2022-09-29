@@ -2,7 +2,6 @@ package kr.ac.kopo.service;
 
 import java.util.List;
 
-import kr.ac.kopo.model.Criteria;
 import kr.ac.kopo.model.ProductVO;
 import kr.ac.kopo.model.SearchCriteria;
 

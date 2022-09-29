@@ -7,12 +7,10 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.dao.BoardDao;
 import kr.ac.kopo.model.BoardVO;
-import kr.ac.kopo.model.SearchCriteria;
 import kr.ac.kopo.service.BoardService;
 
 @Service
 public class BoardServiceImpl implements BoardService {
-
 
 	@Autowired
 	private BoardDao boardDao;
@@ -22,7 +20,6 @@ public class BoardServiceImpl implements BoardService {
 		
 		return boardDao.selectBoardList();
 	}
-
 
 	@Override
 	public int insertBoard(BoardVO vo) {
@@ -48,7 +45,5 @@ public class BoardServiceImpl implements BoardService {
 		
 		return boardDao.updateBoard(vo);
 	}
-
-
 
 }

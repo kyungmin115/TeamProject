@@ -4,7 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="kr.ac.kopo.dao.RecipeDao">
-
 	
 	<resultMap type="RecipeVO" id="recipeMap">
 		<id property="recipeNo" column="RECIPE_NO" />
@@ -34,7 +33,7 @@
 					</choose>			   	      
 				</if>
 			</where>
-		ORDER BY RECIPE_NO desc
+		ORDER BY RECIPE_NO DESC
 	</select>
 	 
 	<select id="selectRecipe" parameterType="Integer" resultType="RecipeVO">

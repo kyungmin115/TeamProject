@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.dao.ProductDao;
-import kr.ac.kopo.model.Criteria;
 import kr.ac.kopo.model.ProductVO;
 import kr.ac.kopo.model.SearchCriteria;
 import kr.ac.kopo.service.ProductService;
@@ -35,8 +34,7 @@ public class ProductServiceImpl implements ProductService {
 				for(int k=0;k<category.length;k++) {
 		String URL = "https://pyony.com/brands/"+store[i]+"/?event_type="+sale[j]+"&category="+category[k]+"&item=100&sort=&q=";
 		Connection conn = Jsoup.connect(URL);
-		
-		
+				
 		try {
 			
 			Document doc = conn.get();
@@ -63,9 +61,7 @@ public class ProductServiceImpl implements ProductService {
 				}
 			}
 		}
-		
-		
-		
+				
 		return productDao.insertProd(vo);
 	}
 
@@ -99,7 +95,5 @@ public class ProductServiceImpl implements ProductService {
 		
 		return productDao.category(scri);
 	}
-
-
 
 }

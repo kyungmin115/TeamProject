@@ -4,14 +4,11 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import kr.ac.kopo.model.Criteria;
 import kr.ac.kopo.model.ProductVO;
 import kr.ac.kopo.model.SearchCriteria;
 
 @Mapper
 public interface ProductDao {
-
-	
 
 	public int insertProd(ProductVO vo);
 
@@ -24,4 +21,5 @@ public interface ProductDao {
 	public List<ProductVO> selectEvent(SearchCriteria scri);
 
 	public List<ProductVO> category(SearchCriteria scri);
+	
 }

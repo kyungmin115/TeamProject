@@ -6,13 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.dao.RecipeDao;
-import kr.ac.kopo.model.BoardVO;
 import kr.ac.kopo.model.RecipeVO;
 import kr.ac.kopo.service.RecipeService;
 
 @Service
 public class RecipeServiceImpl implements RecipeService {
-
 
 	@Autowired
 	private RecipeDao recipeDao;
@@ -22,7 +20,6 @@ public class RecipeServiceImpl implements RecipeService {
 		
 		return recipeDao.selectRecipeList();
 	}
-
 
 	@Override
 	public int insertRecipe(RecipeVO vo) {
@@ -48,9 +45,5 @@ public class RecipeServiceImpl implements RecipeService {
 		
 		return recipeDao.updateRecipe(vo);
 	}
-
-
-
-
 
 }

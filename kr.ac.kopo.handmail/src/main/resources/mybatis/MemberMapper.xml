@@ -3,7 +3,6 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-
 <mapper namespace="kr.ac.kopo.dao.MemberDao">
 
 	<insert id="insertMem" parameterType="MemberVO">
@@ -12,7 +11,6 @@
 	VALUES (#{memId}, #{memMail}, #{memPass}, #{memName}, 'N')
 	</insert>
 	 
-	 
 	 <!-- 로그인 -->
 	 <select id="login" resultType="MemberVO">
 	 	SELECT mem_id, mem_pass, mem_name
@@ -20,9 +18,4 @@
 	 	WHERE mem_id = #{memId}
 	 </select>
 	
-	  
-	
-	
-	
-
 </mapper>

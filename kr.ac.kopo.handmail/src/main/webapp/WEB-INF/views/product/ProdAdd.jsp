@@ -9,16 +9,12 @@
 <body>
 
 	<form action="${pageContext.request.contextPath}/product/insert.do" method="post">
-	
-	<input type="submit" value="상품추가"/>
-	
+		<input type="submit" value="상품추가"/>	
 	</form>
 	
 	<form action="${pageContext.request.contextPath}/product/delete.do" method="post">
-	<input type="submit" value="상품모두삭제"/>
-	
+		<input type="submit" value="상품모두삭제"/>
 	</form>
-
 
 </body>
 </html>

@@ -1,7 +1,6 @@
 package kr.ac.kopo.controller;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +42,6 @@ public class MemberController {
 		return "redirect:/product/log.do";
 	}
 	
-
 	@PostMapping("login.do")
 	public String login(MemberVO vo, HttpSession session, RedirectAttributes rttr ) throws Exception {
 		
@@ -67,7 +65,5 @@ public class MemberController {
 		session.invalidate();
 		return "redirect:/product/list.do";
 	}
-	
-	
 	
 }

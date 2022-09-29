@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kr.ac.kopo.model.Criteria;
 import kr.ac.kopo.model.PageMaker;
 import kr.ac.kopo.model.ProductVO;
 import kr.ac.kopo.model.SearchCriteria;
@@ -113,6 +112,6 @@ public class ProductController {
 		model.addAttribute("scri", scri);
 		
 		return "mail/category";
-	
 	}	
+	
 }

@@ -12,7 +12,6 @@ public class RecipeVO {
 	private int recipeCount;
 	private String noticeAt;
 	
-	
 	public int getRecipeNo() {
 		return recipeNo;
 	}
@@ -55,7 +54,5 @@ public class RecipeVO {
 	public void setNoticeAt(String noticeAt) {
 		this.noticeAt = noticeAt;
 	}
-	
-	
 	
 }

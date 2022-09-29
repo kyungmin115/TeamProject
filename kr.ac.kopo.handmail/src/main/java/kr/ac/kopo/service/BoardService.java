@@ -3,7 +3,6 @@ package kr.ac.kopo.service;
 import java.util.List;
 
 import kr.ac.kopo.model.BoardVO;
-import kr.ac.kopo.model.SearchCriteria;
 
 public interface BoardService {
 
@@ -17,5 +16,4 @@ public interface BoardService {
 
 	int updateBoard(BoardVO vo);
 
-	
 }

@@ -16,7 +16,9 @@
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
+
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
+
 	<div class="cont"></div>
 	<div class="cont">
 	 <div class="search">
@@ -85,7 +87,7 @@
 </div>
 <div class="cont"></div>
 
-
 <%@ include file="/WEB-INF/views/include/footer.jsp" %>
+
 </body>
 </html>

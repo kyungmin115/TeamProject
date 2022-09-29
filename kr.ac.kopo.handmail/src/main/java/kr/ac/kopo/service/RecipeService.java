@@ -2,9 +2,7 @@ package kr.ac.kopo.service;
 
 import java.util.List;
 
-import kr.ac.kopo.model.BoardVO;
 import kr.ac.kopo.model.RecipeVO;
-import kr.ac.kopo.model.SearchCriteria;
 
 public interface RecipeService {
 
@@ -18,5 +16,4 @@ public interface RecipeService {
 
 	int updateRecipe(RecipeVO vo);
 
-	
 }

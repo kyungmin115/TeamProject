@@ -95,34 +95,32 @@ $(function(){
 </script>
 </head>
 <body>
+
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
 
 <div id="wrap">
-<h1>게시글작성</h1>
 
 <form action='${pageContext.request.contextPath}/board/add.do' method='post'>
-<table class="table">
-	<tbody>
-		<tr>
-			<td>제목</td>
-			<td><input type='text' name = 'boardTitle' class="form-control"/></td>			
-		</tr>
-		<tr>
-			<td>내용</td>
-			<td><textarea id = "boardContent"  rows="10" cols="30" name="boardContent" class="form-control"></textarea></td>			
-		</tr>
-
-	</tbody>
-</table>
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-<a href='${pageContext.request.contextPath}/board/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>
-
-<input type='submit' value="등록" class="btn btn-outline-primary">
+	<table class="table">
+		<tbody>
+			<tr>
+				<td>제목</td>
+				<td><input type='text' name = 'boardTitle' class="form-control"/></td>			
+			</tr>
+			<tr>
+				<td>내용</td>
+				<td><textarea id = "boardContent"  rows="10" cols="30" name="boardContent" class="form-control"></textarea></td>			
+			</tr>
+		</tbody>
+	</table>
+	<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+		<a href='${pageContext.request.contextPath}/board/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>
+		<input type='submit' value="등록" class="btn btn-outline-primary">
+	</div>
+	</form>
 </div>
-</form>
-</div>
-
 
 <%@ include file="/WEB-INF/views/include/footer.jsp" %>
+
 </body>
 </html>

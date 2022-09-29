@@ -17,6 +17,7 @@
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
+
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
 
 	<div class="cont">
@@ -55,7 +56,6 @@
 		<div class="bot-box1"><button class="botl"><img src="/resources/images/main/오른쪽버튼.png" alt="오른쪽버튼" class="bot-right"></button></div>
 		    <div class="outer">
 		        <div class="iner">
-		
 		            <section class="slide">
 		                <div class="box"><div class="mini">CU</div>
 		                <div><img src="/resources/images/main/과자류.png" alt=""></div>
@@ -66,7 +66,6 @@
 		                <div class="box"><div class="mini">세븐일레븐</div></div>
 		                <div class="box"><div class="mini">이마트24</div></div>
 		            </section>
-		
 		            <section class="slide">
 		                <div class="box"><div class="mini">CU</div>
 		                <div><img src="/resources/images/main/음료.png" alt=""></div>
@@ -77,7 +76,6 @@
 		                <div class="box"><div class="mini">세븐일레븐</div></div>
 		                <div class="box"><div class="mini">이마트254</div></div>
 		            </section>
-		
 		            <section class="slide">
 		                <div class="box"><div class="mini">CU</div>
 		                <div><img src="/resources/images/main/식품.png" alt=""></div>
@@ -96,11 +94,10 @@
 
 	<section class="secti">
 	
-	
-	
 	</section>
 	
 <%@ include file="/WEB-INF/views/include/footer.jsp" %>
+
 </body>
 <script src="/resources/js/slide.js" type="text/javascript"></script>
 </html>

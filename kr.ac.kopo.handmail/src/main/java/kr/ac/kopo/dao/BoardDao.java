@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import kr.ac.kopo.model.BoardVO;
-import kr.ac.kopo.model.SearchInfo;
 
 @Mapper
 public interface BoardDao {
