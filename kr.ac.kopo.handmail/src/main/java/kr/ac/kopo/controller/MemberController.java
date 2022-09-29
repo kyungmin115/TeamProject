@@ -43,12 +43,7 @@ public class MemberController {
 		return "redirect:/product/log.do";
 	}
 	
-	
-	
-	
-	
-	
-	
+
 	@PostMapping("login.do")
 	public String login(MemberVO vo, HttpSession session, RedirectAttributes rttr ) throws Exception {
 		

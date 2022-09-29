@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="kr.ac.kopo.dao.RecipeDao">
+
+	
+	<resultMap type="RecipeVO" id="recipeMap">
+		<id property="recipeNo" column="RECIPE_NO" />
+		<result property="recipeTitle" column="RECIPE_TITLE" />
+		<result property="recipeContent" column="RECIPE_CONTENT" />
+		<result property="recipeWriter" column="RECIPE_WRITER" />
+		<result property="recipeRegDate" column="RECIPE_REG_DATE" />
+		<result property="recipeCount" column="RECIPE_COUNT" />
+	</resultMap>
+
+	<select id="selectRecipeList" resultType="RecipeVO">
+		SELECT RECIPE_NO, RECIPE_TITLE, RECIPE_WRITER, RECIPE_REG_DATE, RECIPE_COUNT
+		FROM RECIPE_BOARD
+			<where>
+				<if test="searchWord != null and searchWord != ''">
+					<choose>
+					<when test="searchType == 'title'">
+					RECIPE_TITLE LIKE '%' || #{searchWord} || '%'
+					</when>
+					<when test="searchType == 'content'">
+					RECIPE_CONTENT LIKE '%' || #{searchWord} || '%'
+					</when>
+					<when test="searchType == 'total'">
+					RECIPE_CONTENT LIKE '%' || #{searchWord} || '%'  
+						OR RECIPE_TITLE LIKE '%' || #{searchWord} || '%'
+					</when>
+					</choose>			   	      
+				</if>
+			</where>
+		ORDER BY RECIPE_NO desc
+	</select>
+	 
+	<select id="selectRecipe" parameterType="Integer" resultType="RecipeVO">
+		select RECIPE_NO, RECIPE_TITLE, RECIPE_CONTENT, RECIPE_WRITER, RECIPE_REG_DATE from RECIPE_BOARD WHERE RECIPE_NO = #{recipeNo}
+	</select>
+	
+	<insert id="insertRecipe" parameterType="RecipeVO">
+	 	INSERT INTO RECIPE_board
+	(RECIPE_NO, RECIPE_TITLE, RECIPE_CONTENT, RECIPE_WRITER, RECIPE_REG_DATE, RECIPE_COUNT)
+	VALUES (recipe_seq.NEXTVAL, #{recipeTitle}, #{recipeContent}, #{recipeWriter}, SYSDATE, #{recipeCount})
+	</insert>
+	
+	<update id="updateRecipe" parameterType="RecipeVO">
+	  	UPDATE RECIPE_BOARD
+	  	SET RECIPE_TITLE = #{recipeTitle}, RECIPE_CONTENT = #{recipeContent}
+	  	WHERE RECIPE_NO = #{recipeNo}
+	</update>
+	
+	<delete id="delRecipe" parameterType="Integer">
+	  	DELETE FROM RECIPE_BOARD WHERE recipe_no = #{recipeNo}
+	</delete>
+
+</mapper>

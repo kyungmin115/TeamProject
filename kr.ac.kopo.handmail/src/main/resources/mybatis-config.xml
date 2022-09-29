@@ -10,11 +10,13 @@
 	 <typeAlias type="kr.ac.kopo.model.MemberVO" alias="MemberVO"/>
 	 <typeAlias type="kr.ac.kopo.model.ProductVO" alias="ProductVO"/>
  	 <typeAlias type="kr.ac.kopo.model.BoardVO" alias="BoardVO"/>
+ 	 <typeAlias type="kr.ac.kopo.model.RecipeVO" alias="RecipeVO"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mybatis/MemberMapper.xml"/>
 		<mapper resource="mybatis/ProductMapper.xml"/>
  		<mapper resource="mybatis/BoardMapper.xml"/>
+ 		<mapper resource="mybatis/RecipeMapper.xml"/>
 	</mappers>
 </configuration>

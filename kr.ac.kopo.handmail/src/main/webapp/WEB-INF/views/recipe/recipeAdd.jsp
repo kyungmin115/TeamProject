@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
@@ -94,52 +93,35 @@ $(function(){
 
 </script>
 </head>
-
 <body>
+<%@ include file="/WEB-INF/views/include/header.jsp" %>
 
-	<%@ include file="/WEB-INF/views/include/header.jsp" %>
-	
-	<form action='${pageContext.request.contextPath}/board/edit.do' method='post'>
-	
-			<input type="hidden" name="boardNo" value="${boardVO.boardNo}"/>
+<div id="wrap">
+<h1>게시글작성</h1>
+
+<form action='${pageContext.request.contextPath}/recipe/add.do' method='post'>
 <table class="table">
 	<tbody>
 		<tr>
 			<td>제목</td>
-			<td><input type='text' name='boardTitle' value="${boardVO.boardTitle}" class="form-control"/></td>			
+			<td><input type='text' name = 'recipeTitle' class="form-control"/></td>			
 		</tr>
 		<tr>
 			<td>내용</td>
-			<td><textarea id = "boardContent"  rows="10" cols="30" name="boardContent" class="form-control">${boardVO.boardContent}</textarea></td>			
-		</tr>
-		<tr>
-			<td>작성자</td>
-			<td><c:out value="${boardVO.boardWriter}"/></td>
-		</tr>
-		<tr>
-			<td>작성일</td>
-			<td><fmt:formatDate value="${boardVO.boardRegDate}" pattern="yyyy/MM/dd"/></td>
+			<td><textarea id = "recipeContent"  rows="10" cols="30" name="recipeContent" class="form-control"></textarea></td>			
 		</tr>
 
 	</tbody>
 </table>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-<a href='${pageContext.request.contextPath}/board/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>
+<a href='${pageContext.request.contextPath}/recipe/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>
 
-<input type="submit" value="수정" class="btn btn-outline-primary" >
-
-<a href='${pageContext.request.contextPath}/board/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>
-
-<a href='${pageContext.request.contextPath}/board/del.do?boardNo=${boardVO.boardNo}'><input type="button" value="삭제" class="btn btn-outline-danger"></a>
-
+<input type='submit' value="등록" class="btn btn-outline-primary">
 </div>
 </form>
+</div>
 
-	
-	
-	<%@ include file="/WEB-INF/views/include/footer.jsp" %>
-	
 
+<%@ include file="/WEB-INF/views/include/footer.jsp" %>
 </body>
-
 </html>

@@ -49,8 +49,12 @@
 	
 	<update id="updateBoard" parameterType="BoardVO">
 	  	UPDATE board
-	  	SET BOARD_TITLE=#{boardTitle},  BOARD_CONTENT=#{boardContent}
+	  	SET BOARD_TITLE = #{boardTitle}, BOARD_CONTENT = #{boardContent}
 	  	WHERE BOARD_NO = #{boardNo}
 	</update>
+	
+	<delete id="delBoard" parameterType="Integer">
+	  	DELETE FROM board WHERE board_no = #{boardNo}
+	</delete>
 
 </mapper>
