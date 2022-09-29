@@ -36,7 +36,7 @@
 	    <script>
 	      $(function(){
 	        $('#searchBtn').click(function() {
-	          self.location = "event.do" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+	          self.location = "event.do" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&sale=${scri.sale}&keyword=" + encodeURIComponent($('#keywordInput').val());
 	        });
 	      });
 	      $(function(){

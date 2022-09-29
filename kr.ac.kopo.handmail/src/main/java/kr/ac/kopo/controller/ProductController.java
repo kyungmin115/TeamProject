@@ -93,6 +93,7 @@ public class ProductController {
 		pageMaker.setTotalCount(productService.listCount(scri));
 		
 		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("scri", scri);
 		
 		return "mail/event";
 	}
@@ -109,6 +110,7 @@ public class ProductController {
 		pageMaker.setTotalCount(productService.listCount(scri));
 		
 		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("scri", scri);
 		
 		return "mail/category";
 	
