@@ -112,7 +112,6 @@
 		    </c:if> 
 		  </ul>
 		</div>
-		<div class="cont"></div>
     </section>
 	
 
