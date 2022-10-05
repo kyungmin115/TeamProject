@@ -27,6 +27,7 @@ width: 25%;
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/header.jsp"%>
+	<div class="gong"></div>
 	<div class="layyer">
 		<div class="container">
 			<div>

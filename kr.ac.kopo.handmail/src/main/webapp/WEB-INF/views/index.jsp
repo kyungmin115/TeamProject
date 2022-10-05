@@ -18,6 +18,8 @@
 </script>
 <body>
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
+<div class="gong"></div>
+
 <c:if test="${member == null }">
 	<a href="/member/join.do">회원가입</a>
 </c:if>
