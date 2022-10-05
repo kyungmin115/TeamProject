@@ -16,8 +16,9 @@
 	})
 </script>
 <body>
-
-<a href="/member/join.do">회원가입</a>
+<c:if test="${member == null }">
+	<a href="/member/join.do">회원가입</a>
+</c:if>
 
 <form name='homeForm' method="post" action="/member/login.do">
 	<c:if test="${member == null}">
@@ -43,6 +44,7 @@
 		<p style="color: red;">로그인 실패! 아이디와 비밀번호 확인해주세요!.</p>
 	</c:if>
 </form>
+<a href="/product/list.do">메인페이지</a>
 
 </body>
 </html>
