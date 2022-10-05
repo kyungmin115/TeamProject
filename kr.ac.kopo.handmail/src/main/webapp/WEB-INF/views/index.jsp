@@ -52,5 +52,7 @@
 </form>
 <a href="/product/list.do">메인페이지</a>
 
+<%@ include file="/WEB-INF/views/include/footer.jsp" %>
+
 </body>
 </html>
