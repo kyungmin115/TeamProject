@@ -7,6 +7,7 @@
 <head>
 	<title>손.편.지</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<link rel="stylesheet" href="/resources/css/login.css" type="text/css"/>
 	<link rel="stylesheet" href="/resources/css/include.css" type="text/css"/>
 </head>
 <script type="text/javascript">
@@ -18,27 +19,36 @@
 </script>
 <body>
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
+<div class="beck">
 <div class="gong"></div>
 
 <c:if test="${member == null }">
-	<a href="/member/join.do">회원가입</a>
+	
 </c:if>
 
-
+    
 
 <form name='homeForm' method="post" action="/member/login.do">
 	<c:if test="${member == null}">
-		<div>
-			<label for="memId"></label>
-			<input type="text" id="memId" name="memId">
-		</div>
-		<div>
-			<label for="memPass"></label>
+	<section class="midd">
+        <div class="flot">
+            <p>아이디</p>
+            <label for="memId"></label>
+            <input type="text" id="memId" name="memId">
+        </div>
+        <br/>
+        <div class="flot">
+            <p>비밀번호</p>
+            <label for="memPass"></label>
 			<input type="password" id="memPass" name="memPass">
-		</div>
-		<div>
-			<button type="submit">로그인</button>
-		</div>
+        </div>
+        <br/>
+        <div class="rel">
+            <button type="submit" class="logbox">로그인</button>
+            <p class="gaip"><a href="">아이디 비밀번호 변경</a></p>
+            <p class="mar"><a href="/member/join.do">회원가입</a></p>
+        </div>
+    </section>
 	</c:if>
 	<c:if test="${member != null }">
 		<div>
@@ -50,7 +60,7 @@
 		<p style="color: red;">로그인 실패! 아이디와 비밀번호 확인해주세요!.</p>
 	</c:if>
 </form>
-<a href="/product/list.do">메인페이지</a>
-
+</div>
+<%@ include file="/WEB-INF/views/include/footer.jsp" %>
 </body>
 </html>

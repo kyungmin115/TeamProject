@@ -45,59 +45,79 @@ table {
 a{
 	text-decoration: none;
 }
-.hed{
-	width: 1450px;
-	height: 80px;
-	margin: 0 auto;
-	text-align: center;
-	background: white;
-}
-header ul li{
-	float: left;
-	padding: 15px;
-}
-header ul li a{
-	color: black;
-	font-size: 18px;
-	font-family: 'Noto Sans KR', sans-serif;
-	font-weight: 600;
-}
-.mid{
-	margin-top: 10px;
-	margin-left: 50px;
-}
-.line{
-	width: 1920px;
-	border-bottom: 0.5px solid rgb(199, 199, 199);
-}
-.imag{
-	padding-top: 0px;
-	padding-left: 0px;
-	padding-right: 20px;
-}
-.imag:hover{
-	filter: opacity(0.5) drop-shadow(0 0 0 rgb(0, 0, 212));
-}
-.made{
-	margin-left: 30px;
-}
-.fot{
-    width: 1920px;
-    height: 80px;
-    background: black;
+.midd{
+    width: 600px;
+    height: 700px;
     margin: 0 auto;
     text-align: center;
+    background: white;
 }
-.ter{
+.mid a{
+    color: black;
+}
+.logbox{
+    width: 300px;
+    height: 40px;
     text-align: center;
+    background: rgb(0, 6, 87);
+    border-radius: 30px;
+    display: table;
+    margin: 0 auto;
     color: white;
-    padding-top: 15px;
-    font-family: 'Noto Sans KR', sans-serif;
-    line-height: 25px;
+    font-size: 1em;
+    border: 0px;
 }
-.gong{
-	height: 15px;
-	width: 600px;
-	background: white;
-	margin: 0 auto;
+.logbox a{
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: white;
+}
+.logbox:hover{
+    background: rgb(70, 150, 255);
+}
+.gaip{
+    padding-top: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-right: 120px;
+}
+.mar{
+    padding-top: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    position: absolute;
+    right: 170px;
+    top: 70px;
+}
+.mar :hover{
+    color:rgb(70, 150, 255);
+}
+.gaip :hover{
+    color:rgb(70, 150, 255);
+}
+.flot{
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 300px;
+}
+.flot p{
+    float: left;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-left: 10px;
+}
+.input{
+    margin-right: 30px;
+}
+.rel{
+    position: relative;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.rel p a{
+	color: black;
+}
+.beck{
+	height: 700px;
+	background: url("/resources/images/header/log.png") repeat no-repeat;
 }
