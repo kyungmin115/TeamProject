@@ -86,10 +86,13 @@ public class MemberController {
 	
 	@PostMapping("update.do")
 	public String update(MemberVO vo) {
-
+		String inputPass = vo.getMemPass();
+		String pwd = pwdEncoder.encode(inputPass);
+		vo.setMemPass(pwd);
+		
 		int num = memberService.updateMem(vo);
 				
-		return "redirect:/member/list.do";
+		return "redirect:../product/log.do";
 		}
 	
 	@GetMapping("list.do")
@@ -107,7 +110,7 @@ public class MemberController {
 	public String delMem(MemberVO vo) throws Exception{
 		memberService.delMem(vo);
 		
-		return "redirect:../member/list.do";
+		return "redirect:../product/log.do";
 	}
 	
 	
@@ -119,5 +122,18 @@ public class MemberController {
 		map.put("result", mvo==null); // 사용가능한경우 {result:true}, 불가능한경우 {result:false} 
 		return map;
 	}
+	
+	@GetMapping("fix.do")
+	public String fix(MemberVO vo, String memId, Map<String, Object> map) throws Exception{
+			
+		
+		return "/mail/fix";
+	}
+	
+	@PostMapping("fix.do")
+	public String fix(MemberVO vo) {		
+		
+		return "redirect:/member/update.do?memId="+vo.getMemId();
+		}
 
 }

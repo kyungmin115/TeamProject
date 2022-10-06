@@ -17,5 +17,9 @@ public interface MemberService {
 	int updateMem(MemberVO vo);
 
 	MemberVO selectMem(String memId);
+
+	MemberVO fix(String memId);
+
+	MemberVO find(MemberVO vo);
 	
 }

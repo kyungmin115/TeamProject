@@ -52,6 +52,16 @@ public class MemberServiceImpl implements MemberService {
 		return memberDao.selectMem(memId);
 	}
 
+	@Override
+	public MemberVO fix(String memId) {
+		return memberDao.fix(memId);
+	}
+
+	@Override
+	public MemberVO find(MemberVO vo) {
+		return memberDao.find(vo);
+	}
+
 	
 
 }

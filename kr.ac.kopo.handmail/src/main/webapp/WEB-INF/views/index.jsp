@@ -61,7 +61,7 @@
         <div class="rel">
             <button type="submit" class="logbox">로그인</button>
         <ul class="sel">
-            <li class="sele"><a href="">아이디 비밀번호 변경</a></li>
+            <li class="sele"><a href="/member/fix.do">아이디 비밀번호 변경</a></li>
             <li class="sele"><a href="/member/join.do">회원가입</a></li>
         </ul>
         </div>

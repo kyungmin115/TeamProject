@@ -39,7 +39,8 @@
 				<td><input type='text' name='memMail' value="${memberVO.memMail}"></td>	
 			</tr>
 			<tr>
-				<td><input type="hidden" name='memPass' value="${memberVO.memPass}"></td>	
+				<td>비밀번호</td>
+				<td><input type="password" name='memPass' placeholder="비밀번호 입력"></td>
 			</tr>
 		</tbody>
 	</table>
