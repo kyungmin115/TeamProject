@@ -8,6 +8,7 @@ public class ProductVO {
 	private String sale;
 	private String category;
 	private String store;
+	private String imgName;
 
 	public int getProdNum() {
 		return prodNum;
@@ -56,5 +57,15 @@ public class ProductVO {
 	public void setStore(String store) {
 		this.store = store;
 	}
+
+	public String getImgName() {
+		return imgName;
+	}
+
+	public void setImgName(String imgName) {
+		this.imgName = imgName;
+	}
+	
+	
 
 }

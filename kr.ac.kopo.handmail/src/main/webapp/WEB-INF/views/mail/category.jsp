@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="/resources/css/include.css" type="text/css"/>
 <link rel="stylesheet" href="/resources/css/search.css?after" type="text/css"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="/resources/css/img.css" type="text/css" />
 <link rel="stylesheet" href="/resources/css/category.css">
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
@@ -90,7 +91,7 @@
 		 				<c:when test="${item.sale eq '2'}"><c:out value="2+1"/></c:when>
 		 			</c:choose>
  					</p>
-                    <img src="/resources/images/main/과자류.png" alt="">
+                    <img src="/pyony/${item.imgName}" alt="" class="img">
                     <p class="mini">${item.prodName}</p>
                     <p class="nomal">${item.prodPrice}</p>
                 </a>

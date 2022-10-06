@@ -7,8 +7,8 @@
 
 	<insert id="insertProd" parameterType="ProductVO">
 	 	INSERT INTO product_data
-	(prod_num, prod_name, prod_price, sale, store, category )
-	VALUES (prod_seq.NEXTVAL, #{prodName}, #{prodPrice}, #{sale}, #{store}, #{category})
+	(prod_num, prod_name, prod_price, sale, store, category, imgName)
+	VALUES (prod_seq.NEXTVAL, #{prodName}, #{prodPrice}, #{sale}, #{store}, #{category}, #{imgName})
 	</insert>
 	 
 	<delete id="delete">
@@ -17,10 +17,10 @@
 	</delete>
 	
 	<select id="selectList" resultType="productVO" parameterType="kr.ac.kopo.model.SearchCriteria">
-		select prod_name, prod_price, sale, store
+		select prod_name, prod_price, sale, store, imgName
 		from
 		(
-		select prod_name, prod_price, sale, store, row_number() over(order by prod_num) as RNUM
+		select prod_name, prod_price, sale, store, imgName,row_number() over(order by prod_num) as RNUM
 		from product_data
 		WHERE 1=1
 		<include refid="search"></include>
@@ -51,10 +51,10 @@
 	</select>
 	
 	<select id="selectEvent" resultType="productVO" parameterType="kr.ac.kopo.model.SearchCriteria">
-		select prod_name, prod_price, sale, store
+		select prod_name, prod_price, sale, store, imgName
 		from
 		(
-		select prod_name, prod_price, sale, store, row_number() over(order by prod_num) as RNUM
+		select prod_name, prod_price, sale, store, imgName,  row_number() over(order by prod_num) as RNUM
 		from product_data
 		WHERE 1=1 <include refid="sale"></include>
 		<include refid="search"></include>
@@ -67,10 +67,10 @@
 	</select>
 	
 		<select id="category" resultType="productVO" parameterType="kr.ac.kopo.model.SearchCriteria">
-		select prod_name, prod_price, sale, store, category
+		select prod_name, prod_price, sale, store, category, imgName
 		from
 		(
-		select prod_name, prod_price, sale, store, category, row_number() over(order by prod_num) as RNUM
+		select prod_name, prod_price, sale, store, category, imgName, row_number() over(order by prod_num) as RNUM
 		from product_data
 		WHERE 1=1 <include refid="sale"></include> <include refid="cate"></include>
 		<include refid="search"></include>
