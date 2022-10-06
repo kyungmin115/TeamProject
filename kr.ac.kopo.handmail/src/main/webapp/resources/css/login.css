@@ -47,10 +47,11 @@ a{
 }
 .midd{
     width: 600px;
-    height: 790px;
+    height: 600px;
     margin: 0 auto;
     text-align: center;
     background: white;
+    border-radius: 45px;
 }
 .mid a{
     color: black;

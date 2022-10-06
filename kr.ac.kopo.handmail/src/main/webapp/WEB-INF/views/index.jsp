@@ -21,6 +21,8 @@
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
 <div class="beck">
 <div class="gong"></div>
+<div class="gong"></div>
+<div class="gong"></div>
 
 <c:if test="${member == null }">
 	

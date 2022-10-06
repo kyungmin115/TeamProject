@@ -12,10 +12,10 @@ public interface MemberService {
 	
 	int delMem(MemberVO vo);
 	
-	MemberVO selectMem(String MemId);
-	
 	MemberVO login(MemberVO vo) throws Exception;
 	
 	int updateMem(MemberVO vo);
+
+	MemberVO selectMem(String memId);
 	
 }
