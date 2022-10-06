@@ -12,6 +12,43 @@
 <link rel="stylesheet" href="/resources/css/regist.css" type="text/css" />
 <link rel="stylesheet" href="/resources/css/include.css" type="text/css" />
 <title>회원가입</title>
+<script type="text/javascript">
+$(function () {
+	var idChecked = false;
+	$('#frm').on('submit', function() {
+		if (!idChecked) {
+			alert('ID중복확인이 필요합니다.');
+			return false;
+		}
+		if ($('#memPass').val() != $('#memPassCheck').val()) {
+			alert('비밀번호 입력이 서로 다릅니다.');
+			return false;
+		}
+	});
+	$('#dupCheck').on('click', function() {
+		$.ajax({
+			url: "${pageContext.request.contextPath}/member/check.do",
+			method: "post",
+			data: {memId:$('#memId').val()},
+			dataTypes: 'json'
+		}).done(function(resp) {
+			console.log(resp)
+			idChecked = resp.result;
+			if (resp.result) { //사용가능한 아이디
+				$('#addLink').prop('disabled', false);
+				$('#dupCheck').prop('disabled', true);
+				alert('사용 가능한 ID입니다.');
+			}else { //이미 존재하는 아이디
+				$('#addLink').prop('disabled', true);
+				$('#dupCheck').prop('disabled', false);
+				alert('중복된 ID입니다.');
+			}
+		}).fail(function(jqXHR,textStatus) {
+			alert('아이디 중복 확인 요청 실패!');
+		});
+	});
+});
+</script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/header.jsp"%>
@@ -22,7 +59,8 @@
 				<tbody>
 					<tr>
 						<th>아이디</th>
-						<td><input type="text" id="memId" name="memId" /> <!-- 							<button type="button" id="btn-id-check" class="btn">아이디 중복 검사</button></td> -->
+						<td><input type="text" id="memId" name="memId" style="width: 100px;"/>
+						<button type="button" id="dupCheck" class="btndup">아이디 중복 검사</button></td>
 					</tr>
 					<tr>
 						<th>이름</th>
@@ -30,7 +68,11 @@
 					</tr>
 					<tr>
 						<th>비밀번호</th>
-						<td><input type="password" id="memPasee" name="memPase" /></td>
+						<td><input type="password" id="memPass" name="memPass" /></td>
+					</tr>
+					<tr>
+						<th>비밀번호 확인</th>
+						<td><input type="password" id="memPassCheck" name="memPassCheck" /></td>
 					</tr>
 					<tr>
 						<th>이메일</th>
@@ -41,7 +83,7 @@
 			</div>
 
 			<div class="btn">
-				<button type="submit" class="btnreg">가입</button>
+				<button id="addLink" type="submit" class="btnreg">가입</button>
 				<a href="../product/log.do"><button type="button" class="btnesc">취소</button></a>
 			</div>
 		</form>

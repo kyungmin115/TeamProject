@@ -39,9 +39,27 @@ public class ProductServiceImpl implements ProductService {
 			
 			Document doc = conn.get();
 			
+			String imgName = "";
+			
+			Elements elems = doc.select("div.card-body > div.prod_img_div");
+			for(Element e : elems) { //div
+				Element imgTag = e.select("img").get(0);
+				String url = imgTag.getElementsByAttribute("src").attr("src");
+				String[] urlSplit = url.split("/");
+				imgName = urlSplit[urlSplit.length-1]; //순수 파일명
+				System.out.println("imgName" + imgName);
+				
+				//이미지 가져와서 저장하기
+				
+
+				
+				
+			}
+			
 			Elements elem = doc.select("div.card-body > div");
-			for(Element e : elem) {
+			for(Element e : elem) { //div
 				String al = e.text();
+				System.out.println(al);
 				al = al.trim();
 				String[] product = al.split("\\s");
 
@@ -51,7 +69,8 @@ public class ProductServiceImpl implements ProductService {
 					vo.setStore(store[i]);
 					vo.setSale(sale[j]);
 					vo.setCategory(category[k]);
-					productDao.insertProd(vo);
+					//vo.setImgName(imgName);
+					//productDao.insertProd(vo);
 				}
 			}
 		} catch (IOException e) {
@@ -62,7 +81,7 @@ public class ProductServiceImpl implements ProductService {
 			}
 		}
 				
-		return productDao.insertProd(vo);
+		return 1;
 	}
 
 	@Override

@@ -17,5 +17,11 @@
 	 	FROM member
 	 	WHERE mem_id = #{memId}
 	 </select>
+	 
+	 <select id="selectMem" resultType="MemberVO">
+	 	SELECT mem_id, mem_pass, mem_name
+	 	FROM member
+	 	WHERE mem_id = #{memId}
+	 </select>
 	
 </mapper>

@@ -1,5 +1,7 @@
 package kr.ac.kopo.controller;
 
+import java.util.HashMap;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -9,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.ac.kopo.model.MemberVO;
@@ -66,4 +70,12 @@ public class MemberController {
 		return "redirect:/product/list.do";
 	}
 	
+	@RequestMapping(value = "check.do", method = RequestMethod.POST)
+	@ResponseBody
+	public HashMap<String, Object> dupCheck(MemberVO vo) {
+		MemberVO mvo = memberService.selectMem(vo);
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("result", mvo==null); // 사용가능한경우 {result:true}, 불가능한경우 {result:false} 
+		return map;
+	}
 }

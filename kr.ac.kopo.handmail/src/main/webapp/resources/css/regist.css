@@ -9,25 +9,40 @@
 	text-align: center;
 }
 .container table {
-	border-spacing: 60px 16px;
-  	border-collapse: separate;
+	line-height: 30px;
 }
 .tb {
 	margin: 0 auto;
 	padding: 30px;
 }
-.btn .btnreg {
+.tb tbody {
+	width: 600px;
+}
+.tb th {
+	width: 120px;
+}
+.tb td {
+	width: 480px;
+}
+.wrap .btnreg {
 	border-radius: 10px;
 }
-.btn .btnesc {
+.wrap .btnesc {
 	border-radius: 10px;
 }
-.btn button {
+.wrap .btndup {
+	border-radius: 20px;
+	padding: 2px;
+}
+.wrap button {
 	border: 1px solid #fff;
-    background-color: #37D243;
+    background-color: rgb(34,34,34);
     color: #fff;
     padding: 5px;
-    width: 100px;
+    width: 150px;
+}
+.wrap button:hover {
+	background-color: #37D243;
 }
 input {
 	border-bottom: 1px solid #E0E0E0;
@@ -35,6 +50,7 @@ input {
 	border-top:1px;
 	border-left:1px;
 	border-radius: 3px;
+	width: 250px;
 }
 input:focus {
 	outline: none !important;
