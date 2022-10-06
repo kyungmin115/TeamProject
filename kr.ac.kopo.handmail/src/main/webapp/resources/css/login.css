@@ -128,6 +128,13 @@ a{
 	border-radius: 3px;
     width: 250px;
 }
+input:focus {
+	outline: none !important;
+	border-color: #c0c0c0;
+	box-shadow: 0 0 10px #c0c0c0;
+	display: inline-block;
+	box-sizing: border-box;
+}
 .becc{
 	padding-top: 50px;
 }
