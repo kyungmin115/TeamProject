@@ -1,0 +1,54 @@
+.wrap {
+	margin: 0 auto;
+	text-align: center;
+}
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 600px;
+	text-align: center;
+}
+.container table {
+	border-spacing: 60px 16px;
+  	border-collapse: separate;
+}
+.tb {
+	margin: 0 auto;
+	padding: 30px;
+}
+.btn .btnreg {
+	border-radius: 10px;
+}
+.btn .btnesc {
+	border-radius: 10px;
+}
+.btn button {
+	border: 1px solid #fff;
+    background-color: #37D243;
+    color: #fff;
+    padding: 5px;
+    width: 100px;
+}
+input {
+	border-bottom: 1px solid #E0E0E0;
+	border-right:1px;
+	border-top:1px;
+	border-left:1px;
+	border-radius: 3px;
+}
+input:focus {
+	outline: none !important;
+	border-color: #c0c0c0;
+	box-shadow: 0 0 10px #c0c0c0;
+	display: inline-block;
+	box-sizing: border-box;
+}
+input[type=text],
+input[type=password],
+input[type=email] {
+	background-color: #ffffff;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 13px;
+    font-weight: normal;
+}

@@ -95,3 +95,9 @@ header ul li a{
     font-family: 'Noto Sans KR', sans-serif;
     line-height: 25px;
 }
+.gong{
+	height: 15px;
+	width: 600px;
+	background: white;
+	margin: 0 auto;
+}

@@ -1,0 +1,172 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+a{
+	text-decoration: none;
+}
+.midd{
+    width: 600px;
+    height: 790px;
+    margin: 0 auto;
+    text-align: center;
+    background: white;
+}
+.mid a{
+    color: black;
+}
+.logbox{
+    width: 300px;
+    height: 40px;
+    text-align: center;
+    background: rgb(0, 6, 87);
+    border-radius: 30px;
+    display: table;
+    margin: 0 auto;
+    color: white;
+    font-size: 1em;
+    border: 0px;
+}
+.logbox a{
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: white;
+}
+.logbox:hover{
+    background: rgb(70, 150, 255);
+}
+.gaip{
+    padding-top: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-right: 120px;
+}
+.mar{
+    padding-top: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    position: absolute;
+    right: 170px;
+    top: 70px;
+}
+.mar :hover{
+    color:rgb(70, 150, 255);
+}
+.gaip :hover{
+    color:rgb(70, 150, 255);
+}
+.flot td{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.input{
+    margin-right: 30px;
+}
+.rel{
+    position: relative;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.rel p a{
+	color: black;
+}
+.beck{
+	height: 800px;
+	background: url("/resources/images/header/log.jpg") repeat no-repeat;
+}
+.tabl{
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 15px;
+    border-collapse: separate;
+}
+.input{
+    border: 0.5px solid black;
+    height: 25px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 220px;
+}
+.becc{
+	padding-top: 50px;
+}
+.smal{
+	width: 100px;
+	height: 100px;
+	padding-bottom: 30px;
+	padding: 10px;
+}
+.logi{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 1.4em;
+	padding-bottom: 20px;
+	font-weight: 550;
+}
+.sele{
+	width: 200px;
+	height: 40px;
+	border-radius: 30px;
+	font-size: 1em;
+	float: left;
+	margin: 0 auto;
+	display: table;
+}
+.sele a{
+	width: 120px;
+	color: white;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+.sel{
+	width: 400px;
+	height: 40px;
+	margin: 0 auto;
+	margin-top: 60px;
+	border-radius: 30px;
+	background: rgb(34, 34, 34);
+}
+.sele :hover{
+	border-radius: 30px;
+	background: rgb(0, 206, 86);
+	font-weight: 500;
+}
