@@ -2,27 +2,43 @@
 	margin: 0 auto;
 	text-align: center;
 }
+.beck{
+	height: 800px;
+	background: url("/resources/images/header/log.jpg") repeat no-repeat;
+}
+.midd{
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    text-align: center;
+    background: white;
+    border-radius: 45px;
+    display: table;
+}
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
 	width: 600px;
 	text-align: center;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .container table {
-	line-height: 30px;
+	line-height: 60px;
 }
 .tb {
 	margin: 0 auto;
-	padding: 30px;
+	display: table-cell;
+    vertical-align: middle;
+    padding-top: 30px;
 }
 .tb tbody {
 	width: 600px;
-}
-.tb th {
-	width: 120px;
+	display: inline-block;
 }
 .tb td {
-	width: 480px;
+	width: 600px;
 }
 .wrap .btnreg {
 	border-radius: 10px;
@@ -43,6 +59,7 @@
 }
 .wrap button:hover {
 	background-color: #37D243;
+	cursor: pointer;
 }
 input {
 	border-bottom: 1px solid #E0E0E0;
@@ -67,4 +84,7 @@ input[type=email] {
     box-sizing: border-box;
     font-size: 13px;
     font-weight: normal;
+}
+.btn {
+	padding-top: 30px;
 }

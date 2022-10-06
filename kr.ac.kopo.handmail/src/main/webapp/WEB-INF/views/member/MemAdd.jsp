@@ -52,42 +52,38 @@ $(function () {
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/header.jsp"%>
-	<div class="wrap">
-		<form action="/member/join.do" id="frm" name="frm" method="post">
-		<div class="container">
-			<table class="tb">
-				<tbody>
-					<tr>
-						<th>아이디</th>
-						<td><input type="text" id="memId" name="memId" style="width: 100px;"/>
-						<button type="button" id="dupCheck" class="btndup">아이디 중복 검사</button></td>
-					</tr>
-					<tr>
-						<th>이름</th>
-						<td><input type="text" id="memName" name="memName" /></td>
-					</tr>
-					<tr>
-						<th>비밀번호</th>
-						<td><input type="password" id="memPass" name="memPass" /></td>
-					</tr>
-					<tr>
-						<th>비밀번호 확인</th>
-						<td><input type="password" id="memPassCheck" name="memPassCheck" /></td>
-					</tr>
-					<tr>
-						<th>이메일</th>
-						<td><input type="email" id="memMail" name="memMail"></td>
-					</tr>
-				</tbody>
-			</table>
-			</div>
-
-			<div class="btn">
-				<button id="addLink" type="submit" class="btnreg">가입</button>
-				<a href="../product/log.do"><button type="button" class="btnesc">취소</button></a>
-			</div>
-		</form>
-	</div>
+	<div class="wrap beck">
+		<div style="height: 45px;width: 600px;margin: 0 auto;"></div>
+			<form action="/member/join.do" id="frm" name="frm" method="post">
+				<div class="container midd">
+					<div><img src="/resources/images/header/logo.png" alt=""></div>
+					<table class="tb">
+						<tbody>
+							<tr>
+								<td><input type="text" id="memId" name="memId" placeholder="ID" style="width: 100px;"/>
+								<button type="button" id="dupCheck" class="btndup">아이디 중복 검사</button></td>
+							</tr>
+							<tr>
+								<td><input type="text" id="memName" name="memName" placeholder="이름"/></td>
+							</tr>
+							<tr>
+								<td><input type="password" id="memPass" name="memPass" placeholder="비밀번호"/></td>
+							</tr>
+							<tr>
+								<td><input type="password" id="memPassCheck" name="memPassCheck" placeholder="비밀번호 확인"/></td>
+							</tr>
+							<tr>
+								<td><input type="email" id="memMail" name="memMail" placeholder="E-Mail"></td> 
+							</tr>
+						</tbody>
+					</table>
+					</div>
+				<div class="btn">
+					<button id="addLink" type="submit" class="btnreg">가입</button>
+					<a href="../product/log.do"><button type="button" class="btnesc">취소</button></a>
+				</div>
+			</form>
+		</div>
 	<%@ include file="/WEB-INF/views/include/footer.jsp"%>
 </body>
 </html>
