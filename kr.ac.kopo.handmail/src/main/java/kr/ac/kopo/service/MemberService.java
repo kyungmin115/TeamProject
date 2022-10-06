@@ -11,11 +11,15 @@ public interface MemberService {
 	int insertMem(MemberVO vo);
 	
 	int delMem(MemberVO vo);
-	
-	MemberVO selectMem(String MemId);
-	
+		
 	MemberVO login(MemberVO vo) throws Exception;
 	
 	int updateMem(MemberVO vo);
+
+	MemberVO selectMem(String memId);
+
+	MemberVO fix(String memId);
+
+	MemberVO find(MemberVO vo);
 	
 }

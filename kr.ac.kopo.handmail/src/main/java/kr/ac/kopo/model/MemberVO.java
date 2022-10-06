@@ -47,5 +47,13 @@ public class MemberVO {
 	public void setAdmin(String admin) {
 		Admin = admin;
 	}
+
+	@Override
+	public String toString() {
+		return "MemberVO [MemId=" + MemId + ", MemMail=" + MemMail + ", MemPass=" + MemPass + ", MemName=" + MemName
+				+ ", Admin=" + Admin + "]";
+	}
+	
+	
 	
 }

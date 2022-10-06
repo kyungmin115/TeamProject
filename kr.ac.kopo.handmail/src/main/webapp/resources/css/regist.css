@@ -2,32 +2,64 @@
 	margin: 0 auto;
 	text-align: center;
 }
+.beck{
+	height: 800px;
+	background: url("/resources/images/header/log.jpg") repeat no-repeat;
+}
+.midd{
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    text-align: center;
+    background: white;
+    border-radius: 45px;
+    display: table;
+}
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
 	width: 600px;
 	text-align: center;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .container table {
-	border-spacing: 60px 16px;
-  	border-collapse: separate;
+	line-height: 60px;
 }
 .tb {
 	margin: 0 auto;
-	padding: 30px;
+	display: table-cell;
+    vertical-align: middle;
+    padding-top: 30px;
 }
-.btn .btnreg {
+.tb tbody {
+	width: 600px;
+	display: inline-block;
+}
+.tb td {
+	width: 600px;
+}
+.wrap .btnreg {
 	border-radius: 10px;
 }
-.btn .btnesc {
+.wrap .btnesc {
 	border-radius: 10px;
 }
-.btn button {
+.wrap .btndup {
+	border-radius: 20px;
+	padding: 2px;
+}
+.wrap button {
 	border: 1px solid #fff;
-    background-color: #37D243;
+    background-color: rgb(34,34,34);
     color: #fff;
     padding: 5px;
-    width: 100px;
+    width: 150px;
+}
+.wrap button:hover {
+	background-color: #37D243;
+	cursor: pointer;
 }
 input {
 	border-bottom: 1px solid #E0E0E0;
@@ -35,6 +67,7 @@ input {
 	border-top:1px;
 	border-left:1px;
 	border-radius: 3px;
+	width: 250px;
 }
 input:focus {
 	outline: none !important;
@@ -51,4 +84,7 @@ input[type=email] {
     box-sizing: border-box;
     font-size: 13px;
     font-weight: normal;
+}
+.btn {
+	padding-top: 30px;
 }

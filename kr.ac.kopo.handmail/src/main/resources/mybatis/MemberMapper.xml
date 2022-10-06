@@ -17,5 +17,32 @@
 	 	FROM member
 	 	WHERE mem_id = #{memId}
 	 </select>
+	 
+	 <select id="selectMem" resultType="MemberVO">
+	 	SELECT mem_id, mem_mail, mem_pass, mem_name
+	 	FROM member
+	 	WHERE mem_id = #{memId}
+	 </select>
+	 
+	 <select id="selectMemList" resultType="MemberVO">
+	 	SELECT mem_id, mem_mail, mem_name 
+	 	FROM member
+	 </select>
+	 
+	 <update id="updateMem" parameterType="MemberVO" >
+	 	UPDATE member set mem_pass = #{memPass}, mem_mail = #{memMail}, mem_name = #{memName}
+	 	WHERE mem_id = #{memId}
+	 </update>
+	 
+	 <delete id="delMem" parameterType="MemberVO" >
+	 	delete from member
+	 	WHERE mem_id = #{memId}
+	 </delete>
+	
+	<select id="find" resultType="MemberVO">
+	 	SELECT mem_id, mem_mail, mem_pass, mem_name
+	 	FROM member
+	 	WHERE mem_id = #{memId} AND mem_name = #{memName}
+	 </select>
 	
 </mapper>

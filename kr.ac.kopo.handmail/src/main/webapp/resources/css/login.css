@@ -47,10 +47,11 @@ a{
 }
 .midd{
     width: 600px;
-    height: 790px;
+    height: 600px;
     margin: 0 auto;
     text-align: center;
     background: white;
+    border-radius: 45px;
 }
 .mid a{
     color: black;
@@ -75,6 +76,7 @@ a{
 }
 .logbox:hover{
     background: rgb(70, 150, 255);
+    cursor: pointer;
 }
 .gaip{
     padding-top: 10px;
@@ -115,16 +117,23 @@ a{
 .tabl{
     margin-left: auto;
     margin-right: auto;
-    border-spacing: 15px;
+    border-spacing: 30px;
     border-collapse: separate;
 }
 .input{
-    border: 0.5px solid black;
-    height: 25px;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 220px;
+    border-bottom: 1px solid #E0E0E0;
+	border-right:1px;
+	border-top:1px;
+	border-left:1px;
+	border-radius: 3px;
+    width: 250px;
+}
+input:focus {
+	outline: none !important;
+	border-color: #c0c0c0;
+	box-shadow: 0 0 10px #c0c0c0;
+	display: inline-block;
+	box-sizing: border-box;
 }
 .becc{
 	padding-top: 50px;
@@ -165,8 +174,9 @@ a{
 	border-radius: 30px;
 	background: rgb(34, 34, 34);
 }
-.sele :hover{
+.sele:hover{
 	border-radius: 30px;
 	background: rgb(0, 206, 86);
 	font-weight: 500;
+	cursor: pointer;
 }

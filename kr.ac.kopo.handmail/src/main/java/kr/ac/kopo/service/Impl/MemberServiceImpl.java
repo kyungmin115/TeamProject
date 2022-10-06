@@ -33,11 +33,6 @@ public class MemberServiceImpl implements MemberService {
 		return memberDao.delMem(vo);
 	}
 
-	@Override
-	public MemberVO selectMem(String MemId) {
-		
-		return memberDao.selectMem(MemId);
-	}
 
 	@Override
 	public int updateMem(MemberVO vo) {
@@ -50,5 +45,23 @@ public class MemberServiceImpl implements MemberService {
 		
 		return memberDao.login(vo);
 	}
+
+	@Override
+	public MemberVO selectMem(String memId) {
+		
+		return memberDao.selectMem(memId);
+	}
+
+	@Override
+	public MemberVO fix(String memId) {
+		return memberDao.fix(memId);
+	}
+
+	@Override
+	public MemberVO find(MemberVO vo) {
+		return memberDao.find(vo);
+	}
+
+	
 
 }
