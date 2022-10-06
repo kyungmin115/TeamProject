@@ -38,5 +38,6 @@
 	 	delete from member
 	 	WHERE mem_id = #{memId}
 	 </delete>
+
 	
 </mapper>

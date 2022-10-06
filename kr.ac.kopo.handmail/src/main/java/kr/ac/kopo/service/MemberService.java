@@ -11,7 +11,7 @@ public interface MemberService {
 	int insertMem(MemberVO vo);
 	
 	int delMem(MemberVO vo);
-	
+		
 	MemberVO login(MemberVO vo) throws Exception;
 	
 	int updateMem(MemberVO vo);

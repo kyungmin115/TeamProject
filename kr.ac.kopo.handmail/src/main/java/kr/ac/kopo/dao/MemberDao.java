@@ -14,9 +14,9 @@ public interface MemberDao {
 	public MemberVO login(MemberVO vo) throws Exception;
 	
 	int delMem(MemberVO vo);
-	
-	MemberVO selectMem(String MemId);
-	
+		
 	int updateMem(MemberVO vo);
+
+	MemberVO selectMem(String memId);
 	
 }

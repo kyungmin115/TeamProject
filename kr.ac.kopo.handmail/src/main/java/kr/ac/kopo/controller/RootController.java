@@ -15,4 +15,11 @@ public class RootController {
 		
 		return "mail/main";
 	}
+	
+	@RequestMapping(value="/views.do")
+	public String main1() throws Exception{
+		
+		return "introduction";
+	}
+	
 }

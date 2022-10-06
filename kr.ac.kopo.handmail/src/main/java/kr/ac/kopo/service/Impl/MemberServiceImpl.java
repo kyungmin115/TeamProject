@@ -33,6 +33,7 @@ public class MemberServiceImpl implements MemberService {
 		return memberDao.delMem(vo);
 	}
 
+
 	@Override
 	public int updateMem(MemberVO vo) {
 		

@@ -8,7 +8,7 @@
             <li class="mid"></li>
             <li class="imag"><a href="../product/list.do"><img src="/resources/images/header/logo.png" alt=""></a></li>
             <li class="made"></li>
-            <li class="mid"><a href="">소개</a></li>
+            <li class="mid"><a href="/views.do">소개</a></li>
             <li class="mid"><a href="../board/list.do">이벤트</a></li>
             <li class="mid"><a href="/product/event.do">상품 서비스</a></li>
             <li class="mid"><a href="">추천 레시피</a></li>
