@@ -19,26 +19,29 @@
 </script>
 <body>
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
+<div class="beck">
 <div class="gong"></div>
 <div class="gong"></div>
 <div class="gong"></div>
 
+<section class="midd">
+        <div class="becc">
 <form action='${pageContext.request.contextPath}/member/update.do' method='post'>
-	<table class="table">
+	<table class="tabl">
 		<tbody>
-			<tr>
+			<tr class="flot">
 				<td>아이디</td>
 				<td><input type='text' name='memId' value="${memberVO.memId}" class="form-control" readonly="readonly"/></td>			
 			</tr>
-			<tr>
+			<tr class="flot">
 				<td>이름</td>
 				<td><input type='text' name='memName' value="${memberVO.memName}"></td>			
 			</tr>
-			<tr>
+			<tr class="flot">
 				<td>이메일</td>
 				<td><input type='text' name='memMail' value="${memberVO.memMail}"></td>	
 			</tr>
-			<tr>
+			<tr class="flot">
 				<td>비밀번호</td>
 				<td><input type="password" name='memPass' placeholder="비밀번호 입력"></td>
 			</tr>
@@ -51,7 +54,10 @@
 	</div>
 </form>
 
+        </div>
+    </section>
 
+</div>
 
 
 <%@ include file="/WEB-INF/views/include/footer.jsp" %>
