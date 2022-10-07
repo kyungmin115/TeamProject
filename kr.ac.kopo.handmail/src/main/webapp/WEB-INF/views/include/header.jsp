@@ -11,7 +11,7 @@
             <li class="mid"><a href="/views.do">소개</a></li>
             <li class="mid"><a href="../board/list.do">이벤트</a></li>
             <li class="mid"><a href="/product/event.do">상품 서비스</a></li>
-            <li class="mid"><a href="">추천 레시피</a></li>
+            <li class="mid"><a href="/recipe/list.do">추천 레시피</a></li>
             <li class="mid"></li>
             <li class="mid"></li>
             <li class=""><a href="../product/log.do"><img src="/resources/images/header/로그인버튼.png" alt="로그인" style="width: 40px"></a></li> 
