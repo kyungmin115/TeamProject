@@ -1,6 +1,5 @@
 .wrap {
 	margin: 0 auto;
-	text-align: center;
 }
 .beck{
 	height: 800px;
@@ -40,26 +39,43 @@
 .tb td {
 	width: 600px;
 }
+.btn {
+	padding-top: 30px;
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .wrap .btnreg {
-	border-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+}
+.wrap .btnreg:hover {
+	background-color: #37D243;
+	cursor: pointer;
 }
 .wrap .btnesc {
-	border-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.wrap .btnesc:hover {
+	background-color: #37D243;
+	cursor: pointer;
 }
 .wrap .btndup {
 	border-radius: 20px;
 	padding: 2px;
+	width: 130px;
+}
+.wrap .btndup:hover {
+	background-color: #37D243;
+	cursor: pointer;
 }
 .wrap button {
-	border: 1px solid #fff;
+	border:none;
     background-color: rgb(34,34,34);
     color: #fff;
     padding: 5px;
     width: 150px;
-}
-.wrap button:hover {
-	background-color: #37D243;
-	cursor: pointer;
 }
 input {
 	border-bottom: 1px solid #E0E0E0;
@@ -84,7 +100,4 @@ input[type=email] {
     box-sizing: border-box;
     font-size: 13px;
     font-weight: normal;
-}
-.btn {
-	padding-top: 30px;
 }

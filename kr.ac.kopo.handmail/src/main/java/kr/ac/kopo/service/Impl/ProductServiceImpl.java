@@ -60,18 +60,22 @@ public class ProductServiceImpl implements ProductService {
                  String url = imgTag.getElementsByAttribute("src").attr("src");
                  String[] urlSplit = url.split("/");
                  imgName = urlSplit[urlSplit.length-1]; //순수 파일명
-                 System.out.println("imgName" + imgName);
+                 System.out.println("imgName : " + imgName);
                  System.out.println(url);
         
                  URL urls = null;
                  //이미지 다운로드
                  if(url.startsWith("http:")) {
-                		 urls = new URL(url);	 
-                 } else if (url.startsWith("https:")) {
                 	 urls = new URL(url);
-				} else {
-					urls = new URL("https:" + url);
-				}
+                	 if (url.contains("eleven")) {
+                		 urls = new URL(url.replace("http://", "https://"));
+					 }
+                	 } else if (url.startsWith("https:")) {
+                		 urls = new URL(url);
+                	 } else {
+                		 urls = new URL("https:" + url);
+                	 }
+							 
                  
                  InputStream is = urls.openStream();
                  FileOutputStream fos = new FileOutputStream("d:/pyony/" + imgName);

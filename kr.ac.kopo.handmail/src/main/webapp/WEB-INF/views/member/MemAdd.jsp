@@ -60,7 +60,7 @@ $(function () {
 					<table class="tb">
 						<tbody>
 							<tr>
-								<td><input type="text" id="memId" name="memId" placeholder="ID" style="width: 100px;"/>
+								<td><input type="text" id="memId" name="memId" placeholder="ID" style="width: 130px;"/>
 								<button type="button" id="dupCheck" class="btndup">아이디 중복 검사</button></td>
 							</tr>
 							<tr>

@@ -26,7 +26,7 @@
         </ul>
 	 <div class="search">
 	 	<div class="mid">
-	    <select name="searchType">
+	    <select name="searchType" class="selBox">
 	      <option value="n"<c:out value="${scri.searchType == null ? 'selected' : ''}"/>>전체</option>
 	      <option value="cu"<c:out value="${scri.searchType eq 'cu' ? 'selected' : ''}"/>>CU</option>
 	      <option value="gs25"<c:out value="${scri.searchType eq 'gs25' ? 'selected' : ''}"/>>GS25</option>
@@ -34,9 +34,9 @@
 	      <option value="emart24"<c:out value="${scri.searchType eq 'emart24' ? 'selected' : ''}"/>>이마트</option>
 	    </select>
 	
-	    <input type="text" name="keyword" id="keywordInput" value="${scri.keyword}"/>
+	    <input type="text" name="keyword" id="keywordInput" class="srch" value="${scri.keyword}"/>
 	
-	    <button id="searchBtn" type="button">검색</button>
+	    <button id="searchBtn" class="srchBtn" type="button">검색</button>
 	    <script>
 	      $(function(){
 	        $('#searchBtn').click(function() {
