@@ -67,9 +67,11 @@ public class ProductServiceImpl implements ProductService {
                  //이미지 다운로드
                  if(url.startsWith("http:")) {
                 		 urls = new URL(url);	 
-                 } else {
-                	 urls = new URL("https:" + url);	 
-                 }
+                 } else if (url.startsWith("https:")) {
+                	 urls = new URL(url);
+				} else {
+					urls = new URL("https:" + url);
+				}
                  
                  InputStream is = urls.openStream();
                  FileOutputStream fos = new FileOutputStream("d:/pyony/" + imgName);
