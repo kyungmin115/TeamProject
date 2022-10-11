@@ -56,11 +56,13 @@
 		<div class="bot-box1"><button class="botl"><img src="/resources/images/main/오른쪽버튼.png" alt="오른쪽버튼" class="bot-right"></button></div>
 		    <div class="outer">
 		        <div class="iner">
+		        	<c:forEach var="item" items="${result}">
+            			
 		            <section class="slide">
-		                <div class="box"><div class="mini">CU</div>
-		                <div><img src="/resources/images/main/과자류.png" alt=""></div>
-		                <p>롯)칠성사이다</p>
-		                <p>2,000원</p>
+		                <div class="box"><div class="mini">${item.store}</div>
+		                <div><img src="/pyony/${item.imgName}" alt="" class="img"></div>
+		                <p>${item.prodName}</p>
+		                <p>${item.prodPrice}</p>
 		                </div>
 		                <div class="box"><div class="mini">GS25</div></div>
 		                <div class="box"><div class="mini">세븐일레븐</div></div>
@@ -74,7 +76,7 @@
 		                </div>
 		                <div class="box"><div class="mini">GS25</div></div>
 		                <div class="box"><div class="mini">세븐일레븐</div></div>
-		                <div class="box"><div class="mini">이마트254</div></div>
+		                <div class="box"><div class="mini">이마트24</div></div>
 		            </section>
 		            <section class="slide">
 		                <div class="box"><div class="mini">CU</div>
@@ -86,6 +88,7 @@
 		                <div class="box"><div class="mini">세븐일레븐</div></div>
 		                <div class="box"><div class="mini">이마트294</div></div>
 		            </section>
+		            </c:forEach>
 		        </div>
 		    </div>
 		    <div class="bot-box2"><button class="botr"><img src="/resources/images/main/왼쪽버튼.png" alt="왼쪽버튼" class="bot-left"></button></div>

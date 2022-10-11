@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="/resources/css/search.css?after" type="text/css"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link rel="stylesheet" href="/resources/css/sale.css">
+<link rel="stylesheet" href="/resources/css/img.css" type="text/css" />
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
@@ -25,7 +26,7 @@
         </ul>
 	 <div class="search">
 	 	<div class="mid">
-	    <select name="searchType">
+	    <select name="searchType" class="selBox">
 	      <option value="n"<c:out value="${scri.searchType == null ? 'selected' : ''}"/>>전체</option>
 	      <option value="cu"<c:out value="${scri.searchType eq 'cu' ? 'selected' : ''}"/>>CU</option>
 	      <option value="gs25"<c:out value="${scri.searchType eq 'gs25' ? 'selected' : ''}"/>>GS25</option>
@@ -33,9 +34,9 @@
 	      <option value="emart24"<c:out value="${scri.searchType eq 'emart24' ? 'selected' : ''}"/>>이마트</option>
 	    </select>
 	
-	    <input type="text" name="keyword" id="keywordInput" value="${scri.keyword}"/>
+	    <input type="text" name="keyword" id="keywordInput" class="srch" value="${scri.keyword}"/>
 	
-	    <button id="searchBtn" type="button">검색</button>
+	    <button id="searchBtn" class="srchBtn" type="button">검색</button>
 	    <script>
 	      $(function(){
 	        $('#searchBtn').click(function() {
@@ -78,8 +79,8 @@
 		 				<c:when test="${item.sale eq '2'}"><c:out value="2+1"/></c:when>
 		 			</c:choose>
  					</p>
-                    <img src="/resources/images/main/과자류.png" alt="">
-                    <p class="mini">${item.prodName}</p>
+                    <img src="/pyony/${item.imgName}" alt="" class="img">
+                   	<p class="mini">${item.prodName}</p>
                     <p class="nomal">${item.prodPrice}</p>
                 </a>
             </div>            
