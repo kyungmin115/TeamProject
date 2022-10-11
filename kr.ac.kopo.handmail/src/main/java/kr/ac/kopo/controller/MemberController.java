@@ -54,12 +54,12 @@ public class MemberController {
 	@PostMapping("login.do")
 	public String login(MemberVO vo, HttpSession session, RedirectAttributes rttr ) throws Exception {
 		
-		session.getAttribute("member");
-		MemberVO login = memberService.login(vo);
+//		session.getAttribute("member");
+		MemberVO loginUser = memberService.login(vo);
 		boolean pwdMatch = pwdEncoder.matches(vo.getMemPass(), login.getMemPass());
 
-		if(login != null && pwdMatch == true) {
-			session.setAttribute("member", login);
+		if(loginUser != null && pwdMatch == true) {
+			session.setAttribute("member", loginUser);
 		} else {
 			session.setAttribute("member", null);
 			rttr.addFlashAttribute("msg", false);

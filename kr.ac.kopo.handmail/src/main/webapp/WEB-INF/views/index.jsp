@@ -23,8 +23,9 @@
 <div class="gong"></div>
 <div class="gong"></div>
 <div class="gong"></div>
-	<form name='homeForm' method="post" action="/member/login.do">
-		<c:if test="${member == null}">
+	<form name='memberVO' method="post" action="/member/login.do">
+	<c:choose>
+		<c:when test="${sessionScope.member == null}">
 		<section class="midd" style="flex: auto;">
 	        <div class="becc">
 	        	<div>
@@ -52,21 +53,22 @@
 	        <div class="rel">
 	            <button type="submit" class="logbox">로그인</button>
 	        <ul class="sel">
-	            <li class="sele"><a href="">비밀번호 변경</a></li>
+	            <li class="sele"><a href="/member/fix.do">비밀번호 변경</a></li>
 	            <li class="sele"><a href="/member/join.do">회원가입</a></li>
 	        </ul>
 	        </div>
-		<div>
-			<c:if test="${member!=null}">
-				<p>${member.memName}님 환영 합니다.</p>
-				<button id="logoutBtn" type="button">로그아웃</button>
-			</c:if>
 			<c:if test="${msg == false}">
 				<p style="color: red;">로그인 실패! 아이디와 비밀번호 확인해주세요!.</p>
 			</c:if>
-		</div>
 	    </section>
-		</c:if>
+		</c:when>
+		<c:otherwise>
+			<div>
+				<p>${member.memName}님 환영 합니다.</p>
+				<button id="logoutBtn" type="button">로그아웃</button>
+			</div>
+		</c:otherwise>
+		</c:choose>
 	</form>
 </div>
 <%@ include file="/WEB-INF/views/include/footer.jsp" %>

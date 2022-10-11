@@ -115,6 +115,5 @@ section div a img:hover{
 	margin: 0 auto;
 }
 .notibox {
-	display: flex;
-	justify-content: space-between;
+	
 }
