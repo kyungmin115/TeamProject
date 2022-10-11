@@ -22,7 +22,7 @@
 
 	<div class="cont">
 	 <div class="search">
-	    <select name="searchType">
+	    <select name="searchType" class="selBox">
 	      <option value="n"<c:out value="${scri.searchType == null ? 'selected' : ''}"/>>전체</option>
 	      <option value="cu"<c:out value="${scri.searchType eq 'cu' ? 'selected' : ''}"/>>CU</option>
 	      <option value="gs25"<c:out value="${scri.searchType eq 'gs25' ? 'selected' : ''}"/>>GS25</option>
@@ -30,13 +30,13 @@
 	      <option value="emart24"<c:out value="${scri.searchType eq 'emart24' ? 'selected' : ''}"/>>이마트</option>
 	    </select>
 	
-	    <input type="text" name="keyword" id="keywordInput" value="${scri.keyword}" class="searchh"/>
+	    <input type="text" name="keyword" id="keywordInput" value="${scri.keyword}" class="srch"/>
 	
-	    <button id="searchBtn" type="button" class="butt">검색</button>
+	    <button id="searchBtn" type="button" class="srchBtn">검색</button>
 	    <script>
 	      $(function(){
 	        $('#searchBtn').click(function() {
-	          self.location = "search.do" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+	          self.location = "category.do" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
 	        });
 	      });   
 	    </script>

@@ -51,10 +51,11 @@ a{
 	margin: 0 auto;
 }
 .cont{
-	padding-top: 50px;
-	width: 800px;
-	height: 50px;
+	padding-top: 30px;
+	width: 1920px;
+	height: 60px;
 	margin: 0 auto;
+	background:rgb(230,230,230);
 }
 select{
 	width: 60px;
@@ -78,8 +79,8 @@ select{
 	height: 32px;
 }
 .search{
-	width: 600px;
-	height: 100px;
+	width: 480px;
+	height: 80px;
 	margin: 0 auto;
 }
 .secti{
@@ -117,4 +118,51 @@ section div a img:hover{
 .notibox {
 	display: flex;
 	justify-content: space-between;
+}
+.srch {
+	border-bottom: 1px solid #c0c0c0;
+	border-right:1px;
+	border-top:1px;
+	border-left:1px;
+	border-radius: 3px;
+	width: 250px;
+	height: 25px;
+}
+.srchBtn {
+	border: 1px solid #fff;
+    background-color: rgb(34,34,34);
+    color: #fff;
+    padding: 5px;
+    width: 80px;
+    border-radius: 20px;
+    height: 30px;
+}
+.srchBtn:hover {
+	background-color: #37D243;
+	cursor: pointer;
+}
+input:focus {
+	outline: none !important;
+	border-color: #c0c0c0;
+	box-shadow: 0 0 10px #37D243;
+	display: inline-block;
+}
+.selBox {
+	width: 65px;
+	border: 1px solid #999;
+	font-family: inherit;
+	border-radius: 25px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	text-align: center;
+}
+.selBox:hover{
+	border-color: #37D243;
+}
+.selBox:focus {
+	outline:none;
+	border-color: #37D243;
+  	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+ 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
 }
