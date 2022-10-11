@@ -91,6 +91,10 @@ a{
 .ta{
     text-align: left;
     margin: 5px;
+    line-height: 20px;
+}
+.ta a{
+	color: black;
 }
 .fl{
     float: left;

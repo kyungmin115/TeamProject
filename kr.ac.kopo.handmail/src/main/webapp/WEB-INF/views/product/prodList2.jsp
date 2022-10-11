@@ -103,7 +103,7 @@
             </div>
             <div>
                 <div class="ta"><c:out value="${vo.boardWriter}" /></div>
-                <div class="ta"><c:out value="${vo.boardTitle}" /></div>
+                <div class="ta"><a href="${pageContext.request.contextPath}/board/edit.do?boardNo=${vo.boardNo}"><c:out value="${vo.boardTitle}" /></a></div>
             </div>
         </div>
         </c:forEach>
