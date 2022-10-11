@@ -178,4 +178,14 @@ public class ProductServiceImpl implements ProductService {
       return productDao.category(scri);
    }
 
+@Override
+public List<ProductVO> selectList1(SearchCriteria scri) {
+	return productDao.selectList1(scri);
+}
+
+@Override
+public List<ProductVO> selectList2(SearchCriteria scri) {
+	return productDao.selectList2(scri);
+}
+
 }

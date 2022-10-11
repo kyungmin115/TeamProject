@@ -30,6 +30,35 @@
 		
 	</select>
 	
+	<select id="selectList1" resultType="productVO" parameterType="kr.ac.kopo.model.SearchCriteria">
+		select prod_name, prod_price, sale, store, imgName
+		from
+		(
+		select prod_name, prod_price, sale, store, imgName,row_number() over(order by prod_num) as RNUM
+		from product_data
+		WHERE 1=1
+		<include refid="search"></include>
+		)
+		
+		WHERE store = 'gs25'
+		
+	</select>
+	
+	<select id="selectList2" resultType="productVO" parameterType="kr.ac.kopo.model.SearchCriteria">
+		select prod_name, prod_price, sale, store, imgName
+		from
+		(
+		select prod_name, prod_price, sale, store, imgName,row_number() over(order by prod_num) as RNUM
+		from product_data
+		WHERE 1=1
+		<include refid="search"></include>
+		)
+		
+		WHERE store = 'seven'
+		
+	</select>
+	
+	
 	<sql id="search">
 		<if test="searchType != null">
 			<if test="searchType == 'n'.toString()">AND PROD_NAME LIKE '%' || #{keyword} || '%'</if>

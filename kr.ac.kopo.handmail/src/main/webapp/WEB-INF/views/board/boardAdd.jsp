@@ -19,8 +19,7 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <script
-	src="https://cdn.tiny.cloud/1/2xpj4d22abg4qy6hhumahoojfub87knrquwrq4mbmjj9saoo/tinymce/6/tinymce.min.js"
-	referrerpolicy="origin"></script>
+	src="https://cdn.tiny.cloud/1/2xpj4d22abg4qy6hhumahoojfub87knrquwrq4mbmjj9saoo/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
 	$(function() {
 		var plugins = [ "advlist", "autolink", "lists", "link", "image",
@@ -114,8 +113,7 @@ th {
 	<%@ include file="/WEB-INF/views/include/header.jsp"%>
 
 	<div id="wrap">
-		<form action='${pageContext.request.contextPath}/board/add.do'
-			method='post'>
+		<form action='${pageContext.request.contextPath}/board/add.do' method='post'>
 			<table class="table" id="box">
 				<tbody>
 					<tr>
