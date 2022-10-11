@@ -57,10 +57,18 @@ a{
 }
 .h1 {
 	font-size: 30px;
-	align-content: center; 
+	margin-bottom: 50px;
+	margin-top: 50px;
 }
 
 .h3 {
 	font-size: 18px; 
-	align-content: center; 
+}
+.hei{
+	width: 1920px;
+	height: 100%;
+}
+.carousel-inner div img{
+	width: 1920px;
+	height: 1080px;
 }
