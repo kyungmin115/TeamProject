@@ -69,6 +69,7 @@ header ul li a{
 .line{
 	width: 1920px;
 	border-bottom: 0.5px solid rgb(199, 199, 199);
+	background: white;
 }
 .imag{
 	padding-top: 0px;

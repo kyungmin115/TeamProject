@@ -17,9 +17,16 @@ public class RootController {
 	}
 	
 	@RequestMapping(value="/views.do")
-	public String main1() throws Exception{
+	public String introduction() throws Exception{
 		
 		return "introduction";
 	}
+	
+	@RequestMapping(value="/views2.do")
+	public String main1() throws Exception{
+		
+		return "NewFile";
+	}
+	
 	
 }
