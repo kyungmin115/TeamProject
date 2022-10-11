@@ -93,6 +93,7 @@ a{
 	font-weight: 600;
 	font-size: 1.25em;
 	color: white;
+	text-transform: uppercase;
 }
 .box img{
 	padding-left: 15px;
@@ -102,7 +103,7 @@ a{
 .box p{
 	font-family: 'Nanum Brush Script';
 	font-weight: 600;
-	font-size: 18px;
+	font-size: 13.5px;
 	text-align: center;
 	line-height: 25px;
 }

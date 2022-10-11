@@ -21,5 +21,9 @@ public interface ProductDao {
 	public List<ProductVO> selectEvent(SearchCriteria scri);
 
 	public List<ProductVO> category(SearchCriteria scri);
+
+	public List<ProductVO> selectList1(SearchCriteria scri);
+
+	public List<ProductVO> selectList2(SearchCriteria scri);
 	
 }

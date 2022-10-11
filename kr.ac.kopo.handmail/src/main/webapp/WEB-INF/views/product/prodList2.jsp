@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="/resources/css/include.css" type="text/css"/>
 <link rel="stylesheet" href="/resources/css/main.css" type="text/css"/>
 <link rel="stylesheet" href="/resources/css/slide.css" type="text/css"/>
+<link rel="stylesheet" href="/resources/css/gongj.css" type="text/css"/>
 <style type="text/css">
 			li {list-style: none; float: left; padding: 6px;}
 </style>
@@ -52,56 +53,62 @@
 	</div>
 <div class="line">
 	<div class="bbox">
-			<div class="chu">추천상품</div>
+			<div class="chu">상품</div>
 		<div class="bot-box1"><button class="botl"><img src="/resources/images/main/오른쪽버튼.png" alt="오른쪽버튼" class="bot-right"></button></div>
 		    <div class="outer">
 		        <div class="iner">
-		        	<c:forEach var="item" items="${result}">
-            			
 		            <section class="slide">
+		        	<c:forEach var="item" items="${result}">
 		                <div class="box"><div class="mini">${item.store}</div>
 		                <div><img src="/pyony/${item.imgName}" alt="" class="img"></div>
 		                <p>${item.prodName}</p>
 		                <p>${item.prodPrice}</p>
 		                </div>
-		                <div class="box"><div class="mini">GS25</div></div>
-		                <div class="box"><div class="mini">세븐일레븐</div></div>
-		                <div class="box"><div class="mini">이마트24</div></div>
-		            </section>
-		            <section class="slide">
-		                <div class="box"><div class="mini">CU</div>
-		                <div><img src="/resources/images/main/음료.png" alt=""></div>
-		                <p>롯)팔성사이다</p>
-		                <p>8,000원</p>
-		                </div>
-		                <div class="box"><div class="mini">GS25</div></div>
-		                <div class="box"><div class="mini">세븐일레븐</div></div>
-		                <div class="box"><div class="mini">이마트24</div></div>
-		            </section>
-		            <section class="slide">
-		                <div class="box"><div class="mini">CU</div>
-		                <div><img src="/resources/images/main/식품.png" alt=""></div>
-		                <p>롯)구성사이다</p>
-		                <p>9,000원</p>
-		                </div>
-		                <div class="box"><div class="mini">GS25</div></div>
-		                <div class="box"><div class="mini">세븐일레븐</div></div>
-		                <div class="box"><div class="mini">이마트294</div></div>
-		            </section>
 		            </c:forEach>
+		            </section>
+		            <section class="slide">
+		            <c:forEach var="item" items="${result1}">
+						<div class="box"><div class="mini">${item.store}</div>
+		                <div><img src="/pyony/${item.imgName}" alt="" class="img"></div>
+		                <p>${item.prodName}</p>
+		                <p>${item.prodPrice}</p>
+		                </div>
+		            </c:forEach>
+		            </section>
+		            <section class="slide">
+		            <c:forEach var="item" items="${result2}">
+						<div class="box"><div class="mini">${item.store}</div>
+		                <div><img src="/pyony/${item.imgName}" alt="" class="img"></div>
+		                <p>${item.prodName}</p>
+		                <p>${item.prodPrice}</p>
+		                </div>
+		            </c:forEach>
+		            </section>
 		        </div>
 		    </div>
 		    <div class="bot-box2"><button class="botr"><img src="/resources/images/main/왼쪽버튼.png" alt="왼쪽버튼" class="bot-left"></button></div>
 		</div>
 </div>
-
-	<div class="noti">
-		<div class="notibox">
-      		<h1 style="font-size: 20px;">공지사항</h1>
-		    <a href="#" class="">더보기</a>
-      	</div>
-    </div>
-	
+<div class="gong"></div>
+<div class="gong"></div>
+<div class="line">
+	<section class="gongj">
+        <div class="sahang">공지사항</div>
+        <div class="the"><a href="/board/list.do">+더보기</a></div>
+        <c:forEach var="vo" items="${board}" begin="0" end="5">		
+        <div class="neyong">
+            <div class="fl">
+                <div class="nob"><c:out value="${vo.boardNo}" /></div>
+                <div class="dat"><fmt:formatDate value="${vo.boardRegDate}" pattern="yyyy/MM/dd" /></div>
+            </div>
+            <div>
+                <div class="ta"><c:out value="${vo.boardWriter}" /></div>
+                <div class="ta"><c:out value="${vo.boardTitle}" /></div>
+            </div>
+        </div>
+        </c:forEach>
+    </section>
+</div>
 <%@ include file="/WEB-INF/views/include/footer.jsp" %>
 
 </body>

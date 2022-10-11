@@ -18,5 +18,9 @@ public interface ProductService {
 	List<ProductVO> selectEvent(SearchCriteria scri);
 
 	List<ProductVO> category(SearchCriteria scri);
+
+	List<ProductVO> selectList1(SearchCriteria scri);
+
+	List<ProductVO> selectList2(SearchCriteria scri);
 	
 }
