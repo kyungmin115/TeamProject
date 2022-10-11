@@ -1,10 +1,9 @@
 package kr.ac.kopo.controller;
 
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
-
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
@@ -50,9 +49,13 @@ public class MemberController {
 		
 		return "redirect:/product/log.do";
 	}
+	@GetMapping("login.do")
+	public String loginForm() {
+		return "index";
+	}
 	
 	@PostMapping("login.do")
-	public String login(MemberVO vo, HttpSession session, RedirectAttributes rttr ) throws Exception {
+	public String login(MemberVO vo, HttpSession session, RedirectAttributes rttr) throws Exception {
 		
 //		session.getAttribute("member");
 		MemberVO loginUser = memberService.login(vo);
@@ -63,7 +66,8 @@ public class MemberController {
 		} else {
 			session.setAttribute("member", null);
 			rttr.addFlashAttribute("msg", false);
-		}
+			}
+			 
 		
 		return "redirect:/product/log.do";
 		
