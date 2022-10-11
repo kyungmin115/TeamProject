@@ -11,6 +11,7 @@ public class BoardVO {
 	private Date boardRegDate;
 	private int boardCount;
 	private String noticeAt;
+	private int inqireCo;
 	
 	public int getBoardNo() {
 		return boardNo;
@@ -67,5 +68,14 @@ public class BoardVO {
 	public void setNoticeAt(String noticeAt) {
 		this.noticeAt = noticeAt;
 	}
+
+	public int getInqireCo() {
+		return inqireCo;
+	}
+
+	public void setInqireCo(int inqireCo) {
+		this.inqireCo = inqireCo;
+	}
+	
 	
 }

@@ -12,8 +12,9 @@ public interface BoardService {
 
 	int delBoard(int boardNo);
 
-	BoardVO selectBoard(int boardNo);
+	BoardVO selectBoard(BoardVO vo);
 
 	int updateBoard(BoardVO vo);
+
 
 }

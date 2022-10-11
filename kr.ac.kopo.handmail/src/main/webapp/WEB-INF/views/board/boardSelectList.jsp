@@ -10,12 +10,12 @@
 <title>손안의 편의점 지침서</title>
 
 <!-- BBS Style -->
-<link href="/resources/asset/BBSTMP_0000000000001/style.css"
-	rel="stylesheet" />
+<link href="/resources/asset/BBSTMP_0000000000001/style.css" rel="stylesheet" />
 <!-- 공통 Style -->
-<link href="/resources/asset/LYTTMP_0000000000000/style.css"
-	rel="stylesheet" />
+<link href="/resources/asset/LYTTMP_0000000000000/style.css" rel="stylesheet" />
+
 <link rel="stylesheet" href="/resources/css/include.css" type="text/css" />
+
 <link href="/resources/css/board.css" rel="stylesheet" />
 
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
@@ -56,10 +56,11 @@ width: 25%;
 						<table class="list_table">
 							<thead>
 								<tr>
-									<th>글번호</th>
-									<th>글제목</th>
-									<th>작성자</th>
-									<th>작성일</th>
+									<th class="num" scope="col">글번호</th>
+									<th class="tit" scope="col">글제목</th>
+									<th class="writer" scope="col">작성자</th>
+									<th class="date" scope="col">작성일</th>
+									<th class="hits" scope="col">조회수</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -69,6 +70,7 @@ width: 25%;
 										<td><a href="${pageContext.request.contextPath}/board/edit.do?boardNo=${VO.boardNo}"><c:out value="${VO.boardTitle}" /></a></td>
 										<td><c:out value="${VO.boardWriter}" /></td>
 										<td><fmt:formatDate value="${VO.boardRegDate}" pattern="yyyy/MM/dd" /><br></td>
+										<td><c:out value= "${VO.inqireCo}" /></td>
 									</tr>
 								</c:forEach>
 								<!-- 글이 없을 경우 -->

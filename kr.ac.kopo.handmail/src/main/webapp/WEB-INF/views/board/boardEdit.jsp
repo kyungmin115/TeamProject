@@ -17,7 +17,7 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <script src="https://cdn.tiny.cloud/1/2xpj4d22abg4qy6hhumahoojfub87knrquwrq4mbmjj9saoo/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-<script>
+<!-- <script>
 $(function(){
     var plugins = [
         "advlist", "autolink", "lists", "link", "image", "charmap", "print", "preview", "anchor",
@@ -92,11 +92,29 @@ $(function(){
     });
 });
 
-</script>
+</script> -->
 </head>
 <body>
 
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
+
+<div class="board_view">				
+				<dl class="tit_view">
+					<dt>제목</dt>
+					<dd><c:out value="${boardVO.boardTitle}"/></dd>
+				</dl>
+				<dl class="info_view2">
+					<dt>작성자ID</dt>
+					<dd><c:out value="${boardVO.boardWriter}"/></dd>
+					<dt>작성일</dt>
+			<dd><fmt:formatDate value="${boardVO.boardRegDate}" pattern="yyyy-MM-dd"/></dd>
+					<dt>조회수</dt>
+					<dd><c:out value="${boardVO.inqireCo}" /></dd>
+				</dl>
+				<div class="view_cont">
+					<c:out value="${result.boardContent}" escapeXml="false" />
+				</div>
+			</div>
 	
 <form action='${pageContext.request.contextPath}/board/edit.do' method='post'>
 	<input type="hidden" name="boardNo" value="${boardVO.boardNo}"/>

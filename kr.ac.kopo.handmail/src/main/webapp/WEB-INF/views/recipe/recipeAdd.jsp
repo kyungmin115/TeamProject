@@ -33,7 +33,7 @@ $(function(){
 
     tinymce.init({
     	language: "ko_KR", //한글판으로 변경
-        selector: '#boardContent',
+        selector: '#recipeContent',
         height: 500,
         menubar: false,
         plugins: plugins,
