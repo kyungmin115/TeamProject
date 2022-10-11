@@ -109,3 +109,12 @@ section div a img{
 section div a img:hover{
 	border: 2px solid #87CEEA;
 }
+.noti {
+	max-width: 1920px;
+	width: 1400px;
+	margin: 0 auto;
+}
+.notibox {
+	display: flex;
+	justify-content: space-between;
+}

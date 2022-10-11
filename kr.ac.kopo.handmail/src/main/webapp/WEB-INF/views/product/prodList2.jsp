@@ -95,9 +95,12 @@
 		</div>
 </div>
 
-	<section class="secti">
-	
-	</section>
+	<div class="noti">
+		<div class="notibox">
+      		<h1 style="font-size: 20px;">공지사항</h1>
+		    <a href="#" class="">더보기</a>
+      	</div>
+    </div>
 	
 <%@ include file="/WEB-INF/views/include/footer.jsp" %>
 
