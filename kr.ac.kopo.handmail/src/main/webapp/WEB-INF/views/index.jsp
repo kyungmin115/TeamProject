@@ -59,12 +59,14 @@
 			<c:if test="${msg == false}">
 				<p style="color: red;">로그인 실패! 아이디와 비밀번호 확인해주세요!.</p>
 			</c:if>
-		<c:if test="${msg != false}">
-				<p>${member.memName}님 환영 합니다.</p>
-				<button id="logoutBtn" type="button">로그아웃</button>
-		</c:if>
 	    </section>
 	</form>
+	</c:if>
+	<c:if test="${member != null}">
+		<div>
+			<p>${member.memName}님 환영 합니다.</p>
+			<button id="logoutBtn" type="button">로그아웃</button>
+		</div>
 	</c:if>
 	</div>
 <%@ include file="/WEB-INF/views/include/footer.jsp" %>

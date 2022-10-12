@@ -17,7 +17,7 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <script src="https://cdn.tiny.cloud/1/2xpj4d22abg4qy6hhumahoojfub87knrquwrq4mbmjj9saoo/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-<!-- <script>
+<script>
 $(function(){
     var plugins = [
         "advlist", "autolink", "lists", "link", "image", "charmap", "print", "preview", "anchor",
@@ -35,7 +35,7 @@ $(function(){
     tinymce.init({
     	language: "ko_KR", //한글판으로 변경
         selector: '#boardContent',
-        height: 500,
+        height: 650,
         menubar: false,
         plugins: plugins,
         toolbar: edit_toolbar,
@@ -92,13 +92,13 @@ $(function(){
     });
 });
 
-</script> -->
+</script>
 </head>
 <body>
 
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
 
-<div class="board_view">				
+<%-- <div class="board_view">				
 				<dl class="tit_view">
 					<dt>제목</dt>
 					<dd><c:out value="${boardVO.boardTitle}"/></dd>
@@ -115,7 +115,7 @@ $(function(){
 					<c:out value="${result.boardContent}" escapeXml="false" />
 				</div>
 			</div>
-	
+	 --%>
 <form action='${pageContext.request.contextPath}/board/edit.do' method='post'>
 	<input type="hidden" name="boardNo" value="${boardVO.boardNo}"/>
 	<table class="table">
