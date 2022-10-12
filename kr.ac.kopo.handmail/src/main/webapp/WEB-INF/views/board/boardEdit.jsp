@@ -35,7 +35,7 @@ $(function(){
     tinymce.init({
     	language: "ko_KR", //한글판으로 변경
         selector: '#boardContent',
-        height: 650,
+        height: 575,
         menubar: false,
         plugins: plugins,
         toolbar: edit_toolbar,
@@ -93,6 +93,17 @@ $(function(){
 });
 
 </script>
+<style type="text/css">
+th {
+	width: 100px;
+	background-color: white;
+}
+
+#box {
+	width: 1200px;
+	margin: 0 auto;
+}
+</style>
 </head>
 <body>
 
@@ -118,28 +129,27 @@ $(function(){
 	 --%>
 <form action='${pageContext.request.contextPath}/board/edit.do' method='post'>
 	<input type="hidden" name="boardNo" value="${boardVO.boardNo}"/>
-	<table class="table">
+	<table class="table" id="box">
 		<tbody>
 			<tr>
-				<td>제목</td>
-				<td><input type='text' name='boardTitle' value="${boardVO.boardTitle}" class="form-control"/></td>			
-			</tr>
-			<tr>
-				<td>내용</td>
-				<td><textarea id = "boardContent"  rows="10" cols="30" name="boardContent" class="form-control">${boardVO.boardContent}</textarea></td>			
-			</tr>
-			<tr>
-				<td>작성자</td>
+				<th>작성자</th>
 				<td><c:out value="${boardVO.boardWriter}"/></td>
 			</tr>
 			<tr>
-				<td>작성일</td>
+				<th>작성일</th>
 				<td><fmt:formatDate value="${boardVO.boardRegDate}" pattern="yyyy/MM/dd"/></td>
+			</tr>
+			<tr>
+				<th>제목</th>
+				<td><input type='text' name='boardTitle' value="${boardVO.boardTitle}" class="form-control"/></td>			
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td><textarea id = "boardContent"  rows="10" cols="30" name="boardContent" class="form-control">${boardVO.boardContent}</textarea></td>			
 			</tr>
 		</tbody>
 	</table>
-	<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-		<a href='${pageContext.request.contextPath}/board/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>	
+	<div class="btn-cont ar">
 		<input type="submit" value="수정" class="btn btn-outline-primary" >	
 		<a href='${pageContext.request.contextPath}/board/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>	
 		<a href='${pageContext.request.contextPath}/board/del.do?boardNo=${boardVO.boardNo}'><input type="button" value="삭제" class="btn btn-outline-danger"></a>
