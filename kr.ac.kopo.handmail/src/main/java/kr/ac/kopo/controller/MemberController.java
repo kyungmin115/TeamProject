@@ -69,7 +69,7 @@ public class MemberController {
 			}
 			 
 		
-		return "redirect:/product/log.do";
+		return "redirect:/product/list.do";
 		
 	}
 	

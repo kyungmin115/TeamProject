@@ -22,7 +22,7 @@
 <style type="text/css">
 
 th {
-width: 25%;
+width: 20%;
 }
 </style>
 <body>
@@ -65,7 +65,7 @@ width: 25%;
 							</thead>
 							<tbody>
 								<c:forEach var="VO" items="${result}">
-									<tr>
+									<tr class="th">
 										<td><c:out value="${VO.recipeNo}" /></td>
 										<td><a href="${pageContext.request.contextPath}/recipe/edit.do?recipeNo=${VO.recipeNo}"><c:out value="${VO.recipeTitle}" /></a></td>
 										<td><c:out value="${VO.recipeWriter}" /></td>

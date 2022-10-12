@@ -825,14 +825,14 @@ i[class^=ico-book] {
 .btn-cont:first-child,
 input[type=hidden] + .btn-cont { margin-top:0; }
 .btn-cont.al { text-align:left; padding:0;}
-.btn-cont.ar { text-align:right; padding:0;}
+.btn-cont.ar { text-align:right; padding:0; width:1200px;}
 .btn_all {overflow:hidden;width:100%;}
 .btn_c {text-align:center;margin:15px 0;overflow:hidden;}
 .btn_l {text-align:left;margin:15px 0;}
 .btn_r {text-align:right;}
-.btn-cont > * {
+/* .btn-cont > * {
 	margin-bottom:5px;
-}
+} */
 /* .bg_btn {overflow:hidden;width:100%;margin:15px 0}
 .bg_btn .fL {float:left;width:70%;}
 .bg_btn .fR {float:right;width:29%;text-align:right;} */
