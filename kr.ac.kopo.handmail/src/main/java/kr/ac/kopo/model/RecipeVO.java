@@ -11,6 +11,7 @@ public class RecipeVO {
 	private Date recipeRegDate;
 	private int recipeCount;
 	private String noticeAt;
+	private int inqireCo;
 	
 	public int getRecipeNo() {
 		return recipeNo;
@@ -54,5 +55,12 @@ public class RecipeVO {
 	public void setNoticeAt(String noticeAt) {
 		this.noticeAt = noticeAt;
 	}
+	public int getInqireCo() {
+		return inqireCo;
+	}
+	public void setInqireCo(int inqireCo) {
+		this.inqireCo = inqireCo;
+	}
+	
 	
 }

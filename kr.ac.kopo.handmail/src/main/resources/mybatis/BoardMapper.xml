@@ -52,6 +52,12 @@
 	  	WHERE BOARD_NO = #{boardNo}
 	</update>
 	
+	<update id="updateViewCnt" parameterType="BoardVO">
+		UPDATE BOARD SET
+			INQIRE_CO = INQIRE_CO + 1
+		WHERE BOARD_No = #{boardNo}
+	</update>
+	
 	<delete id="delBoard" parameterType="Integer">
 	  	DELETE FROM board WHERE board_no = #{boardNo}
 	</delete>

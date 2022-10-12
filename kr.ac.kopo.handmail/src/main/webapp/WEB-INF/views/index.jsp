@@ -23,9 +23,8 @@
 <div class="gong"></div>
 <div class="gong"></div>
 <div class="gong"></div>
-	<form name='memberVO' method="post" action="/member/login.do">
-	<c:choose>
-		<c:when test="${sessionScope.member == null}">
+<c:if test="${member == null}">
+	<form name='member' method="post" action="/member/login.do">
 		<section class="midd" style="flex: auto;">
 	        <div class="becc">
 	        	<div>
@@ -60,17 +59,14 @@
 			<c:if test="${msg == false}">
 				<p style="color: red;">로그인 실패! 아이디와 비밀번호 확인해주세요!.</p>
 			</c:if>
-	    </section>
-		</c:when>
-		<c:otherwise>
-			<div>
+		<c:if test="${msg != false}">
 				<p>${member.memName}님 환영 합니다.</p>
 				<button id="logoutBtn" type="button">로그아웃</button>
-			</div>
-		</c:otherwise>
-		</c:choose>
+		</c:if>
+	    </section>
 	</form>
-</div>
+	</c:if>
+	</div>
 <%@ include file="/WEB-INF/views/include/footer.jsp" %>
 
 </body>

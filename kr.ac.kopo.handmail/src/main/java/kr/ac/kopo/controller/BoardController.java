@@ -55,10 +55,10 @@ public class BoardController {
 	
 //	@RequestMapping(value ="edit.do", method = RequestMethod.GET)
 	@GetMapping("edit.do")
-	public String editForm(int boardNo, Map<String,Object> map) {
+	public String editForm(BoardVO vo, Map<String,Object> map) {
 		
-		BoardVO vo = boardService.selectBoard(boardNo);
-		map.put("boardVO", vo);
+		BoardVO bvo = boardService.selectBoard(vo);
+		map.put("boardVO", bvo);
 		
 		return "board/boardEdit";
 		

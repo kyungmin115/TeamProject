@@ -19,4 +19,8 @@ public interface BoardDao {
 
 	int updateBoard(BoardVO vo);
 	
+	void updateViewCnt(BoardVO vo);
+
+	BoardVO selectBoard(BoardVO vo);
+	
 }

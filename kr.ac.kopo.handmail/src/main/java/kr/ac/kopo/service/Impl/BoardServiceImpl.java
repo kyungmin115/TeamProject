@@ -35,9 +35,10 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public BoardVO selectBoard(int boardNo) {
+	public BoardVO selectBoard(BoardVO vo) {
 		
-		return boardDao.selectBoard(boardNo);
+		
+		return boardDao.selectBoard(vo);
 	}
 
 	@Override
@@ -45,5 +46,6 @@ public class BoardServiceImpl implements BoardService {
 		
 		return boardDao.updateBoard(vo);
 	}
+
 
 }
