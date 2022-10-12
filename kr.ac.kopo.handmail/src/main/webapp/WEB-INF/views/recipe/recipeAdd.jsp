@@ -34,7 +34,7 @@ $(function(){
     tinymce.init({
     	language: "ko_KR", //한글판으로 변경
         selector: '#recipeContent',
-        height: 500,
+        height: 650,
         menubar: false,
         plugins: plugins,
         toolbar: edit_toolbar,
@@ -92,33 +92,44 @@ $(function(){
 });
 
 </script>
+<style type="text/css">
+th {
+	width: 100px;
+	background-color: white;
+}
+
+#box {
+	width: 1200px;
+	margin: 0 auto;
+}
+</style>
 </head>
 <body>
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
 
 <div id="wrap">
-<h1>게시글작성</h1>
-
-<form action='${pageContext.request.contextPath}/recipe/add.do' method='post'>
-<table class="table">
-	<tbody>
-		<tr>
-			<td>제목</td>
-			<td><input type='text' name = 'recipeTitle' class="form-control"/></td>			
-		</tr>
-		<tr>
-			<td>내용</td>
-			<td><textarea id = "recipeContent"  rows="10" cols="30" name="recipeContent" class="form-control"></textarea></td>			
-		</tr>
-
-	</tbody>
-</table>
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-<a href='${pageContext.request.contextPath}/recipe/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>
-
-<input type='submit' value="등록" class="btn btn-outline-primary">
-</div>
-</form>
+	<form action='${pageContext.request.contextPath}/recipe/add.do' method='post'>
+		<table class="table" id="box">
+			<tbody>
+				<tr>
+					<th>제목</th>
+					<td><input type='text' name = 'recipeTitle' class="form-control"/></td>			
+				</tr>
+				<tr>
+					<th>내용</th>
+					<td><textarea id = "recipeContent"  rows="10" cols="30" name="recipeContent" class="form-control"></textarea></td>			
+				</tr>
+		
+			</tbody>
+		</table>
+		<div class="btn-cont ar">
+			<a href='${pageContext.request.contextPath}/recipe/list.do'>
+				<input type="button" value="목록" class="btn btn-outline-primary">
+			</a>
+		
+			<input type='submit' value="등록" class="btn btn-outline-primary">
+		</div>
+	</form>
 </div>
 
 
