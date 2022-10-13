@@ -62,7 +62,7 @@
 		                <div class="box"><div class="mini">${item.store}</div>
 		                <div><img src="/pyony/${item.imgName}" alt="" class="img"></div>
 		                <p>${item.prodName}</p>
-		                <p>${item.prodPrice}</p>
+		                <p>${item.prodPrice}\</p>
 		                </div>
 		            </c:forEach>
 		            </section>
@@ -71,7 +71,7 @@
 						<div class="box"><div class="mini">${item.store}</div>
 		                <div><img src="/pyony/${item.imgName}" alt="" class="img"></div>
 		                <p>${item.prodName}</p>
-		                <p>${item.prodPrice}</p>
+		                <p>${item.prodPrice}\</p>
 		                </div>
 		            </c:forEach>
 		            </section>
@@ -80,7 +80,7 @@
 						<div class="box"><div class="mini">${item.store}</div>
 		                <div><img src="/pyony/${item.imgName}" alt="" class="img"></div>
 		                <p>${item.prodName}</p>
-		                <p>${item.prodPrice}</p>
+		                <p>${item.prodPrice}\</p>
 		                </div>
 		            </c:forEach>
 		            </section>

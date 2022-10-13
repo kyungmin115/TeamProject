@@ -128,7 +128,7 @@ a{
 	display: table;
 }
 .mid{
-	display: table-cell;
+/* 	display: table-cell; */
 	vertical-align: middle;
 }
 .sel{
