@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
 
 <div class="line">
     <header class="hed">
@@ -14,7 +13,14 @@
             <li class="mid"><a href="/recipe/list.do">추천 레시피</a></li>
             <li class="mid"></li>
             <li class="mid"></li>
-            <li class=""><a href="../product/log.do"><img src="/resources/images/header/로그인버튼.png" alt="로그인" style="width: 40px"></a></li> 
+            <li class="" style="display: flex;flex-direction: column-reverse;">
+            	<c:if test="${member != null}">
+						${member.memName}님 환영 합니다.
+				</c:if>
+            	<a href="../member/login.do">
+            		<img src="/resources/images/header/로그인버튼.png" alt="로그인" style="width: 40px">
+            	</a>
+            </li> 
         </ul>
     </header>
     </div>

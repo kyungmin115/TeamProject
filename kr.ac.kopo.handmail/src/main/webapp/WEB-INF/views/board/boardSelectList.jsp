@@ -79,6 +79,10 @@ width: 20%;
 										<td colspan="8">검색 데이터가 없습니다.</td>
 									</tr>
 								</c:if>
+								<div class="paging" value="${pageContext.request.contextPath}/board/list.do">
+								
+								</div>
+					
 							</tbody>
 						</table>
 					</div>

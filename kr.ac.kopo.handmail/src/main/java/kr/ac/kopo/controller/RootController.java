@@ -14,15 +14,15 @@ public class RootController {
 
 	@RequestMapping("/product/log.do")
 	String index(HttpSession session, Map<String, Object> map) {
-		MemberVO member = new MemberVO();
-		System.out.println("test");
-		
-		if(session.getAttribute("member") != null) {
-			member = (MemberVO) session.getAttribute("member");
-		}
-		
-		map.put("member", member);
-		
+//		MemberVO member = new MemberVO();
+//		System.out.println("test");
+//		
+//		if(session.getAttribute("member") != null) {
+//			member = (MemberVO) session.getAttribute("member");
+//		}
+//		
+//		map.put("loggedUser", member);
+//		
 		return "index";
 	}
 	@RequestMapping(value="/main.do")

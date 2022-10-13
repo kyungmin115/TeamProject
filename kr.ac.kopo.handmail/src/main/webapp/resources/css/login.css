@@ -127,6 +127,7 @@ a{
 	border-left:1px;
 	border-radius: 3px;
     width: 250px;
+    height: 30px;
 }
 input:focus {
 	outline: none !important;

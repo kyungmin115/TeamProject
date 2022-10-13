@@ -92,6 +92,21 @@ $(function(){
     });
 });
 
+$(document).ready(function(){
+	//삭제
+	$("#btnDel").click(function() {
+		if (!confirm("삭제하시겠습니까?")) {
+			return false;
+		}
+	});
+	
+	//수정
+	$("#btnUpt").click(function() {
+		if (!confirm("수정하시겠습니까?")) {
+			return false;
+		}
+	});
+});
 </script>
 <style type="text/css">
 th {
@@ -150,9 +165,9 @@ th {
 		</tbody>
 	</table>
 	<div class="btn-cont ar">
-		<input type="submit" value="수정" class="btn btn-outline-primary" >	
+		<input type="submit" value="수정" class="btn btn-outline-primary" id="btnUpt">	
 		<a href='${pageContext.request.contextPath}/board/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>	
-		<a href='${pageContext.request.contextPath}/board/del.do?boardNo=${boardVO.boardNo}'><input type="button" value="삭제" class="btn btn-outline-danger"></a>
+		<a href='${pageContext.request.contextPath}/board/del.do?boardNo=${boardVO.boardNo}'><input type="button" value="삭제"  id="btnDel" class="btn btn-outline-danger"></a>
 	</div>
 </form>
 

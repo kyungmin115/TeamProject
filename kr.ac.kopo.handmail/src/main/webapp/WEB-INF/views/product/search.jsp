@@ -10,6 +10,8 @@
 <title>손안의 편의점 지침서</title>
 <link rel="stylesheet" href="/resources/css/include.css" type="text/css"/>
 <link rel="stylesheet" href="/resources/css/search.css?after" type="text/css"/>
+
+
 <style type="text/css">
 			li {list-style: none; float: left; padding: 6px;}
 </style>
@@ -70,7 +72,7 @@
  	
  </table>
 </div>
-<div class="cont">
+<div class="cont" id="paging">
   <ul>
     <c:if test="${pageMaker.prev}">
     	<li><a href="search.do${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>

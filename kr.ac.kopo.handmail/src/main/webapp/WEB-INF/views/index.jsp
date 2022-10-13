@@ -14,8 +14,12 @@
 	$(document).ready(function(){
 		$("#logoutBtn").on("click", function(){
 			location.href="/member/logout.do";
-		})		
-	})
+		})
+		
+	<c:if test="${msg == false}">
+		alert("로그인 실패! 아이디와 비밀번호 확인해주세요!")
+	</c:if>
+});
 </script>
 <body>
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
@@ -26,13 +30,13 @@
 	
 		<form name='member' method="post" action="/member/login.do">
 			<section class="midd" style="flex: auto;">
-				<c:if test="${member.memName == null}">
+				<c:if test="${member == null}">
 			        <div class="becc">
 			        	<div>
-			        	<img alt="" src="/resources/images/main/과자류.png" class="smal">
-			        	<img alt="" src="/resources/images/main/음료.png" class="smal">
-			        	<img alt="" src="/resources/images/main/아이스크림.png" class="smal">
-			        	<img alt="" src="/resources/images/main/식품.png" class="smal">
+				        	<img alt="" src="/resources/images/main/과자류.png" class="smal">
+				        	<img alt="" src="/resources/images/main/음료.png" class="smal">
+				        	<img alt="" src="/resources/images/main/아이스크림.png" class="smal">
+				        	<img alt="" src="/resources/images/main/식품.png" class="smal">
 			        	</div>
 			        	<p class="logi">로그인</p>
 			            <table class="tabl">
@@ -52,19 +56,27 @@
 					</div>
 			        <div class="rel">
 			            <button type="submit" class="logbox">로그인</button>
-			        <ul class="sel">
-			            <li class="sele"><a href="/member/fix.do">비밀번호 변경</a></li>
-			            <li class="sele"><a href="/member/join.do">회원가입</a></li>
-			        </ul>
+				        <ul class="sel">
+				            <li class="sele"><a href="/member/fix.do">회원정보 변경</a></li>
+				            <li class="sele"><a href="/member/join.do">회원가입</a></li>
+				        </ul>
 			        </div>
-					<c:if test="${msg == false}">
-						<p style="color: red;">로그인 실패! 아이디와 비밀번호 확인해주세요!.</p>
-					</c:if>
 				</c:if>
-				<c:if test="${member.memName != null}">
-					<div style="padding-top: 250px;">
-						<p>${member.memName}님 환영 합니다.</p>
-						<button id="logoutBtn" type="button">로그아웃</button>
+				<c:if test="${msg == false}">
+					<p style="color: red;">로그인 실패! 아이디와 비밀번호 확인해주세요!</p>
+				</c:if>
+				<c:if test="${member != null}">
+					<div style="padding-top: 50px;">
+						<div>
+				        	<img alt="" src="/resources/images/main/과자류.png" class="smal">
+				        	<img alt="" src="/resources/images/main/음료.png" class="smal">
+				        	<img alt="" src="/resources/images/main/아이스크림.png" class="smal">
+				        	<img alt="" src="/resources/images/main/식품.png" class="smal">
+			        	</div>
+						<p style="padding-top: 100px;">${member.memName}님으로 로그인중.</p>
+						<div class="rel">
+							<button id="logoutBtn" class="logbox" type="button">로그아웃</button>
+						</div>
 					</div>
 				</c:if>
 		    </section>

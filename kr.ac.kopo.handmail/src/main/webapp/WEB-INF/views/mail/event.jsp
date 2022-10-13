@@ -81,7 +81,7 @@
  					</p>
                     <img src="/pyony/${item.imgName}" alt="" class="img">
                    	<p class="mini">${item.prodName}</p>
-                    <p class="nomal">${item.prodPrice}</p>
+                    <p class="nomal">${item.prodPrice}원</p>
                 </a>
             </div>            
         	</c:forEach>
