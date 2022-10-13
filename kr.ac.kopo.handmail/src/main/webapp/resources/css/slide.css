@@ -53,7 +53,6 @@ table {
 	border-spacing: 0;
 }
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR&display=swap');
 a{
 	text-decoration: none;
 }
@@ -89,7 +88,6 @@ a{
 	border-top-right-radius: 14px;
 	text-align: center;
 	line-height: 40px;
-	font-family: 'Nanum Brush Script';
 	font-weight: 600;
 	font-size: 1.25em;
 	color: white;
@@ -101,8 +99,7 @@ a{
 	height: 180px;
 }
 .box p{
-	font-family: 'Nanum Brush Script';
-	font-weight: 600;
+	font-family: 'Noto Sans KR', sans-serif;
 	font-size: 13.5px;
 	text-align: center;
 	line-height: 25px;
