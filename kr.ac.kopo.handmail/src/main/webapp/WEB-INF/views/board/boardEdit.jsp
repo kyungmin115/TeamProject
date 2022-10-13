@@ -17,7 +17,7 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <script src="https://cdn.tiny.cloud/1/2xpj4d22abg4qy6hhumahoojfub87knrquwrq4mbmjj9saoo/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-<!-- <script>
+<script>
 $(function(){
     var plugins = [
         "advlist", "autolink", "lists", "link", "image", "charmap", "print", "preview", "anchor",
@@ -35,7 +35,7 @@ $(function(){
     tinymce.init({
     	language: "ko_KR", //한글판으로 변경
         selector: '#boardContent',
-        height: 500,
+        height: 575,
         menubar: false,
         plugins: plugins,
         toolbar: edit_toolbar,
@@ -92,13 +92,39 @@ $(function(){
     });
 });
 
-</script> -->
+$(document).ready(function(){
+	//삭제
+	$("#btnDel").click(function() {
+		if (!confirm("삭제하시겠습니까?")) {
+			return false;
+		}
+	});
+	
+	//수정
+	$("#btnUpt").click(function() {
+		if (!confirm("수정하시겠습니까?")) {
+			return false;
+		}
+	});
+});
+</script>
+<style type="text/css">
+th {
+	width: 100px;
+	background-color: white;
+}
+
+#box {
+	width: 1200px;
+	margin: 0 auto;
+}
+</style>
 </head>
 <body>
 
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
 
-<div class="board_view">				
+<%-- <div class="board_view">				
 				<dl class="tit_view">
 					<dt>제목</dt>
 					<dd><c:out value="${boardVO.boardTitle}"/></dd>
@@ -115,34 +141,33 @@ $(function(){
 					<c:out value="${result.boardContent}" escapeXml="false" />
 				</div>
 			</div>
-	
+	 --%>
 <form action='${pageContext.request.contextPath}/board/edit.do' method='post'>
 	<input type="hidden" name="boardNo" value="${boardVO.boardNo}"/>
-	<table class="table">
+	<table class="table" id="box">
 		<tbody>
 			<tr>
-				<td>제목</td>
-				<td><input type='text' name='boardTitle' value="${boardVO.boardTitle}" class="form-control"/></td>			
-			</tr>
-			<tr>
-				<td>내용</td>
-				<td><textarea id = "boardContent"  rows="10" cols="30" name="boardContent" class="form-control">${boardVO.boardContent}</textarea></td>			
-			</tr>
-			<tr>
-				<td>작성자</td>
+				<th>작성자</th>
 				<td><c:out value="${boardVO.boardWriter}"/></td>
 			</tr>
 			<tr>
-				<td>작성일</td>
+				<th>작성일</th>
 				<td><fmt:formatDate value="${boardVO.boardRegDate}" pattern="yyyy/MM/dd"/></td>
+			</tr>
+			<tr>
+				<th>제목</th>
+				<td><input type='text' name='boardTitle' value="${boardVO.boardTitle}" class="form-control"/></td>			
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td><textarea id = "boardContent"  rows="10" cols="30" name="boardContent" class="form-control">${boardVO.boardContent}</textarea></td>			
 			</tr>
 		</tbody>
 	</table>
-	<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+	<div class="btn-cont ar">
+		<input type="submit" value="수정" class="btn btn-outline-primary" id="btnUpt">	
 		<a href='${pageContext.request.contextPath}/board/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>	
-		<input type="submit" value="수정" class="btn btn-outline-primary" >	
-		<a href='${pageContext.request.contextPath}/board/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>	
-		<a href='${pageContext.request.contextPath}/board/del.do?boardNo=${boardVO.boardNo}'><input type="button" value="삭제" class="btn btn-outline-danger"></a>
+		<a href='${pageContext.request.contextPath}/board/del.do?boardNo=${boardVO.boardNo}'><input type="button" value="삭제"  id="btnDel" class="btn btn-outline-danger"></a>
 	</div>
 </form>
 

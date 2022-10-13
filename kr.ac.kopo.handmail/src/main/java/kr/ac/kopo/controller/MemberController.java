@@ -57,26 +57,30 @@ public class MemberController {
 	@PostMapping("login.do")
 	public String login(MemberVO vo, HttpSession session, RedirectAttributes rttr) throws Exception {
 		
-//		session.getAttribute("member");
+		session.getAttribute("member");
 		MemberVO loginUser = memberService.login(vo);
+		if (loginUser == null) {
+			rttr.addFlashAttribute("msg", false);
+			return "redirect:/member/login.do";
+		}
 		boolean pwdMatch = pwdEncoder.matches(vo.getMemPass(), loginUser.getMemPass());
-
-		if(loginUser != null && pwdMatch == true) {
+		if (pwdMatch == true) {
 			session.setAttribute("member", loginUser);
 		} else {
 			session.setAttribute("member", null);
 			rttr.addFlashAttribute("msg", false);
+			return "forward:/member/login.do";
 			}
 			 
 		
-		return "redirect:/product/log.do";
+		return "redirect:/product/list.do";
 		
 	}
 	
 	@GetMapping("logout.do")
 	public String logout(HttpSession session) throws Exception {
 		session.invalidate();
-		return "redirect:/product/list.do";
+		return "redirect:/member/login.do";
 	}
 	
 	@GetMapping("update.do")

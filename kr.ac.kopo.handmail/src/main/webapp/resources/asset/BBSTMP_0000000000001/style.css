@@ -51,18 +51,10 @@ div ~ #bbs_wrap { margin-top:30px; }
 #bbs_wrap .list_table { table-layout:fixed;width: 100%;border-collapse: collapse;color:#555; border-top:2px solid #545f80; }
 #bbs_wrap .list_table th { border-bottom:1px solid #ddd;background:#f7f7f7;padding-top:7px; padding-bottom:7px; text-align:center; font-weight:400; color:#000;}
 #bbs_wrap .list_table td { border-bottom:1px solid #ddd;padding-top:7px; padding-bottom:7px; text-align:center; font-weight:400;}
-#bbs_wrap .list_table .check { width:55px; }
-#bbs_wrap .list_table .num { width:50px; }
-#bbs_wrap .list_table .class { width:100px; }
-#bbs_wrap .list_table .tit { width:auto;padding-left:10px;overflow:hidden;text-align:left; }
+#bbs_wrap .list_table .tit { padding-left:10px;overflow:hidden;text-align:left; }
 #bbs_wrap .list_table th.tit { text-align:center; }
 #bbs_wrap .list_table .tit a { color:#000; }
 #bbs_wrap .list_table .tit.end a { color:#999; }
-#bbs_wrap .list_table .state { width:61px; }
-#bbs_wrap .list_table .writer { width:100px; }
-#bbs_wrap .list_table .file { width:50px; }
-#bbs_wrap .list_table .date { width:120px; }
-#bbs_wrap .list_table .hits { width:60px; }
 #bbs_wrap .list_table tbody td { text-align:center; line-height:35px; }
 #bbs_wrap .list_table tbody td.tit { text-align:left; line-height:15px;line-height:1.7em }
 #bbs_wrap .list_table tbody td.work { text-align:left;padding-left:10px; }

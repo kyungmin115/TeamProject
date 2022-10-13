@@ -64,7 +64,7 @@
 .wrap .btndup {
 	border-radius: 20px;
 	padding: 2px;
-	width: 130px;
+	width: 120px;
 }
 .wrap .btndup:hover {
 	background-color: #37D243;
@@ -84,6 +84,7 @@ input {
 	border-left:1px;
 	border-radius: 3px;
 	width: 250px;
+	height: 35px;
 }
 input:focus {
 	outline: none !important;

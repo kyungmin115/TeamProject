@@ -34,8 +34,8 @@ $(function(){
 
     tinymce.init({
     	language: "ko_KR", //한글판으로 변경
-        selector: '#boardContent',
-        height: 500,
+        selector: '#recipeContent',
+        height: 575,
         menubar: false,
         plugins: plugins,
         toolbar: edit_toolbar,
@@ -92,7 +92,34 @@ $(function(){
     });
 });
 
+$(document).ready(function(){
+	//삭제
+	$("#btnDel").click(function() {
+		if (!confirm("삭제하시겠습니까?")) {
+			return false;
+		}
+	});	
+	
+	//수정
+	$("#btnUpt").click(function() {
+		if (!confirm("수정하시겠습니까?")) {
+			return false;
+		}
+	});
+});
+
 </script>
+<style type="text/css">
+th {
+	width: 100px;
+	background-color: white;
+}
+
+#box {
+	width: 1200px;
+	margin: 0 auto;
+}
+</style>
 </head>
 
 <body>
@@ -102,35 +129,34 @@ $(function(){
 	<form action='${pageContext.request.contextPath}/recipe/edit.do' method='post'>
 	
 			<input type="hidden" name="recipeNo" value="${recipeVO.recipeNo}"/>
-<table class="table">
+<table class="table" id="box">
 	<tbody>
 		<tr>
-			<td>제목</td>
-			<td><input type='text' name='recipeTitle' value="${recipeVO.recipeTitle}" class="form-control"/></td>			
-		</tr>
-		<tr>
-			<td>내용</td>
-			<td><textarea id = "recipeContent"  rows="10" cols="30" name="recipeContent" class="form-control">${recipeVO.recipeContent}</textarea></td>			
-		</tr>
-		<tr>
-			<td>작성자</td>
+			<th>작성자</th>
 			<td><c:out value="${recipeVO.recipeWriter}"/></td>
 		</tr>
 		<tr>
-			<td>작성일</td>
+			<th>작성일</th>
 			<td><fmt:formatDate value="${recipeVO.recipeRegDate}" pattern="yyyy/MM/dd"/></td>
+		</tr>
+		<tr>
+			<th>제목</th>
+			<td><input type='text' name='recipeTitle' value="${recipeVO.recipeTitle}" class="form-control"/></td>			
+		</tr>
+		<tr>
+			<th>내용</th>
+			<td><textarea id = "recipeContent"  rows="10" cols="30" name="recipeContent" class="form-control">${recipeVO.recipeContent}</textarea></td>			
 		</tr>
 
 	</tbody>
 </table>
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+<div class="btn-cont ar">
+
+<input type="submit" value="수정" class="btn btn-outline-primary" id="btnUpt">
+
 <a href='${pageContext.request.contextPath}/recipe/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>
 
-<input type="submit" value="수정" class="btn btn-outline-primary" >
-
-<a href='${pageContext.request.contextPath}/recipe/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>
-
-<a href='${pageContext.request.contextPath}/recipe/del.do?recipeNo=${recipeVO.recipeNo}'><input type="button" value="삭제" class="btn btn-outline-danger"></a>
+<a href='${pageContext.request.contextPath}/recipe/del.do?recipeNo=${recipeVO.recipeNo}'><input type="button" id="btnDel" value="삭제" class="btn btn-outline-danger"></a>
 
 </div>
 </form>

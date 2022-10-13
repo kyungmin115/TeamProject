@@ -36,7 +36,7 @@
 				.init({
 					language : "ko_KR", //한글판으로 변경
 					selector : '#boardContent',
-					height : 500,
+					height : 650,
 					menubar : false,
 					plugins : plugins,
 					toolbar : edit_toolbar,
