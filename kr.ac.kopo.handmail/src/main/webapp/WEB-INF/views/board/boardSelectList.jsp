@@ -87,17 +87,19 @@ width: 20%;
 										<td colspan="8">검색 데이터가 없습니다.</td>
 									</tr>
 								</c:if>
-								<div class="paging" value="${pageContext.request.contextPath}/board/list.do">
+<%-- 								<div class="paging" value="${pageContext.request.contextPath}/board/list.do"> --%>
 								
-								</div>
+<!-- 								</div> -->
 					
 							</tbody>
 						</table>
 					</div>
 				</div>
-				<div class="btn-cont ar">
-					<a href='${pageContext.request.contextPath}/board/add.do'><input type="button" value="글쓰기" class="btn btn-outline-primary"></a>
-				</div>
+				<c:if test="${member != null}">
+					<div class="btn-cont ar">
+						<a href='${pageContext.request.contextPath}/board/add.do'><input type="button" value="글쓰기" class="btn btn-outline-primary"></a>
+					</div>
+				</c:if>
 			</div>
 		</div>
 	</div>

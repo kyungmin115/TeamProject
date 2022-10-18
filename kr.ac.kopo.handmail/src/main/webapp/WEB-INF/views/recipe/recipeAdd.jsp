@@ -117,7 +117,7 @@ th {
 				</tr>
 				<tr>
 					<th>내용</th>
-					<td><textarea id = "recipeContent"  rows="10" cols="30" name="recipeContent" class="form-control"></textarea></td>			
+					<td><textarea id="recipeContent"  rows="10" cols="30" name="recipeContent" class="form-control"></textarea></td>			
 				</tr>
 		
 			</tbody>

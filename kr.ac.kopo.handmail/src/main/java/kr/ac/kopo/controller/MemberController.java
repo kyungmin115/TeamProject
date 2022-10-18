@@ -76,7 +76,7 @@ public class MemberController {
 			 */
 			 
 		
-		return "redirect:/product/list.do";
+		return "redirect:/member/login.do";
 		
 	}
 	

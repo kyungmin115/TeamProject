@@ -87,7 +87,6 @@
     </c:if> 
   </ul>
 </div>
-<div class="cont"></div>
 
 <%@ include file="/WEB-INF/views/include/footer.jsp" %>
 

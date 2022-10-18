@@ -35,7 +35,10 @@ $(function(){
     tinymce.init({
     	language: "ko_KR", //한글판으로 변경
         selector: '#boardContent',
-        height: 575,
+        <c:if test="${member == null}">
+        	readonly: true,
+    	</c:if>
+        height: 567,
         menubar: false,
         plugins: plugins,
         toolbar: edit_toolbar,
@@ -146,6 +149,25 @@ th {
 	<input type="hidden" name="boardNo" value="${boardVO.boardNo}"/>
 	<table class="table" id="box">
 		<tbody>
+		<c:if test="${member == null}">
+			<tr>
+				<th>작성자</th>
+				<td><c:out value="${boardVO.boardWriter}"/></td>
+			</tr>
+			<tr>
+				<th>작성일</th>
+				<td><fmt:formatDate value="${boardVO.boardRegDate}" pattern="yyyy/MM/dd"/></td>
+			</tr>
+			<tr>
+				<th>제목</th>
+				<td><input type='text' name='boardTitle' value="${boardVO.boardTitle}" class="form-control" readonly="readonly"/></td>			
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td><textarea id="boardContent"  rows="10" cols="30" name="boardContent" class="form-control" readonly>${boardVO.boardContent}</textarea></td>			
+			</tr>
+		</c:if>
+		<c:if test="${member != null}">
 			<tr>
 				<th>작성자</th>
 				<td><c:out value="${boardVO.boardWriter}"/></td>
@@ -160,14 +182,19 @@ th {
 			</tr>
 			<tr>
 				<th>내용</th>
-				<td><textarea id = "boardContent"  rows="10" cols="30" name="boardContent" class="form-control">${boardVO.boardContent}</textarea></td>			
+				<td><textarea id="boardContent"  rows="10" cols="30" name="boardContent" class="form-control">${boardVO.boardContent}</textarea></td>			
 			</tr>
+		</c:if>
 		</tbody>
 	</table>
 	<div class="btn-cont ar">
-		<input type="submit" value="수정" class="btn btn-outline-primary" id="btnUpt">	
-		<a href='${pageContext.request.contextPath}/board/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>	
-		<a href='${pageContext.request.contextPath}/board/del.do?boardNo=${boardVO.boardNo}'><input type="button" value="삭제"  id="btnDel" class="btn btn-outline-danger"></a>
+		<c:if test="${member != null}">
+			<input type="submit" value="수정" class="btn btn-outline-primary" id="btnUpt">
+		</c:if>	
+		<a href='${pageContext.request.contextPath}/board/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>
+		<c:if test="${member != null}">	
+			<a href='${pageContext.request.contextPath}/board/del.do?boardNo=${boardVO.boardNo}'><input type="button" value="삭제"  id="btnDel" class="btn btn-outline-danger"></a>
+		</c:if>
 	</div>
 </form>
 

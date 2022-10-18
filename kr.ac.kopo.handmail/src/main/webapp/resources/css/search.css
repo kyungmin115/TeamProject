@@ -47,9 +47,12 @@ a{
 }
 .cont{
 	padding-top: 50px;
-	width: 800px;
+	width: fit-content;
 	height: 50px;
 	margin: 0 auto;
+}
+.cont ul li a{
+	color: black;
 }
 .contt{
 	width: 1200px;

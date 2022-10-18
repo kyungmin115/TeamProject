@@ -122,10 +122,8 @@ th {
 					</tr>
 					<tr>
 						<th>내용</th>
-						<td><textarea id="boardContent" rows="10" cols="30"
-								name="boardContent" class="form-control"></textarea></td>
+						<td><textarea id="boardContent" rows="10" cols="30" name="boardContent" class="form-control"></textarea></td>
 					</tr>
-
 				</tbody>
 			</table>
 			<div class="btn-cont ar">

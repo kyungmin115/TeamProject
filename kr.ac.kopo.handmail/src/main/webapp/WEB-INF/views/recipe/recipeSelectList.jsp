@@ -84,9 +84,11 @@ width: 20%;
 						</table>
 					</div>
 				</div>
-				<div class="btn-cont ar">
-					<a href='${pageContext.request.contextPath}/recipe/add.do'><input type="button" value="글쓰기" class="btn btn-outline-primary"></a>
-				</div>
+				<c:if test="${member != null}">
+					<div class="btn-cont ar">
+						<a href='${pageContext.request.contextPath}/recipe/add.do'><input type="button" value="글쓰기" class="btn btn-outline-primary"></a>
+					</div>
+				</c:if>
 			</div>
 		</div>
 	</div>
