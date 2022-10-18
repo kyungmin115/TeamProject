@@ -27,29 +27,37 @@ width: 20%;
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/header.jsp"%>
+	<!-- 기본 URL -->
+	<c:url var="_BASE_PARAM" value="">
+		<c:if test="${not empty searchInfo.searchWord}">
+			<c:param name="searchKeyword" value="${searchInfo.searchWord}" />
+		</c:if>
+	</c:url>
 	<div class="gong"></div>
 	<div class="layyer">
 		<div class="container">
 			<div>
-				<div style="text-align: center;">
-					<form action="${pageContext.request.contextPath}/board/list.do">
-						<select name="searchType">
-							<option value="title">제목</option>
-							<option value="content">내용</option>
-							<option value="total">제목+내용</option>
-						</select>
-						<script type="text/javascript">
-							if ('${searchInfo.searchType}') {
-								//		document.querySelector('[name="searchType"]').value = '${searchInfo.searchType}'
-								$('[name="searchType"]').val(
-										'${searchInfo.searchType}');
-							}
-						</script>
-						<input type="text" name="searchWord"
-							value="${searchInfo.searchWord}" placeholder="검색어를 입력하세요" />
-							<span class="bbtn_s"><input type="submit" value="검색" /></span>
-					</form>
-				</div>
+				<!-- 검색 -->
+<!-- 			<div style="text-align: center;"> -->
+<%-- 				<form action="${pageContext.request.contextPath}/board/list.do"> --%>
+<!-- 					<select name="searchType"> -->
+<!-- 						<option value="title">제목</option> -->
+<!-- 						<option value="content">내용</option> -->
+<!-- 						<option value="total">제목+내용</option> -->
+<!-- 					</select> -->
+<!-- 					<script type="text/javascript"> -->
+<%--						if ('${searchInfo.searchType}') { --%>
+<%-- 						document.querySelector('[name="searchType"]').value = '${searchInfo.searchType}' --%>
+<!-- 						$('[name="searchType"]').val( '${searchInfo.searchType}'); --%>
+<!--  						} -->
+<!-- 					</script> -->
+<!-- 					<label for="inp_text" class="hdn">검색어입력</label> -->
+<%-- 							<input name="searchKeyword" value="<c:out value="${searchInfo.searchWord}"/>" type="text" class="inp_s" id="inp_text" /> --%>
+<!-- 					<span class="bbtn_s"> -->
+<!-- 						<input type="submit" value="검색" title="검색" /> -->
+<!--  					</span> -->
+<!-- 				</form> -->
+<!--			</div> -->
 				<!-- 목록 -->
 				<div id="bbs_wrap">
 					<div class="bbs_list">
