@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import org.jsoup.select.Evaluator.Matches;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -59,18 +60,20 @@ public class MemberController {
 		
 		session.getAttribute("member");
 		MemberVO loginUser = memberService.login(vo);
-		if (loginUser == null) {
+		if (loginUser == null || !(pwdEncoder.matches(vo.getMemPass(), loginUser.getMemPass()))) {
+			session.setAttribute("member", null);
 			rttr.addFlashAttribute("msg", false);
 			return "redirect:/member/login.do";
 		}
 		boolean pwdMatch = pwdEncoder.matches(vo.getMemPass(), loginUser.getMemPass());
-		if (pwdMatch == true) {
-			session.setAttribute("member", loginUser);
-		} else {
-			session.setAttribute("member", null);
-			rttr.addFlashAttribute("msg", false);
-			return "forward:/member/login.do";
-			}
+			if (pwdMatch == true) {
+				session.setAttribute("member", loginUser);
+		}
+		
+		 /*
+			 * else { session.setAttribute("member", null); rttr.addFlashAttribute("msg",
+			 * false); return "forward:/member/login.do"; }
+			 */
 			 
 		
 		return "redirect:/product/list.do";
