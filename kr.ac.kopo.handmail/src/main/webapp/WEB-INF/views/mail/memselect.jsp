@@ -17,6 +17,15 @@
 .btns input:hover {
 	cursor: pointer;
 }
+.buto {
+	width: 100px;
+	border-radius: 30px;
+	background-color: #222222;
+	color: white;
+}
+.buto:hover {
+	background-color: #37D243;
+}
 input {
 	border-bottom: 1px solid #E0E0E0;
 	border-right:1px;
@@ -45,17 +54,20 @@ input[type=email] {
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
-			$("#btnDel").click(function() {
-				if (!confirm("회원탈퇴 하시겠습니까?")) {
-					return false;
-				}
-			});
-			
 			$("#btnUpt").click(function() {
+				if ($('#memPass').val() != $('#memPassCheck').val()) {
+					alert('비밀번호 입력이 서로 다릅니다.');
+					return false;
+					}
 				if (!confirm("회원정보수정 하시겠습니까?")) {
 					return false;
 				}
-			});
+				});
+		$("#btnDel").click(function() {
+			if (!confirm("회원탈퇴 하시겠습니까?")) {
+				return false;
+			}
+		});
 	});
 </script>
 <body>
@@ -80,14 +92,17 @@ input[type=email] {
 				<td><input type='text' name='memMail' value="${memberVO.memMail}"></td>	
 			</tr>
 			<tr class="flot">
-				<td><input type="password" name='memPass' placeholder="비밀번호 입력"></td>
+				<td><input type="password" name='memPass' id="memPass" placeholder="비밀번호 입력"></td>
+			</tr>
+			<tr class="flot">
+				<td><input type="password" name='memPassCheck' id="memPassCheck" placeholder="비밀번호 확인"></td>
 			</tr>
 		</tbody>
 	</table>
 	<div class="d-grid gap-2 d-md-flex justify-content-md-end btns">
-<%-- 		<a href='${pageContext.request.contextPath}/member/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>	 --%>
-		<input type="submit" value="수정" id="btnUpt">		
-		<a href='${pageContext.request.contextPath}/member/delete.do?memId=${memberVO.memId}'><input type="button" value="삭제" class="btn btn-outline-danger" id="btnDel"></a>
+		<input type="submit" value="수정" id="btnUpt" class="buto">		
+		<a href='${pageContext.request.contextPath}/member/delete.do?memId=${memberVO.memId}'><input type="button" value="삭제" id="btnDel"  class="buto"></a>
+		<a href='${pageContext.request.contextPath}/member/login.do'><input type="button" value="목록" class="buto"></a>	
 	</div>
 </form>
 

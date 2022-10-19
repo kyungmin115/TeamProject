@@ -58,8 +58,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberVO find(MemberVO vo) {
-		return memberDao.find(vo);
+	public MemberVO find(String memId) {
+		return memberDao.find(memId);
 	}
 
 	

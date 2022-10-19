@@ -35,7 +35,7 @@ $(function(){
     tinymce.init({
     	language: "ko_KR", //한글판으로 변경
         selector: '#boardContent',
-        <c:if test="${member == null}">
+        <c:if test="${member.memId != boardVO.boardWriter}">
         	readonly: true,
     	</c:if>
         height: 567,
@@ -126,30 +126,11 @@ th {
 <body>
 
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
-
-<%-- <div class="board_view">				
-				<dl class="tit_view">
-					<dt>제목</dt>
-					<dd><c:out value="${boardVO.boardTitle}"/></dd>
-				</dl>
-				<dl class="info_view2">
-					<dt>작성자ID</dt>
-					<dd><c:out value="${boardVO.boardWriter}"/></dd>
-					<dt>작성일</dt>
-			<dd><fmt:formatDate value="${boardVO.boardRegDate}" pattern="yyyy-MM-dd"/></dd>
-					<dt>조회수</dt>
-					<dd><c:out value="${boardVO.inqireCo}" /></dd>
-				</dl>
-				<div class="view_cont">
-					<c:out value="${result.boardContent}" escapeXml="false" />
-				</div>
-			</div>
-	 --%>
 <form action='${pageContext.request.contextPath}/board/edit.do' method='post'>
 	<input type="hidden" name="boardNo" value="${boardVO.boardNo}"/>
 	<table class="table" id="box">
 		<tbody>
-		<c:if test="${member == null}">
+		<c:if test="${member.memId != boardVO.boardWriter}">
 			<tr>
 				<th>작성자</th>
 				<td><c:out value="${boardVO.boardWriter}"/></td>
@@ -167,7 +148,7 @@ th {
 				<td><textarea id="boardContent"  rows="10" cols="30" name="boardContent" class="form-control" readonly>${boardVO.boardContent}</textarea></td>			
 			</tr>
 		</c:if>
-		<c:if test="${member != null}">
+		<c:if test="${member.memId == boardVO.boardWriter}">
 			<tr>
 				<th>작성자</th>
 				<td><c:out value="${boardVO.boardWriter}"/></td>
@@ -188,11 +169,11 @@ th {
 		</tbody>
 	</table>
 	<div class="btn-cont ar">
-		<c:if test="${member != null}">
+		<c:if test="${member.memId == boardVO.boardWriter}">
 			<input type="submit" value="수정" class="btn btn-outline-primary" id="btnUpt">
 		</c:if>	
 		<a href='${pageContext.request.contextPath}/board/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>
-		<c:if test="${member != null}">	
+		<c:if test="${member.memId == boardVO.boardWriter}">	
 			<a href='${pageContext.request.contextPath}/board/del.do?boardNo=${boardVO.boardNo}'><input type="button" value="삭제"  id="btnDel" class="btn btn-outline-danger"></a>
 		</c:if>
 	</div>

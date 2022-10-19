@@ -35,7 +35,7 @@ $(function(){
     tinymce.init({
     	language: "ko_KR", //한글판으로 변경
         selector: '#recipeContent',
-        <c:if test="${member == null}">
+        <c:if test="${member.memId != recipeVO.recipeWriter}">
     	readonly: true,
 		</c:if>
         height: 567,
@@ -134,7 +134,7 @@ th {
 			<input type="hidden" name="recipeNo" value="${recipeVO.recipeNo}"/>
 <table class="table" id="box">
 	<tbody>
-		<c:if test="${member != null}">
+		<c:if test="${member.memId == recipeVO.recipeWriter}">
 			<tr>
 				<th>작성자</th>
 				<td><c:out value="${recipeVO.recipeWriter}"/></td>
@@ -152,7 +152,7 @@ th {
 				<td><textarea id="recipeContent"  rows="10" cols="30" name="recipeContent" class="form-control">${recipeVO.recipeContent}</textarea></td>			
 			</tr>
 		</c:if>
-		<c:if test="${member == null}">
+		<c:if test="${member.memId != recipeVO.recipeWriter}">
 			<tr>
 				<th>작성자</th>
 				<td><c:out value="${recipeVO.recipeWriter}"/></td>
@@ -173,11 +173,11 @@ th {
 	</tbody>
 </table>
 <div class="btn-cont ar">
-<c:if test="${member != null}">
+<c:if test="${member.memId == recipeVO.recipeWriter}">
 	<input type="submit" value="수정" class="btn btn-outline-primary" id="btnUpt">
 </c:if>
 <a href='${pageContext.request.contextPath}/recipe/list.do'><input type="button" value="목록" class="btn btn-outline-primary"></a>
-<c:if test="${member != null}">
+<c:if test="${member.memId == recipeVO.recipeWriter}">
 	<a href='${pageContext.request.contextPath}/recipe/del.do?recipeNo=${recipeVO.recipeNo}'><input type="button" id="btnDel" value="삭제" class="btn btn-outline-danger"></a>
 </c:if>
 </div>

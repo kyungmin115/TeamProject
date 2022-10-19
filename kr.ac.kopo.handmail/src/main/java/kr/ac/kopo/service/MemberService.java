@@ -20,6 +20,6 @@ public interface MemberService {
 
 	MemberVO fix(String memId);
 
-	MemberVO find(MemberVO vo);
+	MemberVO find(String memId);
 	
 }

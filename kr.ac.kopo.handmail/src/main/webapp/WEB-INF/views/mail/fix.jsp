@@ -14,6 +14,15 @@
 .btns input:hover {
 	cursor: pointer;
 }
+.buto {
+	width: 150px;
+	border-radius: 30px;
+	background-color: #222222;
+	color: white;
+}
+.buto:hover {
+	background-color: #37D243;
+}
 input {
 	border-bottom: 1px solid #E0E0E0;
 	border-right:1px;
@@ -44,8 +53,15 @@ input[type=email] {
 	$(document).ready(function(){
 		$("#logoutBtn").on("click", function(){
 			location.href="/member/logout.do";
-		})		
-	})
+		})
+		<c:if test="${idmsg == false}">
+			alert("ID를 확인해주세요.")
+		</c:if>
+		<c:if test="${namemsg == false}">
+			alert("이름을 확인해주세요.")
+		</c:if>
+
+	});
 </script>
 <body>
 <%@ include file="/WEB-INF/views/include/header.jsp" %>
@@ -55,7 +71,7 @@ input[type=email] {
 <div class="gong"></div>
 	<section class="midd">
         <div class="becc">
-			<form action='${pageContext.request.contextPath}/member/fix.do' method='post'>
+			<form action='${pageContext.request.contextPath}/member/fix.do' name="fix" method='post'>
 				<table class="tabl" style="padding-top: 110px;">
 					<tbody>
 						<tr class="flot">
@@ -68,7 +84,8 @@ input[type=email] {
 					</tbody>
 				</table>
 				<div class="d-grid gap-2 d-md-flex justify-content-md-end btns">	
-					<input type="submit" value="입력" class="">
+					<input type="submit" value="입력" class="buto">
+					<a href="/member/login.do"><input class="buto" type="button" value="취소"/></a>
 				</div>
 			</form>
         </div>

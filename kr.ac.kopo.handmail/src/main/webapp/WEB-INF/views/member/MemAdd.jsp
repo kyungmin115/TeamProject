@@ -80,7 +80,7 @@ $(function () {
 					</div>
 				<div class="btn">
 					<button id="addLink" type="submit" class="btnreg">가입</button>
-					<a href="../product/log.do"><button type="button" class="btnesc">취소</button></a>
+					<a href="/member/login.do"><button type="button" class="btnesc">취소</button></a>
 				</div>
 			</form>
 		</div>

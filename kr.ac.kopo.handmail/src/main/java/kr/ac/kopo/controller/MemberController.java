@@ -142,9 +142,19 @@ public class MemberController {
 	}
 	
 	@PostMapping("fix.do")
-	public String fix(MemberVO vo) {		
+	public String fix(MemberVO vo,String memId,RedirectAttributes rttr) throws Exception {		
 		
-		return "redirect:/member/update.do?memId="+vo.getMemId();
+		MemberVO mem = memberService.selectMem(memId);
+		if (mem == null) {
+			rttr.addFlashAttribute("idmsg", false);
+			return "redirect:/member/fix.do";
 		}
-
+		if (!vo.getMemName().equals(mem.getMemName())) {
+			rttr.addFlashAttribute("namemsg", false);
+		}
+		if (vo.getMemId().equals(mem.getMemId()) && vo.getMemName().equals(mem.getMemName())) {
+			return "redirect:/member/update.do?memId="+vo.getMemId();
+		}
+			return "redirect:/member/fix.do";
+		}
 }
